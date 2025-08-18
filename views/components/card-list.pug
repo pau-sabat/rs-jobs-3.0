@@ -1,0 +1,18 @@
+mixin card-list(data, listType)
+
+    - const cardList = data[listType]
+    - const titleLevel = cardList.titleLevel || '2'
+    - const columns = cardList.columns
+
+    .container.flex.flex-col.gap-8
+        .flex.flex-col.gap-4
+            div(class=`text-center text-heading-mobile-${titleLevel} lg:text-heading-desktop-${titleLevel} font-bold text-secondary`)!=md(cardList.title)
+            if cardList.subtitle
+                div(class="text-center text-dark")!=md(cardList.subtitle)
+        div(class=`grid grid-cols-1 md:grid-cols-2 gap-4 lg:grid-cols-3 ${columns === '4' ? 'xl:grid-cols-4' : ''}`)
+            each item in cardList.items
+                if item.type === "company"
+                    +companyCard(item)
+                if item.type === "city"
+                    +cityCard(item)
+

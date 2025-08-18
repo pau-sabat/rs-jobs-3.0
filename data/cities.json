@@ -1,0 +1,162 @@
+[
+	{
+		"slug": "a-coruna",
+		"label": "A coruña"
+	},
+	{
+		"slug": "albacete",
+		"label": "Albacete"
+	},
+	{
+		"slug": "alicante",
+		"label": "Alicante"
+	},
+	{
+		"slug": "almeria",
+		"label": "Almería"
+	},
+	{
+		"slug": "badajoz",
+		"label": "Badajoz"
+	},
+	{
+		"slug": "barcelona",
+		"label": "Barcelona"
+	},
+	{
+		"slug": "bilbao",
+		"label": "Bilbao"
+	},
+	{
+		"slug": "caceres",
+		"label": "Cáceres"
+	},
+	{
+		"slug": "cadiz",
+		"label": "Cádiz"
+	},
+	{
+		"slug": "castellon",
+		"label": "Castellón"
+	},
+	{
+		"slug": "ciudad-real",
+		"label": "Ciudad Real"
+	},
+	{
+		"slug": "cordoba",
+		"label": "Córdoba"
+	},
+	{
+		"slug": "cuenca",
+		"label": "Cuenca"
+	},
+	{
+		"slug": "fuerteventura",
+		"label": "Fuerteventura"
+	},
+	{
+		"slug": "gijon",
+		"label": "Gijón"
+	},
+	{
+		"slug": "girona",
+		"label": "Girona"
+	},
+	{
+		"slug": "gran-canaria",
+		"label": "Gran Cararia"
+	},
+	{
+		"slug": "granada",
+		"label": "Granada"
+	},
+	{
+		"slug": "huelva",
+		"label": "Huelva"
+	},
+	{
+		"slug": "huesca",
+		"label": "Huesca"
+	},
+	{
+		"slug": "ibiza",
+		"label": "Ibiza"
+	},
+	{
+		"slug": "jaen",
+		"label": "Jaén"
+	},
+	{
+		"slug": "lleida",
+		"label": "Lleida"
+	},
+	{
+		"slug": "lugo",
+		"label": "Lugo"
+	},
+	{
+		"slug": "madrid",
+		"label": "Madrid"
+	},
+	{
+		"slug": "malaga",
+		"label": "Málaga"
+	},
+	{
+		"slug": "mallorca",
+		"label": "Mallorca"
+	},
+	{
+		"slug": "ourense",
+		"label": "Ourense"
+	},
+	{
+		"slug": "oviedo",
+		"label": "Oviedo"
+	},
+	{
+		"slug": "pamplona",
+		"label": "Pamplona"
+	},
+	{
+		"slug": "pontevedra",
+		"label": "Pontevedra"
+	},
+	{
+		"slug": "san-sebastian",
+		"label": "San Sebastián"
+	},
+	{
+		"slug": "santander",
+		"label": "Santander"
+	},
+	{
+		"slug": "sevilla",
+		"label": "Sevilla"
+	},
+	{
+		"slug": "tarragona",
+		"label": "Tarragona"
+	},
+	{
+		"slug": "tenerife",
+		"label": "Tenerife"
+	},
+	{
+		"slug": "teruel",
+		"label": "Teruel"
+	},
+	{
+		"slug": "toledo",
+		"label": "Toledo"
+	},
+	{
+		"slug": "valencia",
+		"label": "Valencia"
+	},
+	{
+		"slug": "zaragoza",
+		"label": "Zaragoza"
+	}
+]

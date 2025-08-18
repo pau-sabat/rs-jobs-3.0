@@ -1,0 +1,258 @@
+{
+  "navbar": {
+    "logo": "/assets/images/logo.svg",
+    "items": [
+      {
+        "text": "Buscar trabajo",
+        "href": "/"
+      },
+      {
+        "text": "Buscar empresa",
+        "href": "/"
+      }
+    ],
+    "buttons": [
+      {
+        "text": "Soy empresa",
+        "href": "/"
+      },
+      {
+        "text": "Acceso candidato",
+        "href": "/",
+        "secondary": true
+      }
+    ]
+  },
+  "footer": {
+    "sections": [
+      {
+        "title": "Iniciar sesión",
+        "items": [
+          {
+            "text": "Candidatos",
+            "href": "/"
+          },
+          {
+            "text": "Empresas",
+            "href": "/"
+          }
+        ]
+      },
+      {
+        "title": "Te interesa",
+        "items": [
+          {
+            "text": "Blog",
+            "href": "/"
+          },
+          {
+            "text": "Contacto",
+            "href": "/"
+          }
+        ]
+      },
+      {
+        "title": "Contacto",
+        "text": "Plaza Urquinaona, 7. 5º 1ª. 08010 - Barcelona <br> info@rs-jobs.com - 900 877 735 / 930 500 800"
+      }
+    ],
+    "copyright": [
+      {
+        "text": "Copyright © 2022. All Rights Reserved."
+      },
+      {
+        "text": "Aviso legal",
+        "href": "/"
+      },
+      {
+        "text": "Política de privacidad de candidatos",
+        "href": "/"
+      },
+      {
+        "text": "Términos y condiciones para candidatos",
+        "href": "/"
+      }
+    ]
+  },
+  "hero": {
+    "background": "bg-gradient-secondary",
+    "title": "# Conéctate con ofertas de trabajo <strong>hechas para ti</strong>",
+    "text": "Sabemos que cada candidato es diferente. Por eso, en R&S Jobs te mostramos solo ofertas que encajan contigo, basadas en tu perfil, ubicación y objetivos profesionales.",
+    "image": "/assets/images/hero.png",
+    "filter": {
+      "title": "Búsquedas populares:",
+      "items": [
+        "Técnico",
+        "Desarrollador",
+        "Comercial",
+        "Camarero",
+        "Ingeniero",
+        "Dependiente/a",
+        "Teleoperador",
+        "Jefe de cocina"
+      ]
+    },
+    "searchBar": {
+      "name": "search-bar",
+      "items": [
+        {
+          "type": "text",
+          "text": "Puesto de trabajo o palabra clave"
+        },
+        {
+          "type": "select",
+          "text": "Selecciona la provincia",
+          "options": [
+            {
+              "text": "Selecciona la provincia",
+              "value": ""
+            }
+          ]
+        },
+        {
+          "type": "button",
+          "text": "Buscar"
+        }
+      ]
+    }
+  },
+  "categories": {
+    "title": "Categorías más buscadas",
+    "subtitle": "13.401 empleos - 293 añadidos hoy",
+    "cta": {
+      "text": "Ver todas las categorías >",
+      "href": "/"
+    },
+    "items": [
+      {
+        "text": "Marketing",
+        "icon": "📢",
+        "href": "/"
+      },
+      {
+        "text": "Comercial",
+        "icon": "💼",
+        "href": "/"
+      },
+      {
+        "text": "Contabilidad / Finanzas",
+        "icon": "💸",
+        "href": "/"
+      },
+      {
+        "text": "Diseño / Creatividad",
+        "icon": "🧑‍🎨",
+        "href": "/"
+      },
+      {
+        "text": "Desarrollo",
+        "icon": "💻",
+        "href": "/"
+      },
+      {
+        "text": "Atención al cliente",
+        "icon": "📠",
+        "href": "/"
+      }
+    ]
+  },
+  "companies-list": {
+    "title": "## Las mejores empresas buscan tu talento. <strong>¡Descúbrelas!</strong>",
+    "items": [
+      {
+        "type": "company",
+        "title": "SOLVE THE X",
+        "tags": ["3 ofertas"],
+        "href": "/",
+        "image": "/assets/images/companies/solvethex.png",
+        "logo": "/assets/images/companies/solvethex-logo.png"
+      },
+      {
+        "type": "company",
+        "title": "ElectryConsulting",
+        "tags": ["37 ofertas"],
+        "href": "/",
+        "image": "/assets/images/companies/electryconsulting.png",
+        "logo": "/assets/images/companies/electryconsulting-logo.png"
+      },
+      {
+        "type": "company",
+        "title": "L'ver Hoteles",
+        "tags": ["7 ofertas"],
+        "href": "/",
+        "image": "/assets/images/companies/lver.png",
+        "logo": "/assets/images/companies/lver-logo.png"
+      },
+      {
+        "type": "company",
+        "title": "Netflix",
+        "tags": ["9 ofertas"],
+        "href": "/",
+        "image": "/assets/images/companies/netflix.png",
+        "logo": "/assets/images/companies/netflix-logo.png"
+      },
+      {
+        "type": "company",
+        "title": "Spotify",
+        "tags": ["5 ofertas"],
+        "href": "/",
+        "image": "/assets/images/companies/spotify.png",
+        "logo": "/assets/images/companies/spotify-logo.png"
+      },
+      {
+        "type": "company",
+        "title": "Instagram",
+        "tags": ["23 ofertas"],
+        "href": "/",
+        "image": "/assets/images/companies/instagram.png",
+        "logo": "/assets/images/companies/instagram-logo.png"
+      }
+    ]
+  },
+  "cta": {
+    "background": "bg-gradient-secondary",
+    "title": "## Cada día, más candidatos reciben llamadas para <strong>ser entrevistados</strong>",
+    "subtitle": "R&S Jobs conecta talento con empresas reales. Súmate al portal donde las oportunidades llegan a quienes están listos.",
+    "button": {
+      "text": "Regístrate y recibe ofertas",
+      "href": "/"
+    },
+    "image": "/assets/images/cta.png"
+  },
+  "cities-list": {
+    "title": "## No importa donde estés, <strong>¡tenemos un trabajo para ti!</strong>",
+    "titleLevel": "3",
+    "subtitle": "Descubre trabajos en las principales ciudades del país. ",
+    "columns": "4",
+    "items": [
+      {
+        "type": "city",
+        "text": "#### Madrid",
+        "href": "/",
+        "image": "/assets/images/cities/madrid.png",
+        "info": "+190 ofertas"
+      },
+      {
+        "type": "city",
+        "text": "#### Barcelona",
+        "href": "/",
+        "image": "/assets/images/cities/barcelona.png",
+        "info": "+230 ofertas"
+      },
+      {
+        "type": "city",
+        "text": "#### Sevilla",
+        "href": "/",
+        "image": "/assets/images/cities/sevilla.png",
+        "info": "+170 ofertas"
+      },
+      {
+        "type": "city",
+        "text": "#### Valencia",
+        "href": "/",
+        "image": "/assets/images/cities/valencia.png",
+        "info": "+150 ofertas"
+      }
+    ]
+  }
+}

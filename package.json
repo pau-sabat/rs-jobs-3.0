@@ -1,0 +1,26 @@
+{
+  "name": "mail",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon app.js",
+    "build:css": "tailwindcss -i ./public/css/styles.css -o ./public/css/output.css --watch",
+    "dev": "concurrently \"npm run start\" \"npm run build:css\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "express": "^5.1.0",
+    "marked": "^16.1.2",
+    "pug": "^3.0.3"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.0",
+    "concurrently": "^8.2.2",
+    "nodemon": "^3.1.10",
+    "postcss": "^8.4.0",
+    "tailwindcss": "^3.4.0"
+  }
+}

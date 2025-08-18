@@ -1,0 +1,9 @@
+mixin cityCard(data)
+    a(href=data.href class="shadow-md rounded-lg overflow-hidden bg-white xl:min-w-[280px]")
+        img(src=data.image alt=data.text class="w-full h-[202px] lg:h-[350px] object-cover")
+        .flex.items-center.justify-between.py-3.px-4.bg-white
+            .flex.item-center.gap-2
+                .flex.items-center.justify-center.w-6.h-6
+                    img(src='/assets/images/location-icon.svg' alt=data.text class="w-[14px] h-5 object-cover")
+                .text-dark.font-bold!=md(data.text)
+            .text-primary!=md(data.info)

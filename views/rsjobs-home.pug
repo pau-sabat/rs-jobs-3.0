@@ -1,0 +1,28 @@
+doctype html
+html(lang="es")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title RSJobs
+        link(rel="stylesheet", href="/css/output.css")
+
+    body.bg-light.text-dark(class="text-body-mobile md:text-body-desktop")
+        // Incluir componentes
+        include components/navbar
+        include components/hero
+        include components/footer
+        include components/searchBar
+        include components/categories
+        include components/card-list
+        include components/company-card
+        include components/cta
+        include components/city-card
+
+        // Usar los mixins con los datos del JSON
+        +navbar(data)
+        +hero(data)
+        +categories(data)
+        +card-list(data, 'companies-list')
+        +cta(data)
+        +card-list(data, 'cities-list')
+        +footer(data)
