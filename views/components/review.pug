@@ -1,0 +1,14 @@
+mixin review(data, color, align)
+    - const text = data.text
+    - const name = data.name
+
+    div(class=`w-full md:w-[88%] px-[18px] md:px-6 py-[13px] md:py-[17px] bg-white rounded-[7px] shadow-md flex flex-col gap-2 md:gap-3 relative overflow-hidden ${align}`)
+        span(class=`absolute top-0 left-0 h-full w-[7px] ${color}`)
+        .flex.flex-nowrap
+            - for (let i = 0; i < 5; i++)
+                div(class="w-5 h-5 flex items-center justify-center")
+                    img(src="/assets/images/star.svg" alt="Star" class="w-[17px] h-auto")
+        p(class="text-[10px] leading-[140%] md:text-caption-desktop line-clamp-2")=text
+        hr(class="border-primary")
+        h3(class="text-caption-mobile md:text-small-desktop font-bold text-dark")=name
+

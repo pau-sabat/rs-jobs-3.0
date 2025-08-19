@@ -14,6 +14,10 @@ module.exports = {
         'rethink': ['RethinkSans', 'sans-serif'],
         'sans': ['RethinkSans', 'sans-serif'],
       },
+      fontWeight: {
+        'normal': '400',
+        'bold': '700',
+      },
       colors: {
         primary: '#F0386B',
         secondary: '#0B2A52',

@@ -210,7 +210,6 @@
     ]
   },
   "cta": {
-    "background": "bg-gradient-secondary",
     "title": "## Cada día, más candidatos reciben llamadas para <strong>ser entrevistados</strong>",
     "subtitle": "R&S Jobs conecta talento con empresas reales. Súmate al portal donde las oportunidades llegan a quienes están listos.",
     "button": {
@@ -218,6 +217,16 @@
       "href": "/"
     },
     "image": "/assets/images/cta.png"
+  },
+  "candidacy": {
+    "left": true,
+    "title": "## Siempre sabrás <strong>en qué punto está</strong> tu candidatura",
+    "subtitle": "En R&S Jobs, no te dejamos en el limbo. Te informamos en cada etapa del proceso: cuándo aplicas, si tu CV es revisado, si avanzas o no y mucho más.<br>La comunicación constante aquí no es una promesa, es una realidad.",
+    "image": "/assets/images/cta.png",
+    "button": {
+      "text": "Regístrate ahora",
+      "href": "/"
+    }
   },
   "cities-list": {
     "title": "## No importa donde estés, <strong>¡tenemos un trabajo para ti!</strong>",
@@ -254,5 +263,35 @@
         "info": "+150 ofertas"
       }
     ]
-  }
+  },
+  "testimonials": [
+    {
+      "text": "Este mes estuve buscando trabajo en el sector hostelería donde llevo años desarrollándome profesionalmente. Me inscribí a varias ofertas siendo  una de ellas la empresa R&S que contactó conmigo.  Me citaron con Marta Venero y tuvimos una primera cita en sus  instalaciones. Tras esta primera toma de contacto fui seleccionado para  una segunda entrevista con la dirección del restaurante y posteriormente con el equipo jefe de sala. Quisiera agradecer la profesionalidad y el  carácter humano que me proporcionó R&S acompañándome a todas las  entrevistas y apoyándome en todo momento. Muchas gracias Marta Venero por ser tan atenta, cercana y profesional. Mañana empiezo un nuevo  proyecto con mucha ilusión y quería agradecer a R&S jobs por su  gestión!!!",
+      "name": "Fernanda Barrera"
+    },
+    {
+      "text": "Contraté sus servicios para incorporar una vacante en el despacho y estamos muy contentos. Son ágiles, serios y muy  profesionales. Agradecidos a la empresa, así  como a Marta y su equipo  por la calidad de los candidatos presentados y por todas las gestiones y apoyo que nos brindaron en el proceso de selección. Muy recomendables.",
+      "name": "Nic Fer"
+    },
+    {
+      "text": "Mónica es muy amable y profesional. Sin duda, recomiendo a R&S Jobs. Son diferentes y mejores en su sector.",
+      "name": "Rocio Moreno"
+    }
+  ],
+  "ctaCards": [
+    {
+      "title": "Potencia tu búsqueda de empleo",
+      "description": "Descubre consejos, guías y buenas prácticas para encontrar trabajo de forma más rápida y efectiva.",
+      "cta": "IR AL BLOG",
+      "image": "/assets/images/blog.png",
+      "href": "/"
+    },
+    {
+      "title": "¿Buscas talento para tu empresa?",
+      "description": "Publica ofertas y encuentra candidatos en nuestro portal especializado para empleadores y RRHH.",
+      "cta": "BUSCO TALENTO",
+      "image": "/assets/images/rrhh.png",
+      "href": "/"
+    }
+  ]
 }

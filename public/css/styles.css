@@ -1,8 +1,15 @@
 @font-face {
-  font-family: "RethinkSans";
-  src: url("../assets/fonts/RethinkSans.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
+	font-family: 'RethinkSans';
+	src: url('../assets/fonts/RethinkSans.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'RethinkSans';
+	src: url('../assets/fonts/RethinkSans.ttf') format('truetype');
+	font-weight: bold;
+	font-style: normal;
 }
 
 @tailwind base;
@@ -11,59 +18,59 @@
 
 /* Botón base */
 .btn {
-  @apply inline-flex items-center justify-center px-3 py-1.5 rounded-[4px] font-bold;
+	@apply inline-flex items-center justify-center px-3 py-1.5 rounded-[4px] font-bold;
 }
 
 /* Botón primario */
 .btn-primary {
-  @apply bg-primary text-white transition-all;
+	@apply bg-primary text-white transition-all;
 }
 
 .btn-primary:hover {
-  @apply bg-[#CC305B];
+	@apply bg-[#CC305B];
 }
 
 .btn-primary-outline {
-  @apply text-primary bg-transparent shadow-[inset_0_0_0_2px_#F0386B] transition-all;
+	@apply text-primary bg-transparent shadow-[inset_0_0_0_2px_#F0386B] transition-all;
 }
 
 .btn-primary-outline:hover {
-  @apply bg-primary text-white;
+	@apply bg-primary text-white;
 }
 
 /* Botón secundario */
 .btn-secondary {
-  @apply bg-secondary text-white transition-all;
+	@apply bg-secondary text-white transition-all;
 }
 
 .btn-secondary:hover {
-  @apply bg-[#071931];
+	@apply bg-[#071931];
 }
 
 .btn-secondary-outline {
-  @apply text-secondary bg-transparent shadow-[inset_0_0_0_2px_#0b2a52] transition-all;
+	@apply text-secondary bg-transparent shadow-[inset_0_0_0_2px_#0b2a52] transition-all;
 }
 
 .btn-secondary-outline:hover {
-  @apply bg-secondary text-white;
+	@apply bg-secondary text-white;
 }
 
 .container {
-  @apply max-w-[1170px] mx-auto px-6 xl:px-0;
+	@apply max-w-[1170px] mx-auto px-6 xl:px-0;
 }
 
 .text-secondary strong {
-  @apply text-primary;
+	@apply text-primary;
 }
 
 /* Personalización del select */
 .custom-select {
-  appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  background-image: url("/assets/images/arrow-down.svg");
-  background-position: right 0.375rem center;
-  background-repeat: no-repeat;
-  background-size: 0.75rem 0.4625rem;
-  padding-right: 2.5rem;
+	appearance: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	background-image: url('/assets/images/arrow-down.svg');
+	background-position: right 0.375rem center;
+	background-repeat: no-repeat;
+	background-size: 0.75rem 0.4625rem;
+	padding-right: 2.5rem;
 }

@@ -2,13 +2,12 @@ mixin cta(data)
 
     - const cta = data.cta
 
-    section(class=`${cta.background}`)
-        .container
-            div(class="relative flex flex-col md:flex-row-reverse gap-6 md:gap-12 pt-[50px] md:py-[70px] md-2:py-[105px]")
-                div(class=`flex flex-col ${cta.image ? 'md:w-[48%]' : 'w-full'}`)
-                    div(class="text-secondary font-bold text-heading-mobile-2 lg:text-heading-desktop-2")!=md(cta.title)
-                    if cta.subtitle
-                        div(class="text-dark mt-2 md:hidden lg:block")!=md(cta.subtitle)
-                    a(href=cta.button.href class="btn btn-primary text-white mt-6 w-fit")=cta.button.text
-                if cta.image
-                    img(src=cta.image alt="" class="w-full md:absolute bottom-0 left-0 md:w-[44%] h-auto object-cover")
+    .container
+        div(class="relative flex flex-col md:flex-row-reverse gap-6 md:gap-12 pt-[50px] md:py-[70px] md-2:py-[105px]")
+            div(class=`flex flex-col ${cta.image ? 'md:w-[48%]' : 'w-full'}`)
+                div(class="text-secondary font-bold text-heading-mobile-2 lg:text-heading-desktop-2")!=md(cta.title)
+                if cta.subtitle
+                    div(class="text-dark mt-2 md:hidden lg:block")!=md(cta.subtitle)
+                a(href=cta.button.href class="btn btn-primary text-white mt-6 w-fit")=cta.button.text
+            if cta.image
+                img(src=cta.image alt="" class="w-full md:absolute bottom-0 left-0 md:w-[44%] h-auto object-cover")

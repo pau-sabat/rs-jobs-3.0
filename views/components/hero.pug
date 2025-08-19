@@ -3,7 +3,7 @@ mixin hero(data)
     - const background = hero.background || ''
 
     // cambiar por el sistema de contenedor desde el JSON del site
-    section(class=`${background} pb-6 lg:pb-0`)
+    div(class=`${background} pb-6 lg:pb-0`)
         div(class="container p-6 lg:py-[78px] relative")
             div(class="space-y-[24px] lg:space-y-[32px] lg:max-w-[570px]")
                 img(src=hero.image alt="Hero image" class="lg:absolute -z-10 bottom-0 right-0 w-4/5 lg:w-[50%] xl:w-[55%] mx-auto h-auto")

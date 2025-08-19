@@ -1,0 +1,24 @@
+mixin color-card(data, color)
+
+    - const title = data.title
+    - const description = data.description
+    - const image = data.image
+    - const href = data.href
+    - const cta = data.cta
+
+    - let color1, color2
+    - if (color === 'red')
+        - color1 = 'bg-primary/50'
+        - color2 = 'bg-primary/75'
+    - else
+        - color1 = 'bg-[#3A83E4]/50'
+        - color2 = 'bg-[#3A83E4]/75'
+
+    a(href=href class=`flex flex-col items-stretch md:items-center md:flex-row md:gap-6 ${color1} rounded-lg md:px-8 overflow-hidden`)
+        div(class="flex md:hidden lg:flex items-end justify-center shrink-0 h-full")
+            img(src=image alt=title class="w-[192px] h-auto")
+        div(class=`flex flex-col items-start gap-4 p-5 md:p-0 md:py-[30px] ${color2} md:bg-transparent`)
+            h2(class="text-heading-mobile-4 md:text-heading-desktop-4 text-secondary font-bold")=title
+            p(class="text-small-mobile md:text-small-desktop text-dark")=description
+            button.btn.btn-secondary.uppercase=cta
+

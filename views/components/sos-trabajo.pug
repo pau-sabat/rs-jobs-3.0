@@ -1,0 +1,30 @@
+mixin sos-trabajo
+
+    .container(class="py-[50px] md:py-[100px]")
+        div(class="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-8")
+            img(src="/assets/images/sos-trabajo/header.png" alt="Sos Trabajo" class="w-full md:w-[50%] h-auto")
+            div(class="w-full md:w-[50%] flex flex-col items-start gap-4 md:gap-6")
+                h2(class="text-heading-mobile-2 md:text-heading-desktop-2 text-primary font-bold") SOS Trabajo
+                p(class="text-small-mobile md:text-small-desktop text-dark")
+                    | Encontrar empleo ahora es más #[strong rápido y fácil]. Simplemente #[strong sube tu CV] y nuestra #[strong IA] se encargará de encontrar #[strong todas las ofertas] relacionadas con tu perfil. #[strong Regístrate ahora] y descubre cómo podemos ayudarte a encontrar el trabajo perfecto.
+                ul.flex.flex-col.gap-4
+                    li.flex.items-center.gap-4
+                        div(class="flex items-center justify-center w-[30px] h-[30px]")
+                            img(src="/assets/images/sos-trabajo/01.svg" alt="Tick" class="w-auto h-auto")
+                        p #[strong Lectura inteligente] de CV.
+                    li.flex.items-center.gap-4
+                        div(class="flex items-center justify-center w-[30px] h-[30px]")
+                            img(src="/assets/images/sos-trabajo/02.svg" alt="Tick" class="w-auto h-auto")
+                        p #[strong Conexión automática] con ofertas.
+                    li.flex.items-center.gap-4
+                        div(class="flex items-center justify-center w-[30px] h-[30px]")
+                            img(src="/assets/images/sos-trabajo/03.svg" alt="Tick" class="w-auto h-auto")
+                        p #[strong Automatización de alertas] de empleo.
+                    li.flex.items-center.gap-4
+                        div(class="flex items-center justify-center w-[30px] h-[30px]")
+                            img(src="/assets/images/sos-trabajo/04.svg" alt="Tick" class="w-auto h-auto")
+                        p #[strong Búsqueda proactiva] impulsada por IA.
+
+                a(href="/" class="btn btn-primary") Registrate ahora
+
+
