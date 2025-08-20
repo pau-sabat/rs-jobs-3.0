@@ -1,0 +1,30 @@
+
+doctype html
+html(lang="es")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
+        title RSJobs
+        link(rel="stylesheet" href="/css/output.css")
+        link(rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css")
+
+    body.bg-light.text-dark(class="text-body-mobile md:text-body-desktop")
+        // Incluir componentes
+        include ../components/navbar
+        include ../components/footer
+        include ../components/backdrop
+
+        // Usar los mixins con los datos del JSON
+        +navbar(data)
+
+        block content
+
+        +footer(data)
+
+        +backdrop
+
+        script(src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js")
+        script(src="/js/testimonials-swiper.js")
+
+        // Script de Vite - Bundle generado automáticamente
+        script(src="/static/bundle.js")

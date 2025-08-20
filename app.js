@@ -4,7 +4,7 @@ const fs = require("fs");
 const path = require("path");
 
 app.set("view engine", "pug");
-app.set("views", path.join(__dirname, "src", "views", "pages"));
+app.set("views", path.join(__dirname, "src", "views"));
 
 // Configure marked for safe HTML output
 let marked;
@@ -33,7 +33,7 @@ app.use("/static", express.static(path.join(__dirname, "public/static")));
 
 app.get("/", (req, res) => {
   const data = JSON.parse(fs.readFileSync("./data/home.json"));
-  res.render("home", { data });
+  res.render("pages/home", { data });
 });
 
 const PORT = 3000;
