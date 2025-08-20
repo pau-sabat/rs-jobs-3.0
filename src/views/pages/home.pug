@@ -10,6 +10,8 @@ block content
     include ../components/sos-trabajo
     include ../components/process
 
+    div(data-component="ExampleComponent")
+
     section
         +hero(data)
     section(class="pb-[50px] lg:pb-[100px]")
@@ -24,3 +26,5 @@ block content
     section(class="bg-light pb-[50px] lg:pb-[100px]")
         +process
         +card-list(data, 'cities-list')
+
+    script(src="/js/testimonials-swiper.js")
