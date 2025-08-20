@@ -2,7 +2,7 @@ mixin review(data, color, align)
     - const text = data.text
     - const name = data.name
 
-    div(class=`w-full md:w-[88%] px-[18px] md:px-6 py-[13px] md:py-[17px] bg-white rounded-[7px] shadow-md flex flex-col gap-2 md:gap-3 relative overflow-hidden ${align}`)
+    div(class=`w-[98%] mx-auto md:w-[88%] px-[18px] md:px-6 py-[13px] md:py-[17px] bg-white rounded-[7px] shadow-md flex flex-col gap-2 md:gap-3 relative overflow-hidden ${align || ''}`)
         span(class=`absolute top-0 left-0 h-full w-[7px] ${color}`)
         .flex.flex-nowrap
             - for (let i = 0; i < 5; i++)

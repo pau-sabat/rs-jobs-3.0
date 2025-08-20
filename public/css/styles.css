@@ -74,3 +74,17 @@
 	background-size: 0.75rem 0.4625rem;
 	padding-right: 2.5rem;
 }
+
+.testimonials-swiper .swiper-pagination {
+	position: relative;
+	margin-top: 12px;
+}
+
+.testimonials-swiper .swiper-pagination-bullet {
+	background: #F0386B;
+	opacity: 0.3;
+}
+
+.testimonials-swiper .swiper-pagination-bullet-active {
+	opacity: 1;
+}
