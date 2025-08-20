@@ -4,7 +4,7 @@ const fs = require("fs");
 const path = require("path");
 
 app.set("view engine", "pug");
-app.set("views", path.join(__dirname, "views"));
+app.set("views", path.join(__dirname, "src", "views", "pages"));
 
 // Configure marked for safe HTML output
 let marked;
@@ -28,12 +28,15 @@ app.use((req, res, next) => {
 
 app.use(express.static("public"));
 
+// Ruta específica para archivos de Vite
+app.use("/static", express.static(path.join(__dirname, "public/static")));
+
 app.get("/", (req, res) => {
   const data = JSON.parse(fs.readFileSync("./data/home.json"));
-  res.render("rsjobs-home", { data });
+  res.render("home", { data });
 });
 
 const PORT = 3000;
 app.listen(PORT, () => {
-  console.log(`Server running at http://localhost:${PORT}`);
-});
+	console.log(`Server running at http://localhost:${PORT}`)
+})

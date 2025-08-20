@@ -1,3 +1,14 @@
 .vscode
 /node_modules
 .DS_Store
+
+# Archivos generados por Vite
+public/static/
+
+# Logs
+*.log
+npm-debug.log*
+
+# Archivos temporales
+.tmp/
+.cache/
