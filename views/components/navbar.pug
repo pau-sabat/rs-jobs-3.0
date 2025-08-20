@@ -33,7 +33,7 @@ mixin navbar(data)
               path(d="M14 1.91L12.59 0.5L7 6.09L1.41 0.5L0 1.91L5.59 7.5L0 13.09L1.41 14.5L7 8.91L12.59 14.5L14 13.09L8.41 7.5L14 1.91Z" fill="currentColor")
 
       // Mobile Menu (Hidden by default)
-      #mobile-menu(class="hidden lg:hidden fixed top-[65px] right-0 w-[70%] max-w-[350px] h-[calc(100vh-65px)] bg-light shadow-md transform translate-x-full transition-transform duration-300 ease-in-out z-40 overflow-y-auto")
+      #mobile-menu(class="hidden lg:hidden fixed top-[65px] right-0 w-[70%] max-w-[350px] h-[calc(100vh-65px)] bg-light shadow-md transform translate-x-full transition-transform duration-300 ease-in-out z-50 overflow-y-auto")
         .px-6.py-4.flex.flex-col.items-stretch.justify-between.min-h-full.gap-10
           .flex.flex-col.gap-4
             each item in navbar.items
@@ -53,6 +53,8 @@ mixin navbar(data)
     document.addEventListener('DOMContentLoaded', function() {
       const mobileMenuButton = document.getElementById('mobile-menu-button');
       const mobileMenu = document.getElementById('mobile-menu');
+      const backdrop = document.getElementById('backdrop');
+
       let isMenuOpen = false;
 
       mobileMenuButton.addEventListener('click', function() {
@@ -70,6 +72,7 @@ mixin navbar(data)
         mobileMenuButton.setAttribute('aria-label', 'Close mobile menu');
         mobileMenuButton.querySelector('[data-open]').classList.add('hidden');
         mobileMenuButton.querySelector('[data-close]').classList.remove('hidden');
+        backdrop.classList.remove('hidden');
         // Trigger animation after a small delay
         setTimeout(() => {
           mobileMenu.classList.remove('translate-x-full');
@@ -82,6 +85,8 @@ mixin navbar(data)
         mobileMenuButton.setAttribute('aria-label', 'Open mobile menu');
         mobileMenuButton.querySelector('[data-open]').classList.remove('hidden');
         mobileMenuButton.querySelector('[data-close]').classList.add('hidden');
+        backdrop.classList.add('hidden');
+        
         setTimeout(() => {
           mobileMenu.classList.add('hidden');
         }, 300);

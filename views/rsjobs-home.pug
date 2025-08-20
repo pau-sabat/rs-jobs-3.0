@@ -21,7 +21,8 @@ html(lang="es")
         include components/process
         include components/testimonials
         include components/sos-trabajo
-
+        include components/backdrop
+        
         // Usar los mixins con los datos del JSON
         +navbar(data)
         section
@@ -39,6 +40,8 @@ html(lang="es")
             +process
             +card-list(data, 'cities-list')
         +footer(data)
+
+        +backdrop
 
         script(src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js")
         script(src="/js/testimonials-swiper.js")
