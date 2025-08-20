@@ -3,7 +3,8 @@
 .DS_Store
 
 # Archivos generados por Vite
-public/static/
+/public/static/
+/public/css/output.css
 
 # Logs
 *.log
