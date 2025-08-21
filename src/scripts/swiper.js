@@ -1,5 +1,5 @@
-export default function testimonialsSwiper() {
-	new Swiper('.testimonials-swiper', {
+const componentMap = {
+	'.testimonials-swiper': {
 		slidesPerView: 1,
 		spaceBetween: 20,
 		loop: true,
@@ -15,5 +15,14 @@ export default function testimonialsSwiper() {
 			el: '.swiper-pagination',
 			clickable: true,
 		},
+	},
+}
+
+export const initSwiper = () => {
+	Object.entries(componentMap).forEach(([selector, config]) => {
+		const element = document.querySelector(selector)
+		if (element) {
+			new Swiper(element, config)
+		}
 	})
 }

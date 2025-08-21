@@ -1,4 +1,4 @@
 import initNavbar from './initNavbar.js'
-import testimonialsSwiper from './testimonials-swiper.js'
+import initSwiper from './swiper.js'
 
-export { initNavbar, testimonialsSwiper }
+export { initNavbar, initSwiper }
