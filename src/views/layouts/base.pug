@@ -8,7 +8,7 @@ html(lang="es")
         link(rel="stylesheet" href="/css/output.css")
         link(rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css")
 
-    body.bg-light.text-dark(class="text-body-mobile md:text-body-desktop")
+    body(class="text-body-mobile md:text-body-desktop bg-light text-dark flex flex-col min-h-screen")
         // Incluir componentes
         include ../components/navbar
         include ../components/footer
@@ -17,7 +17,8 @@ html(lang="es")
         // Usar los mixins con los datos del JSON
         +navbar(data)
 
-        block content
+        main(class="flex flex-col flex-1")
+            block content
 
         +footer(data)
 

@@ -31,9 +31,27 @@ app.use(express.static("public"));
 // Ruta específica para archivos de Vite
 app.use("/static", express.static(path.join(__dirname, "public/static")));
 
-app.get("/", (req, res) => {
-  const data = JSON.parse(fs.readFileSync("./data/home.json"));
-  res.render("pages/home", { data });
+// Importar y usar rutas
+const routes = require('./src/routes');
+
+// Usar rutas principales
+app.use('/', routes);
+
+// Middleware para manejo de errores 404
+app.use((req, res) => {
+  res.status(404).render('error', {
+    message: 'Página no encontrada',
+    status: 404
+  });
+});
+
+// Middleware para manejo de errores generales
+app.use((err, req, res, next) => {
+  console.error('Error del servidor:', err);
+  res.status(500).render('error', {
+    message: 'Error interno del servidor',
+    status: 500
+  });
 });
 
 const PORT = 3000;
