@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function () {
+export default function initNavbar() {
 	const mobileMenuButton = document.getElementById('mobile-menu-button')
 	const mobileMenu = document.getElementById('mobile-menu')
 	const backdrop = document.getElementById('backdrop')
@@ -61,4 +61,4 @@ document.addEventListener('DOMContentLoaded', function () {
 			closeMenu()
 		}
 	})
-})
+}

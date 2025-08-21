@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', () => {
+export default function testimonialsSwiper() {
 	new Swiper('.testimonials-swiper', {
 		slidesPerView: 1,
 		spaceBetween: 20,
@@ -16,4 +16,4 @@ document.addEventListener('DOMContentLoaded', () => {
 			clickable: true,
 		},
 	})
-})
+}
