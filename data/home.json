@@ -1,28 +1,4 @@
 {
-  "navbar": {
-    "logo": "/assets/images/logo.svg",
-    "items": [
-      {
-        "text": "Buscar trabajo",
-        "href": "/"
-      },
-      {
-        "text": "Buscar empresa",
-        "href": "/"
-      }
-    ],
-    "buttons": [
-      {
-        "text": "Soy empresa",
-        "href": "/"
-      },
-      {
-        "text": "Acceso candidato",
-        "href": "/",
-        "secondary": true
-      }
-    ]
-  },
   "hero": {
     "background": "bg-gradient-secondary",
     "title": "# Conéctate con ofertas de trabajo <strong>hechas para ti</strong>",

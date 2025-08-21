@@ -1,5 +1,4 @@
 mixin navbar(data)
-  - const navbar = data.navbar
 
   header(class="bg-white shadow-md sticky top-0 z-[60] h-[65px]")
     nav(class="mx-auto px-6 lg:px-8 py-3 relative")
@@ -8,23 +7,22 @@ mixin navbar(data)
         // Logo
         .flex.items-center
           a(href="/")
-            img(src=navbar.logo alt="RSJobs logo" class="w-[176px] h-[41px]")
+            img(src='/assets/images/logo.svg' alt="RSJobs logo" class="w-[176px] h-[41px]")
 
         // Desktop
         div(class="hidden lg:flex items-center gap-[26px]")
           .flex.items-center.gap-2
-            each item in navbar.items
-              a(href=item.href class="text-secondary font-semibold px-1.5")=item.text
+            a(href='/' class="text-secondary font-semibold px-1.5") Buscar trabajo
+            a(href='/' class="text-secondary font-semibold px-1.5") Buscar empresa
 
         div(class="hidden lg:flex items-center gap-2 h-10")
           button(class="flex items-center gap-1.5 p-2 text-secondary")
             | es
             svg(width="10" height="5" viewBox="0 0 10 5" fill="none")
               path(d="M0 0L5 5L10 0H0Z" fill="currentColor")
-          each button in navbar.buttons
-            a.btn(class=`btn-${button.secondary ? 'secondary-outline' : 'primary'}` href=button.href)=button.text
+          a(href='/').btn.btn-primary Soy empresa
+          a(href='/').btn.btn-secondary-outline Acceso candidato
 
-        // Mobile Menu Button
         div(class="lg:hidden")
           button(aria-label="Open mobile menu").h-6.w-6.flex.items-center.justify-center.text-secondary#mobile-menu-button
             svg(width="18" height="13" viewBox="0 0 18 13" fill="none" data-open="true")
@@ -36,16 +34,16 @@ mixin navbar(data)
       #mobile-menu(class="hidden lg:hidden fixed top-[65px] right-0 w-[70%] max-w-[350px] h-[calc(100vh-65px)] bg-light shadow-md transform translate-x-full transition-transform duration-300 ease-in-out z-50 overflow-y-auto")
         .px-6.py-4.flex.flex-col.items-stretch.justify-between.min-h-full.gap-10
           .flex.flex-col.gap-4
-            each item in navbar.items
-              a(href=item.href class="text-secondary font-bold h-10 flex items-center justify-center")=item.text
+            a(href='/' class="text-secondary font-bold h-10 flex items-center justify-center") Buscar trabajo
+            a(href='/' class="text-secondary font-bold h-10 flex items-center justify-center") Buscar empresa
             .flex.items-center.justify-center.h-10
               button(class="flex items-center gap-1.5 p-2 text-secondary")
                 | es
                 svg(width="10" height="5" viewBox="0 0 10 5" fill="none")
                   path(d="M0 0L5 5L10 0H0Z" fill="currentColor")
           .flex.flex-col.gap-2
-            each button in navbar.buttons
-              a.btn(class=`btn-${button.secondary ? 'secondary-outline' : 'primary'}` href=button.href)=button.text
+            a.btn(class=`btn-secondary-outline` href='/') Soy empresa
+            a.btn(class=`btn-primary` href='/') Acceso candidato
 
 
   script.
