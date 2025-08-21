@@ -23,57 +23,6 @@
       }
     ]
   },
-  "footer": {
-    "sections": [
-      {
-        "title": "Iniciar sesión",
-        "items": [
-          {
-            "text": "Candidatos",
-            "href": "/"
-          },
-          {
-            "text": "Empresas",
-            "href": "/"
-          }
-        ]
-      },
-      {
-        "title": "Te interesa",
-        "items": [
-          {
-            "text": "Blog",
-            "href": "/"
-          },
-          {
-            "text": "Contacto",
-            "href": "/"
-          }
-        ]
-      },
-      {
-        "title": "Contacto",
-        "text": "Plaza Urquinaona, 7. 5º 1ª. 08010 - Barcelona <br> info@rs-jobs.com - 900 877 735 / 930 500 800"
-      }
-    ],
-    "copyright": [
-      {
-        "text": "Copyright © 2022. All Rights Reserved."
-      },
-      {
-        "text": "Aviso legal",
-        "href": "/"
-      },
-      {
-        "text": "Política de privacidad de candidatos",
-        "href": "/"
-      },
-      {
-        "text": "Términos y condiciones para candidatos",
-        "href": "/"
-      }
-    ]
-  },
   "hero": {
     "background": "bg-gradient-secondary",
     "title": "# Conéctate con ofertas de trabajo <strong>hechas para ti</strong>",
