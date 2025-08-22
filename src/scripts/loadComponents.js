@@ -2,13 +2,12 @@ import * as components from '../components/index.js'
 
 // Mapeo de nombres de componentes a clases
 const componentMap = {
-	ExampleComponent: components.ExampleComponent,
 	// Agregar más componentes aquí:
+	JobList: components.JobList,
+	SearchBar: components.SearchBar,
 }
 
 export default function initializeSvelte() {
-	console.log('🚀 Svelte initializing...')
-
 	// Buscar todos los contenedores con atributo data-component
 	const containers = document.querySelectorAll('[data-component]')
 
@@ -18,8 +17,25 @@ export default function initializeSvelte() {
 
 		if (ComponentClass) {
 			try {
+				// Leer todos los atributos data-* y convertirlos en props
+				const props = {}
+				Array.from(container.attributes).forEach(attr => {
+					if (attr.name.startsWith('data-') && attr.name !== 'data-component') {
+						const propName = attr.name.replace('data-', '')
+						let value = attr.value
+
+						// Intentar convertir a número si es posible
+						if (!isNaN(value) && value !== '') {
+							value = Number(value)
+						}
+
+						props[propName] = value
+					}
+				})
+
 				new ComponentClass({
 					target: container,
+					props: props
 				})
 			} catch (error) {
 				console.error(`❌ Error mounting component ${componentName}:`, error)

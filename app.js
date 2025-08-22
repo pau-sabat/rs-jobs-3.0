@@ -1,7 +1,6 @@
 const express = require('express')
 const app = express()
 const path = require('path')
-const dateHelper = require('./src/services/dayjs')
 
 app.set('view engine', 'pug')
 app.set('views', path.join(__dirname, 'src', 'views'))
@@ -23,9 +22,6 @@ app.use((req, res, next) => {
 		if (!marked) return text || ''
 		return marked(text || '')
 	}
-
-	// Agregar dayjs a todas las plantillas
-	res.locals.dayjs = dateHelper.dayjs
 	next()
 })
 

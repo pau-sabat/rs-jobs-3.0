@@ -68,11 +68,11 @@
 	appearance: none;
 	-webkit-appearance: none;
 	-moz-appearance: none;
+	padding-right: 2rem;
 	background-image: url('/assets/images/arrow-down.svg');
-	background-position: right 0.375rem center;
 	background-repeat: no-repeat;
-	background-size: 0.75rem 0.4625rem;
-	padding-right: 2.5rem;
+	background-position: right 0.5rem center;
+	background-size: 0.75rem 0.75rem;
 }
 
 .testimonials-swiper .swiper-pagination {
@@ -81,7 +81,7 @@
 }
 
 .testimonials-swiper .swiper-pagination-bullet {
-	background: #F0386B;
+	@apply bg-primary;
 	opacity: 0.3;
 }
 

@@ -4,102 +4,306 @@
 			"company": {
 				"name": "ElectryConsulting",
 				"logo": "/assets/images/companies/electryconsulting-logo.png",
-				"featured": "Featured"
+				"featured": true
 			},
 			"job": {
-                "url": "/",
-				"title": "Comercial Stand en centro comercial espacio mediterraneo",
-				"description": "Lorem ipsum dolor sit amet consectetur. Sit metus enim ut tristique. Tempor integer eget amet elit porttitor rutrum augue dictum. Ipsum id non mattis in at sit orci tortor. Quis egestas facilisis sapien ultrices diam ullamcorper.",
+				"url": "/",
+				"title": "Comercial Stand en Centro Comercial Espacio Mediterráneo",
+				"description": "Buscamos un comercial dinámico para representar nuestra marca en el centro comercial. Responsabilidades incluyen atención al cliente, demostración de productos y cierre de ventas. Ideal para personas extrovertidas con experiencia en retail.",
 				"conditions": ["Jornada completa", "Contrato indefinido"],
-				"publishedAt": "2025-08-21T10:30:00.000Z",
+				"publishedAt": "2025-01-21T10:30:00.000Z",
 				"location": "Valencia",
 				"salary": "1000€ - 1500€ Brutos/mes",
-                "category": "Comercial y ventas"
+				"category": "Comercial y ventas"
 			}
 		},
 		{
 			"company": {
 				"name": "L'ver Hoteles",
 				"logo": "/assets/images/companies/lver-logo.png",
-				"featured": "Featured"
+				"featured": false
 			},
 			"job": {
-                "url": "/",
-				"title": "Analista de Datos",
-				"description": "Necesitamos un analista de datos para extraer insights valiosos de nuestros datos empresariales. Deberás crear reportes, dashboards y análisis que ayuden a la toma de decisiones estratégicas.",
+				"url": "/",
+				"title": "Analista de Datos de Hospitalidad",
+				"description": "Únete a nuestro equipo de análisis para optimizar la experiencia del huésped. Analizarás patrones de reservas, satisfacción del cliente y métricas operativas para mejorar nuestros servicios hoteleros.",
 				"conditions": ["Jornada completa", "Contrato indefinido", "Formación continua"],
-				"publishedAt": "2025-01-12T16:20:00.000Z",
+				"publishedAt": "2025-08-21T21:20:00.000Z",
 				"location": "Valencia",
 				"salary": "2000€ - 3000€ Brutos/mes",
-                "category": "Análisis y datos"
+				"category": "Análisis y datos"
 			}
 		},
 		{
 			"company": {
 				"name": "Instagram",
 				"logo": "/assets/images/companies/instagram-logo.png",
-				"featured": "Featured"
+				"featured": true
 			},
 			"job": {
-                "url": "/",
-				"title": "Diseñador UX/UI",
-				"description": "Buscamos un diseñador creativo para diseñar interfaces intuitivas y atractivas. Deberás crear wireframes, prototipos y diseños finales que mejoren la experiencia del usuario en nuestras plataformas.",
+				"url": "/",
+				"title": "Diseñador UX/UI Senior",
+				"description": "Buscamos un diseñador creativo para revolucionar la experiencia de usuario en Instagram. Crearás interfaces intuitivas, prototipos interactivos y diseños que conecten con millones de usuarios globalmente.",
 				"conditions": ["Jornada completa", "Contrato indefinido", "Teletrabajo opcional"],
 				"publishedAt": "2025-01-13T11:45:00.000Z",
 				"location": "Sevilla",
 				"salary": "2500€ - 3500€ Brutos/mes",
-                "category": "Diseño y creatividad"
+				"category": "Diseño y creatividad"
 			}
 		},
 		{
 			"company": {
 				"name": "Spotify",
 				"logo": "/assets/images/companies/spotify-logo.png",
-				"featured": "Featured"
+				"featured": true
 			},
 			"job": {
-                "url": "/",
-				"title": "Product Manager de Audio",
-				"description": "Únete a nuestro equipo de producto para desarrollar nuevas funcionalidades relacionadas con el audio. Necesitamos alguien con experiencia en gestión de productos digitales y pasión por la música y la tecnología.",
+				"url": "/",
+				"title": "Product Manager de Audio Digital",
+				"description": "Únete a nuestro equipo de producto para desarrollar funcionalidades innovadoras en el mundo del audio. Liderarás el desarrollo de nuevas características que mejoren la experiencia musical de millones de usuarios.",
 				"conditions": ["Jornada completa", "Contrato indefinido", "Flexibilidad horaria"],
 				"publishedAt": "2025-01-14T14:15:00.000Z",
 				"location": "Barcelona",
 				"salary": "4000€ - 5000€ Brutos/mes",
-                "category": "Producto y estrategia"
+				"category": "Producto y estrategia"
 			}
 		},
 		{
 			"company": {
 				"name": "SOLVE THE X",
 				"logo": "/assets/images/companies/solvethex-logo.png",
-				"featured": "Featured"
+				"featured": true
 			},
 			"job": {
-                "url": "/",
-				"title": "Lorem ipsum faucibus laoreet",
-				"description": "Lorem ipsum dolor sit amet consectetur. Sit metus enim ut tristique. Tempor integer eget amet elit porttitor rutrum augue dictum. Ipsum id non mattis in at sit orci tortor. Quis egestas facilisis sapien ultrices diam ullamcorper.",
+				"url": "/",
+				"title": "Desarrollador Full Stack Senior",
+				"description": "Buscamos un desarrollador full stack experimentado para liderar proyectos tecnológicos innovadores. Trabajarás con tecnologías modernas como Node.js, React, y bases de datos cloud para crear soluciones escalables.",
 				"conditions": ["Jornada completa", "Contrato indefinido", "Teletrabajo híbrido"],
-				"publishedAt": "2025-08-18T09:00:00.000Z",
+				"publishedAt": "2025-01-18T09:00:00.000Z",
 				"location": "Madrid",
 				"salary": "3500€ - 4500€ Brutos/mes",
-                "category": "Desarrollo y programación"
+				"category": "Desarrollo y programación"
 			}
 		},
 		{
 			"company": {
 				"name": "Netflix",
 				"logo": "/assets/images/companies/netflix-logo.png",
-				"featured": "Featured"
+				"featured": true
 			},
 			"job": {
-                "url": "/",
+				"url": "/",
 				"title": "Desarrollador Frontend Senior",
-				"description": "Buscamos un desarrollador frontend experimentado para unirse a nuestro equipo de desarrollo. Deberás trabajar con tecnologías modernas como React, TypeScript y CSS avanzado para crear experiencias de usuario excepcionales.",
+				"description": "Únete a Netflix para crear experiencias de usuario excepcionales en nuestra plataforma de streaming. Desarrollarás interfaces responsivas con React, TypeScript y CSS avanzado para millones de usuarios globales.",
 				"conditions": ["Jornada completa", "Contrato indefinido", "Teletrabajo híbrido"],
 				"publishedAt": "2025-01-15T09:00:00.000Z",
 				"location": "Madrid",
 				"salary": "3500€ - 4500€ Brutos/mes",
-                "category": "Desarrollo y programación"
+				"category": "Desarrollo y programación"
+			}
+		},
+		{
+			"company": {
+				"name": "ElectryConsulting",
+				"logo": "/assets/images/companies/electryconsulting-logo.png",
+				"featured": false
+			},
+			"job": {
+				"url": "/",
+				"title": "Especialista en Energías Renovables",
+				"description": "Buscamos un especialista en energías renovables para asesorar a clientes sobre soluciones sostenibles. Evaluarás proyectos solares y eólicos, realizarás auditorías energéticas y recomendarás mejoras de eficiencia.",
+				"conditions": ["Jornada completa", "Contrato indefinido", "Viajes ocasionales"],
+				"publishedAt": "2025-01-20T14:00:00.000Z",
+				"location": "Valencia",
+				"salary": "2500€ - 3500€ Brutos/mes",
+				"category": "Ingeniería y consultoría"
+			}
+		},
+		{
+			"company": {
+				"name": "L'ver Hoteles",
+				"logo": "/assets/images/companies/lver-logo.png",
+				"featured": false
+			},
+			"job": {
+				"url": "/",
+				"title": "Chef de Cocina Mediterránea",
+				"description": "Únete a nuestro equipo culinario para crear experiencias gastronómicas únicas. Desarrollarás menús mediterráneos innovadores, supervisarás la cocina y mantendrás los más altos estándares de calidad y presentación.",
+				"conditions": ["Jornada completa", "Contrato indefinido", "Formación culinaria"],
+				"publishedAt": "2025-01-19T12:30:00.000Z",
+				"location": "Valencia",
+				"salary": "1800€ - 2500€ Brutos/mes",
+				"category": "Hostelería y turismo"
+			}
+		},
+		{
+			"company": {
+				"name": "Instagram",
+				"logo": "/assets/images/companies/instagram-logo.png",
+				"featured": true
+			},
+			"job": {
+				"url": "/",
+				"title": "Content Creator Manager",
+				"description": "Buscamos un manager creativo para liderar nuestro equipo de content creators. Desarrollarás estrategias de contenido, supervisarás la producción de videos y fotos, y optimizarás el engagement en la plataforma.",
+				"conditions": ["Jornada completa", "Contrato indefinido", "Teletrabajo híbrido"],
+				"publishedAt": "2025-01-17T15:45:00.000Z",
+				"location": "Sevilla",
+				"salary": "3000€ - 4000€ Brutos/mes",
+				"category": "Marketing y comunicación"
+			}
+		},
+		{
+			"company": {
+				"name": "Spotify",
+				"logo": "/assets/images/companies/spotify-logo.png",
+				"featured": false
+			},
+			"job": {
+				"url": "/",
+				"title": "Data Scientist de Música",
+				"description": "Únete a nuestro equipo de ciencia de datos para descubrir patrones musicales fascinantes. Analizarás preferencias de usuarios, tendencias musicales y crearás algoritmos que personalicen la experiencia de escucha.",
+				"conditions": ["Jornada completa", "Contrato indefinido", "Investigación continua"],
+				"publishedAt": "2025-01-16T10:20:00.000Z",
+				"location": "Barcelona",
+				"salary": "4500€ - 5500€ Brutos/mes",
+				"category": "Ciencia de datos"
+			}
+		},
+		{
+			"company": {
+				"name": "SOLVE THE X",
+				"logo": "/assets/images/companies/solvethex-logo.png",
+				"featured": false
+			},
+			"job": {
+				"url": "/",
+				"title": "DevOps Engineer",
+				"description": "Buscamos un ingeniero DevOps para optimizar nuestros procesos de desarrollo y despliegue. Implementarás CI/CD, gestionarás infraestructura cloud y asegurarás la escalabilidad de nuestras aplicaciones.",
+				"conditions": ["Jornada completa", "Contrato indefinido", "Teletrabajo híbrido"],
+				"publishedAt": "2025-01-22T11:15:00.000Z",
+				"location": "Madrid",
+				"salary": "4000€ - 5000€ Brutos/mes",
+				"category": "DevOps e infraestructura"
+			}
+		},
+		{
+			"company": {
+				"name": "Netflix",
+				"logo": "/assets/images/companies/netflix-logo.png",
+				"featured": true
+			},
+			"job": {
+				"url": "/",
+				"title": "UX Researcher",
+				"description": "Únete a Netflix para investigar y entender las necesidades de nuestros usuarios globales. Realizarás estudios de usabilidad, entrevistas con usuarios y análisis de comportamiento para mejorar la experiencia de streaming.",
+				"conditions": ["Jornada completa", "Contrato indefinido", "Investigación de campo"],
+				"publishedAt": "2025-01-23T13:30:00.000Z",
+				"location": "Madrid",
+				"salary": "3000€ - 4000€ Brutos/mes",
+				"category": "Investigación y UX"
+			}
+		},
+		{
+			"company": {
+				"name": "ElectryConsulting",
+				"logo": "/assets/images/companies/electryconsulting-logo.png",
+				"featured": true
+			},
+			"job": {
+				"url": "/",
+				"title": "Project Manager de Sostenibilidad",
+				"description": "Buscamos un project manager para liderar iniciativas de sostenibilidad energética. Coordinarás proyectos de eficiencia energética, gestionarás equipos multidisciplinarios y asegurarás la entrega exitosa de soluciones sostenibles.",
+				"conditions": ["Jornada completa", "Contrato indefinido", "Gestión de equipos"],
+				"publishedAt": "2025-01-24T09:45:00.000Z",
+				"location": "Valencia",
+				"salary": "3500€ - 4500€ Brutos/mes",
+				"category": "Gestión de proyectos"
+			}
+		},
+		{
+			"company": {
+				"name": "L'ver Hoteles",
+				"logo": "/assets/images/companies/lver-logo.png",
+				"featured": true
+			},
+			"job": {
+				"url": "/",
+				"title": "Director de Experiencia del Huésped",
+				"description": "Únete a nuestro equipo de dirección para crear experiencias hoteleras excepcionales. Supervisarás todos los aspectos del servicio al cliente, implementarás mejoras de calidad y liderarás iniciativas de satisfacción del huésped.",
+				"conditions": ["Jornada completa", "Contrato indefinido", "Liderazgo de equipos"],
+				"publishedAt": "2025-01-25T16:00:00.000Z",
+				"location": "Valencia",
+				"salary": "4000€ - 5000€ Brutos/mes",
+				"category": "Dirección y gestión"
+			}
+		},
+		{
+			"company": {
+				"name": "Instagram",
+				"logo": "/assets/images/companies/instagram-logo.png",
+				"featured": true
+			},
+			"job": {
+				"url": "/",
+				"title": "Machine Learning Engineer",
+				"description": "Buscamos un ingeniero de machine learning para desarrollar algoritmos que mejoren la experiencia de Instagram. Trabajarás con grandes volúmenes de datos, implementarás modelos de IA y optimizarás la personalización del contenido.",
+				"conditions": ["Jornada completa", "Contrato indefinido", "Investigación en IA"],
+				"publishedAt": "2025-01-26T14:15:00.000Z",
+				"location": "Sevilla",
+				"salary": "5000€ - 6000€ Brutos/mes",
+				"category": "Inteligencia artificial"
+			}
+		},
+		{
+			"company": {
+				"name": "Spotify",
+				"logo": "/assets/images/companies/spotify-logo.png",
+				"featured": false
+			},
+			"job": {
+				"url": "/",
+				"title": "Audio Quality Engineer",
+				"description": "Únete a nuestro equipo de audio para asegurar la más alta calidad de sonido en Spotify. Optimizarás algoritmos de compresión, realizarás pruebas de calidad auditiva y mantendrás los estándares de excelencia en audio digital.",
+				"conditions": ["Jornada completa", "Contrato indefinido", "Especialización en audio"],
+				"publishedAt": "2025-01-27T11:30:00.000Z",
+				"location": "Barcelona",
+				"salary": "3500€ - 4500€ Brutos/mes",
+				"category": "Ingeniería de audio"
+			}
+		},
+		{
+			"company": {
+				"name": "SOLVE THE X",
+				"logo": "/assets/images/companies/solvethex-logo.png",
+				"featured": true
+			},
+			"job": {
+				"url": "/",
+				"title": "Cybersecurity Specialist",
+				"description": "Buscamos un especialista en ciberseguridad para proteger nuestros sistemas y datos. Implementarás medidas de seguridad, realizarás auditorías de vulnerabilidades y desarrollarás políticas de protección contra amenazas digitales.",
+				"conditions": ["Jornada completa", "Contrato indefinido", "Certificaciones de seguridad"],
+				"publishedAt": "2025-01-28T10:00:00.000Z",
+				"location": "Madrid",
+				"salary": "4500€ - 5500€ Brutos/mes",
+				"category": "Ciberseguridad"
+			}
+		},
+		{
+			"company": {
+				"name": "Netflix",
+				"logo": "/assets/images/companies/netflix-logo.png",
+				"featured": true
+			},
+			"job": {
+				"url": "/",
+				"title": "Content Acquisition Manager",
+				"description": "Únete a Netflix para gestionar la adquisición de contenido global. Negociarás licencias de contenido, evaluarás propuestas de producción y desarrollarás estrategias para expandir nuestro catálogo de entretenimiento.",
+				"conditions": ["Jornada completa", "Contrato indefinido", "Negociaciones internacionales"],
+				"publishedAt": "2025-01-29T15:45:00.000Z",
+				"location": "Madrid",
+				"salary": "5000€ - 6000€ Brutos/mes",
+				"category": "Adquisición y licencias"
 			}
 		}
 	]

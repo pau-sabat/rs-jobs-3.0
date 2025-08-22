@@ -1,2 +1,4 @@
 // Exportar todos los componentes Svelte desde aquí
-export { default as ExampleComponent } from './ExampleComponent.svelte';
+export { default as Paginator } from './Paginator.svelte'
+export { default as JobList } from './JobList.svelte'
+export { default as SearchBar } from './SearchBar.svelte'
