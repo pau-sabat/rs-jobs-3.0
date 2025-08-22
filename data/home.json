@@ -16,29 +16,6 @@
         "Teleoperador",
         "Jefe de cocina"
       ]
-    },
-    "searchBar": {
-      "name": "search-bar",
-      "items": [
-        {
-          "type": "text",
-          "text": "Puesto de trabajo o palabra clave"
-        },
-        {
-          "type": "select",
-          "text": "Selecciona la provincia",
-          "options": [
-            {
-              "text": "Selecciona la provincia",
-              "value": ""
-            }
-          ]
-        },
-        {
-          "type": "button",
-          "text": "Buscar"
-        }
-      ]
     }
   },
   "categories": {

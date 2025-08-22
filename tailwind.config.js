@@ -45,11 +45,12 @@ module.exports = {
         'small-desktop': ['16px', { lineHeight: '150%' }],
         'caption-mobile': ['12px', { lineHeight: '140%' }],
         'caption-desktop': ['14px', { lineHeight: '140%' }],
-        'label-mobile': ['11px', { lineHeight: '130%' }],
-        'label-desktop': ['12px', { lineHeight: '130%' }],
+        'legal-mobile': ['11px', { lineHeight: '130%' }],
+        'legal-desktop': ['12px', { lineHeight: '130%' }],
       },
       boxShadow: {
-        'md': '0 2px 8px 0 rgba(0, 0, 0, 0.15)'
+        'md': '0 2px 8px 0 rgba(0, 0, 0, 0.15)',
+        'lg': '0 2px 16px 0 rgba(0, 0, 0, 0.15)'
       },
       backgroundImage: {
         'gradient-primary': 'linear-gradient(rgba(240, 56, 107, 0.05), rgba(240, 56, 107, 0.05))',

@@ -1,4 +1,5 @@
 import initNavbar from './initNavbar.js'
-import initSwiper from './swiper.js'
+import initLocationSelect from './initLocationSelect.js'
+import { initSwiper } from './swiper.js'
 
-export { initNavbar, initSwiper }
+export { initNavbar, initLocationSelect, initSwiper }

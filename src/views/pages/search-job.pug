@@ -1,3 +1,26 @@
 extends ../layouts/base
 
+block title
+    | Ofertas de trabajo - R&S Jobs
+
 block content
+    include ../components/search-bar
+    include ../components/jobs/job-card
+
+    .container
+        div(class="flex items-stretch flex-row-reverse gap-[30px] py-6 md:py-8")
+            div(class="hidden shrink-0 xl:block bg-dark/50 w-[24%] max-w-[270px] text-center")
+            div(class="flex-grow flex flex-col gap-6 md:gap-8")
+                h1(class="sr-only md:not-sr-only text-secondary font-bold text-heading-desktop-3") Encuentra #[strong la mejor oferta de empleo] adaptada a tus necesidades
+                div(class="hidden md:block")
+                    +searchBar({ search: true, location: true, button: true })
+                div(class="md:hidden")
+                    +searchBar({ search: true, button: true })
+
+                .flex.flex-col.gap-3
+                    each job, index in data.jobs
+                        +jobCard(job)
+                        if index % 4 === 3
+                            div(class="flex flex-wrap items-center justify-center gap-6")
+                                each i in [1, 2, 3, 4]
+                                    a(href='/' class="bg-dark/50 w-[calc(50%-12px)] max-w-[170px] max-h-[130px] aspect-[170/130]")

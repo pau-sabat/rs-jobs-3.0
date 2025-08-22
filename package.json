@@ -14,6 +14,7 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "dayjs": "^1.11.13",
     "express": "^5.1.0",
     "marked": "^16.1.2",
     "pug": "^3.0.3"

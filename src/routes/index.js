@@ -9,6 +9,6 @@ const jobRoutes = require('./jobs');
 
 // Configurar rutas
 router.use('/', homeRoutes);
-router.use('/buscar-trabajo', jobRoutes);
+router.use('/ofertas-trabajo', jobRoutes);
 
 module.exports = router;

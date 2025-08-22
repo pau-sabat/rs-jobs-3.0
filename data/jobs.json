@@ -1,0 +1,106 @@
+{
+	"jobs": [
+		{
+			"company": {
+				"name": "ElectryConsulting",
+				"logo": "/assets/images/companies/electryconsulting-logo.png",
+				"featured": "Featured"
+			},
+			"job": {
+                "url": "/",
+				"title": "Comercial Stand en centro comercial espacio mediterraneo",
+				"description": "Lorem ipsum dolor sit amet consectetur. Sit metus enim ut tristique. Tempor integer eget amet elit porttitor rutrum augue dictum. Ipsum id non mattis in at sit orci tortor. Quis egestas facilisis sapien ultrices diam ullamcorper.",
+				"conditions": ["Jornada completa", "Contrato indefinido"],
+				"publishedAt": "2025-08-21T10:30:00.000Z",
+				"location": "Valencia",
+				"salary": "1000€ - 1500€ Brutos/mes",
+                "category": "Comercial y ventas"
+			}
+		},
+		{
+			"company": {
+				"name": "L'ver Hoteles",
+				"logo": "/assets/images/companies/lver-logo.png",
+				"featured": "Featured"
+			},
+			"job": {
+                "url": "/",
+				"title": "Analista de Datos",
+				"description": "Necesitamos un analista de datos para extraer insights valiosos de nuestros datos empresariales. Deberás crear reportes, dashboards y análisis que ayuden a la toma de decisiones estratégicas.",
+				"conditions": ["Jornada completa", "Contrato indefinido", "Formación continua"],
+				"publishedAt": "2025-01-12T16:20:00.000Z",
+				"location": "Valencia",
+				"salary": "2000€ - 3000€ Brutos/mes",
+                "category": "Análisis y datos"
+			}
+		},
+		{
+			"company": {
+				"name": "Instagram",
+				"logo": "/assets/images/companies/instagram-logo.png",
+				"featured": "Featured"
+			},
+			"job": {
+                "url": "/",
+				"title": "Diseñador UX/UI",
+				"description": "Buscamos un diseñador creativo para diseñar interfaces intuitivas y atractivas. Deberás crear wireframes, prototipos y diseños finales que mejoren la experiencia del usuario en nuestras plataformas.",
+				"conditions": ["Jornada completa", "Contrato indefinido", "Teletrabajo opcional"],
+				"publishedAt": "2025-01-13T11:45:00.000Z",
+				"location": "Sevilla",
+				"salary": "2500€ - 3500€ Brutos/mes",
+                "category": "Diseño y creatividad"
+			}
+		},
+		{
+			"company": {
+				"name": "Spotify",
+				"logo": "/assets/images/companies/spotify-logo.png",
+				"featured": "Featured"
+			},
+			"job": {
+                "url": "/",
+				"title": "Product Manager de Audio",
+				"description": "Únete a nuestro equipo de producto para desarrollar nuevas funcionalidades relacionadas con el audio. Necesitamos alguien con experiencia en gestión de productos digitales y pasión por la música y la tecnología.",
+				"conditions": ["Jornada completa", "Contrato indefinido", "Flexibilidad horaria"],
+				"publishedAt": "2025-01-14T14:15:00.000Z",
+				"location": "Barcelona",
+				"salary": "4000€ - 5000€ Brutos/mes",
+                "category": "Producto y estrategia"
+			}
+		},
+		{
+			"company": {
+				"name": "SOLVE THE X",
+				"logo": "/assets/images/companies/solvethex-logo.png",
+				"featured": "Featured"
+			},
+			"job": {
+                "url": "/",
+				"title": "Lorem ipsum faucibus laoreet",
+				"description": "Lorem ipsum dolor sit amet consectetur. Sit metus enim ut tristique. Tempor integer eget amet elit porttitor rutrum augue dictum. Ipsum id non mattis in at sit orci tortor. Quis egestas facilisis sapien ultrices diam ullamcorper.",
+				"conditions": ["Jornada completa", "Contrato indefinido", "Teletrabajo híbrido"],
+				"publishedAt": "2025-08-18T09:00:00.000Z",
+				"location": "Madrid",
+				"salary": "3500€ - 4500€ Brutos/mes",
+                "category": "Desarrollo y programación"
+			}
+		},
+		{
+			"company": {
+				"name": "Netflix",
+				"logo": "/assets/images/companies/netflix-logo.png",
+				"featured": "Featured"
+			},
+			"job": {
+                "url": "/",
+				"title": "Desarrollador Frontend Senior",
+				"description": "Buscamos un desarrollador frontend experimentado para unirse a nuestro equipo de desarrollo. Deberás trabajar con tecnologías modernas como React, TypeScript y CSS avanzado para crear experiencias de usuario excepcionales.",
+				"conditions": ["Jornada completa", "Contrato indefinido", "Teletrabajo híbrido"],
+				"publishedAt": "2025-01-15T09:00:00.000Z",
+				"location": "Madrid",
+				"salary": "3500€ - 4500€ Brutos/mes",
+                "category": "Desarrollo y programación"
+			}
+		}
+	]
+}
