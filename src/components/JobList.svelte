@@ -3,6 +3,7 @@
 	import JobCard from './JobCard.svelte'
 	import SearchBar from './SearchBar.svelte'
 	import JobAlert from './JobAlert.svelte'
+	import JobFilters from './JobFilters.svelte'
 	import { onMount } from 'svelte'
 
 	let jobs = []
@@ -53,10 +54,12 @@
 
 <div class="flex flex-col gap-6 md:gap-8">
 	<SearchBar location={showLocation} onSearch={handleSearch} />
-	<div class="flex flex-col gap-4 md:flex-row md:flex-nowrap items-center justify-between text-small-mobile md:text-small-desktop">
-		<div class="w-full md:w-auto flex items-center justify-between gap-4">
+	<div class="flex flex-col gap-4 lg:flex-row lg:flex-nowrap items-center justify-between text-small-mobile lg:text-small-desktop">
+		<div class="w-full lg:w-auto flex items-center justify-between gap-4">
 			{jobs.length} empleos
-			<span class="md:hidden">Filtros</span>
+			<div class="lg:hidden">
+				<JobFilters />
+			</div>
 		</div>
 		<div class="flex items-center gap-4">
 			Ordenar por
@@ -68,6 +71,9 @@
 	<div class="grid lg:grid-cols-9 gap-[30px]">
 		<div class="hidden lg:flex flex-col gap-6 w-full col-span-2">
 			<JobAlert text="Mantente informado sobre las ofertas relacionadas con esta busqueda" />
+			<div class="hidden lg:block">
+				<JobFilters />
+			</div>
 		</div>
 		<div class="flex flex-col gap-3 w-full col-span-7">
 			{#each currentPageJobs as job, index}

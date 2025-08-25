@@ -17,7 +17,7 @@
 			<div class="flex items-center justify-center w-6 h-6">
 				<img src="/assets/images/search-icon.svg" alt="Buscar" class="w-4 h-4" />
 			</div>
-            <input type="text" placeholder="Puesto de trabajo o palabra clave" bind:value={searchText} name="search" class="flex-grow text-small-mobile md:text-small-desktop py-1.5 border-b border-secondary/50 placeholder-secondary/50 focus:outline-none focus:ring-0" />
+            <input type="text" placeholder="Puesto de trabajo o palabra clave" bind:value={searchText} name="search" class="flex-grow text-small-mobile md:text-small-desktop py-1.5" />
 		</div>
 	{/if}
 
@@ -26,7 +26,7 @@
 			<div class="flex items-center justify-center w-6 h-6">
 				<img src="/assets/images/location-icon.svg" alt="Ubicación" class="w-3.5 h-5">
 			</div>
-            <select name="location-select" class="custom-select pr-[40px] flex-grow text-small-mobile md:text-small-desktop py-1.5 border-b border-secondary/50 text-secondary/50 focus:outline-none focus:ring-0">
+            <select name="location-select" class="custom-select pr-[40px] flex-grow text-small-mobile md:text-small-desktop py-1.5">
                 <option value="">Selecciona la provincia</option>
             </select>
         </div>

@@ -1,16 +1,13 @@
 export default function initNavbar() {
 	const mobileMenuButton = document.getElementById('mobile-menu-button')
 	const mobileMenu = document.getElementById('mobile-menu')
-	const backdrop = document.getElementById('backdrop')
 
 	let isMenuOpen = false
 
 	mobileMenuButton.addEventListener('click', function () {
 		if (!isMenuOpen) {
-			// Open menu
 			openMenu()
 		} else {
-			// Close menu
 			closeMenu()
 		}
 	})
@@ -20,7 +17,8 @@ export default function initNavbar() {
 		mobileMenuButton.setAttribute('aria-label', 'Close mobile menu')
 		mobileMenuButton.querySelector('[data-open]').classList.add('hidden')
 		mobileMenuButton.querySelector('[data-close]').classList.remove('hidden')
-		backdrop.classList.remove('hidden')
+		// Dispatch event from document to trigger backdrop
+		document.dispatchEvent(new CustomEvent('openBackdrop'))
 		// Trigger animation after a small delay
 		setTimeout(() => {
 			mobileMenu.classList.remove('translate-x-full')
@@ -33,7 +31,8 @@ export default function initNavbar() {
 		mobileMenuButton.setAttribute('aria-label', 'Open mobile menu')
 		mobileMenuButton.querySelector('[data-open]').classList.remove('hidden')
 		mobileMenuButton.querySelector('[data-close]').classList.add('hidden')
-		backdrop.classList.add('hidden')
+		// Dispatch event from document to trigger backdrop
+		document.dispatchEvent(new CustomEvent('closeBackdrop'))
 
 		setTimeout(() => {
 			mobileMenu.classList.add('hidden')
