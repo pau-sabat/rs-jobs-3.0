@@ -1,0 +1,24 @@
+{
+    "modality": [
+        {
+            "id": "presential",
+            "label": "Presencial",
+            "count": 1568
+        },
+        {
+            "id": "hybrid",
+            "label": "Híbrido",
+            "count": 1098
+        },
+        {
+            "id": "unspecified",
+            "label": "Sin especificar",
+            "count": 865
+        },
+        {
+            "id": "telework",
+            "label": "Teletrabajo",
+            "count": 742
+        }
+    ]
+}

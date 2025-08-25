@@ -7,6 +7,7 @@
 	import { onMount } from 'svelte'
 
 	let jobs = []
+	let filters = {}
 	let totalPages = 1
 	let jobsPerPage = 8
 	let currentPage = 1
@@ -16,7 +17,18 @@
 	$: endIndex = startIndex + jobsPerPage
 	$: currentPageJobs = jobs.slice(startIndex, endIndex)
 
-	onMount(() => {
+	async function fetchFilters() {
+		try {
+			const response = await fetch('/data/filters.json')
+			const data = await response.json()
+			filters = data
+		} catch (error) {
+			console.error('Error fetching filters:', error)
+			filters = {}
+		}
+	}
+
+	onMount(async () => {
 		const updateShowLocation = () => {
 			showLocation = window.innerWidth >= 768
 		}
@@ -25,22 +37,25 @@
 
 		window.addEventListener('resize', updateShowLocation)
 
+		await Promise.all([
+			fetch('/data/jobs.json')
+				.then(response => response.json())
+				.then(data => {
+					jobs = data.jobs || []
+					totalPages = Math.ceil(jobs.length / jobsPerPage)
+				})
+				.catch(error => {
+					console.error('Error fetching jobs:', error)
+					jobs = []
+					totalPages = 1
+				}),
+			fetchFilters()
+		])
+
 		return () => {
 			window.removeEventListener('resize', updateShowLocation)
 		}
 	})
-
-	fetch('/data/jobs.json')
-		.then(response => response.json())
-		.then(data => {
-			jobs = data.jobs || []
-			totalPages = Math.ceil(jobs.length / jobsPerPage)
-		})
-		.catch(error => {
-			console.error('Error fetching jobs:', error)
-			jobs = []
-			totalPages = 1
-		})
 
 	function handlePageChange(page) {
 		currentPage = page
@@ -58,12 +73,12 @@
 		<div class="w-full lg:w-auto flex items-center justify-between gap-4">
 			{jobs.length} empleos
 			<div class="lg:hidden">
-				<JobFilters />
+				<JobFilters {filters} />
 			</div>
 		</div>
 		<div class="flex items-center gap-4">
 			Ordenar por
-			<select name="published-date" class="custom-select pr-[30px] text-primary underline appearance-none bg-transparent">
+			<select name="published-date" class="pr-[30px] border-none py-0 text-primary underline appearance-none bg-transparent">
 				<option value="newest">Fecha de publicación</option>
 			</select>
 		</div>
@@ -72,7 +87,7 @@
 		<div class="hidden lg:flex flex-col gap-6 w-full col-span-2">
 			<JobAlert text="Mantente informado sobre las ofertas relacionadas con esta busqueda" />
 			<div class="hidden lg:block">
-				<JobFilters />
+				<JobFilters {filters} />
 			</div>
 		</div>
 		<div class="flex flex-col gap-3 w-full col-span-7">

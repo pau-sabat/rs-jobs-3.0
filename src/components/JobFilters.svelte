@@ -1,6 +1,8 @@
 <script>
 	import { onMount, onDestroy } from 'svelte'
 
+	export let filters = {}
+
 	let isOpen = false
 	let filtersMenu
 	let filtersButton
@@ -113,49 +115,35 @@
 
 		<div class="flex flex-col gap-2">
 			<label for="location" class="text-small-mobile md:text-small-desktop font-bold">Provincias</label>
-			<select name="location-select" class="custom-select pr-[40px] flex-grow text-caption-mobile md:text-caption-desktop py-1 border-b border-secondary/50">
+			<select name="location-select" class=" flex-grow text-caption-mobile md:text-caption-desktop py-1 border-b border-secondary/50">
 				<option value="">Selecciona la provincia</option>
 			</select>
 		</div>
 
 		<div class="flex flex-col gap-2">
 			<label for="category" class="text-small-mobile md:text-small-desktop font-bold">Categoría</label>
-			<select name="category" class="custom-select pr-[40px] flex-grow text-caption-mobile md:text-caption-desktop py-1 border-b border-secondary/50">
+			<select name="category" class=" flex-grow text-caption-mobile md:text-caption-desktop py-1 border-b border-secondary/50">
 				<option value="">Selecciona la categoría</option>
 			</select>
 		</div>
 
-		<fieldset class="space-y-[8px] text-caption-mobile md:text-caption-desktop">
-			<legend class="text-small-mobile md:text-small-desktop font-bold">Modalidad</legend>
-			<div class="flex items-center gap-1">
-				<div class="flex items-center justify-center w-6 h-6">
-					<input type="checkbox" id="presential" name="modality" value="presential" class="w-[18px] h-[18px]" />
-				</div>
-				<label for="presential">Presencial</label>
-			</div>
-			<div class="flex items-center gap-1">
-				<div class="flex items-center justify-center w-6 h-6">
-					<input type="checkbox" id="hybrid" name="modality" value="hybrid" class="w-[18px] h-[18px]" />
-				</div>
-				<label for="hybrid">Híbrido</label>
-			</div>
-			<div class="flex items-center gap-1">
-				<div class="flex items-center justify-center w-6 h-6">
-					<input type="checkbox" id="unspecified" name="modality" value="unspecified" class="w-[18px] h-[18px]" />
-				</div>
-				<label for="unspecified">Sin especificar</label>
-			</div>
-			<div class="flex items-center gap-1">
-				<div class="flex items-center justify-center w-6 h-6">
-					<input type="checkbox" id="telework" name="modality" value="telework" class="w-[18px] h-[18px]" />
-				</div>
-				<label for="telework">Solo teletrabajo</label>
-			</div>
-		</fieldset>
+		{#if filters.modality}
+			<fieldset class="space-y-[8px] text-caption-mobile md:text-caption-desktop">
+				<legend class="text-small-mobile md:text-small-desktop font-bold">Modalidad</legend>
+				{#each filters.modality as filter}
+					<div class="flex items-center gap-1">
+						<div class="flex items-center justify-center w-6 h-6">
+							<input type="checkbox" id={filter.id} name="modality" value={filter.id} class="w-[18px] h-[18px]" />
+						</div>
+						<label for={filter.id}>{filter.label} ({filter.count})</label>
+					</div>
+				{/each}
+			</fieldset>
+		{/if}
 
 		<div class="flex flex-col gap-2">
 			<label for="category" class="text-small-mobile md:text-small-desktop font-bold">Tipo de jornada</label>
-			<select name="category" class="custom-select pr-[40px] flex-grow text-caption-mobile md:text-caption-desktop py-1 border-b border-secondary/50">
+			<select name="category" class=" flex-grow text-caption-mobile md:text-caption-desktop py-1 border-b border-secondary/50">
 				<option value="">Selecciona el tipo de jornada</option>
 			</select>
 		</div>
