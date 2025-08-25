@@ -20,9 +20,9 @@ export default function initNavbar() {
 		// Dispatch event from document to trigger backdrop
 		document.dispatchEvent(new CustomEvent('openBackdrop'))
 		// Trigger animation after a small delay
-		setTimeout(() => {
+		requestAnimationFrame(() => {
 			mobileMenu.classList.remove('translate-x-full')
-		}, 10)
+		})
 		isMenuOpen = true
 	}
 
