@@ -7,7 +7,7 @@
 <div class={`bg-white rounded-lg shadow-md flex flex-col gap-2 ${big ? 'p-6' : 'p-2.5'} h-fit`}>
 	<div class="flex items-center justify-between gap-4">
 		<div class="flex items-center justify-center h-6 w-6">
-			<img src="/assets/images/alert-bell.svg" alt="Campana" class="w-5 h-5" />
+			<img src="/assets/images/icons/alert-bell.svg" alt="Campana" class="w-5 h-5" />
 		</div>
 
 		<div class="relative inline-block w-9 h-5">

@@ -1,0 +1,3 @@
+
+mixin svg(name)
+    != fs.readFileSync(path.join(process.cwd(), 'public', 'assets', 'images', 'icons', `${name}.svg`), 'utf8')

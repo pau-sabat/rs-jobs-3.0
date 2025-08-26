@@ -3,7 +3,7 @@
 		{
 			"company": {
 				"name": "ElectryConsulting",
-				"logo": "/assets/images/companies/electryconsulting-logo.png",
+				"logo": "/assets/images/home/companies/electryconsulting-logo.png",
 				"featured": true
 			},
 			"job": {
@@ -20,7 +20,7 @@
 		{
 			"company": {
 				"name": "L'ver Hoteles",
-				"logo": "/assets/images/companies/lver-logo.png",
+				"logo": "/assets/images/home/companies/lver-logo.png",
 				"featured": false
 			},
 			"job": {
@@ -37,7 +37,7 @@
 		{
 			"company": {
 				"name": "Instagram",
-				"logo": "/assets/images/companies/instagram-logo.png",
+				"logo": "/assets/images/home/companies/instagram-logo.png",
 				"featured": true
 			},
 			"job": {
@@ -54,7 +54,7 @@
 		{
 			"company": {
 				"name": "Spotify",
-				"logo": "/assets/images/companies/spotify-logo.png",
+				"logo": "/assets/images/home/companies/spotify-logo.png",
 				"featured": true
 			},
 			"job": {
@@ -71,7 +71,7 @@
 		{
 			"company": {
 				"name": "SOLVE THE X",
-				"logo": "/assets/images/companies/solvethex-logo.png",
+				"logo": "/assets/images/home/companies/solvethex-logo.png",
 				"featured": true
 			},
 			"job": {
@@ -88,7 +88,7 @@
 		{
 			"company": {
 				"name": "Netflix",
-				"logo": "/assets/images/companies/netflix-logo.png",
+				"logo": "/assets/images/home/companies/netflix-logo.png",
 				"featured": true
 			},
 			"job": {
@@ -105,7 +105,7 @@
 		{
 			"company": {
 				"name": "ElectryConsulting",
-				"logo": "/assets/images/companies/electryconsulting-logo.png",
+				"logo": "/assets/images/home/companies/electryconsulting-logo.png",
 				"featured": false
 			},
 			"job": {
@@ -122,7 +122,7 @@
 		{
 			"company": {
 				"name": "L'ver Hoteles",
-				"logo": "/assets/images/companies/lver-logo.png",
+				"logo": "/assets/images/home/companies/lver-logo.png",
 				"featured": false
 			},
 			"job": {
@@ -139,7 +139,7 @@
 		{
 			"company": {
 				"name": "Instagram",
-				"logo": "/assets/images/companies/instagram-logo.png",
+				"logo": "/assets/images/home/companies/instagram-logo.png",
 				"featured": true
 			},
 			"job": {
@@ -156,7 +156,7 @@
 		{
 			"company": {
 				"name": "Spotify",
-				"logo": "/assets/images/companies/spotify-logo.png",
+				"logo": "/assets/images/home/companies/spotify-logo.png",
 				"featured": false
 			},
 			"job": {
@@ -173,7 +173,7 @@
 		{
 			"company": {
 				"name": "SOLVE THE X",
-				"logo": "/assets/images/companies/solvethex-logo.png",
+				"logo": "/assets/images/home/companies/solvethex-logo.png",
 				"featured": false
 			},
 			"job": {
@@ -190,7 +190,7 @@
 		{
 			"company": {
 				"name": "Netflix",
-				"logo": "/assets/images/companies/netflix-logo.png",
+				"logo": "/assets/images/home/companies/netflix-logo.png",
 				"featured": true
 			},
 			"job": {
@@ -207,7 +207,7 @@
 		{
 			"company": {
 				"name": "ElectryConsulting",
-				"logo": "/assets/images/companies/electryconsulting-logo.png",
+				"logo": "/assets/images/home/companies/electryconsulting-logo.png",
 				"featured": true
 			},
 			"job": {
@@ -224,7 +224,7 @@
 		{
 			"company": {
 				"name": "L'ver Hoteles",
-				"logo": "/assets/images/companies/lver-logo.png",
+				"logo": "/assets/images/home/companies/lver-logo.png",
 				"featured": true
 			},
 			"job": {
@@ -241,7 +241,7 @@
 		{
 			"company": {
 				"name": "Instagram",
-				"logo": "/assets/images/companies/instagram-logo.png",
+				"logo": "/assets/images/home/companies/instagram-logo.png",
 				"featured": true
 			},
 			"job": {
@@ -258,7 +258,7 @@
 		{
 			"company": {
 				"name": "Spotify",
-				"logo": "/assets/images/companies/spotify-logo.png",
+				"logo": "/assets/images/home/companies/spotify-logo.png",
 				"featured": false
 			},
 			"job": {
@@ -275,7 +275,7 @@
 		{
 			"company": {
 				"name": "SOLVE THE X",
-				"logo": "/assets/images/companies/solvethex-logo.png",
+				"logo": "/assets/images/home/companies/solvethex-logo.png",
 				"featured": true
 			},
 			"job": {
@@ -292,7 +292,7 @@
 		{
 			"company": {
 				"name": "Netflix",
-				"logo": "/assets/images/companies/netflix-logo.png",
+				"logo": "/assets/images/home/companies/netflix-logo.png",
 				"featured": true
 			},
 			"job": {

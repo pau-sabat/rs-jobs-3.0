@@ -75,7 +75,7 @@ input[type='checkbox'] {
 select {
 	@apply bg-transparent focus:outline-none focus:ring-0 text-ellipsis overflow-hidden border-b border-secondary/50 pb-2 pr-8;
 	/* Custom arrow */
-	background-image: url('/assets/images/arrow-down.svg');
+	background-image: url('/assets/images/icons/arrow-down.svg');
 	background-repeat: no-repeat;
 	background-position: right 0.5rem center;
 	background-size: 0.75rem 0.75rem;
@@ -95,7 +95,7 @@ select {
 }
 
 select.text-primary {
-	background-image: url('/assets/images/arrow-down-pink.svg');
+	background-image: url('/assets/images/icons/arrow-down-pink.svg');
 }
 
 select:focus {

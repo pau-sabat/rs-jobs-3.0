@@ -1,6 +1,7 @@
 const express = require('express')
 const app = express()
 const path = require('path')
+const fs = require('fs')
 
 app.set('view engine', 'pug')
 app.set('views', path.join(__dirname, 'src', 'views'))
@@ -15,6 +16,13 @@ let marked
 		gfm: true,
 	})
 })()
+
+app.use((req, res, next) => {
+	res.locals.fs = fs
+	res.locals.path = path
+	res.locals.process = process
+	next()
+})
 
 // Add md function and date helpers to locals for use in templates
 app.use((req, res, next) => {
