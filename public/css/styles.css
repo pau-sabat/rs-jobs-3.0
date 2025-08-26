@@ -59,6 +59,10 @@
 	@apply max-w-[1170px] mx-auto px-6 xl:px-0;
 }
 
+.container-sm {
+	@apply max-w-[970px] mx-auto px-6 lg:px-0;
+}
+
 .text-secondary strong {
 	@apply text-primary;
 }

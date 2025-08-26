@@ -2,3 +2,4 @@
 export { default as Paginator } from './Paginator.svelte'
 export { default as JobList } from './JobList.svelte'
 export { default as SearchBar } from './SearchBar.svelte'
+export { default as CompanySearch } from './CompanySearch.svelte'

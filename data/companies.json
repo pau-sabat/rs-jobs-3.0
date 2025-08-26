@@ -1,0 +1,49 @@
+{
+	"companies": [
+		{
+			"name": "ElectryConsulting",
+			"logo": "/assets/images/home/companies/electryconsulting-logo.png",
+			"href": "/"
+		},
+		{
+			"name": "L'ver Hoteles",
+			"logo": "/assets/images/home/companies/lver-logo.png",
+			"href": "/"
+		},
+		{
+			"name": "Instagram",
+			"logo": "/assets/images/home/companies/instagram-logo.png",
+			"href": "/"
+		},
+		{
+			"name": "Netflix",
+			"logo": "/assets/images/home/companies/netflix-logo.png",
+			"href": "/"
+		},
+		{
+			"name": "Spotify",
+			"logo": "/assets/images/home/companies/spotify-logo.png",
+			"href": "/"
+		},
+		{
+			"name": "SOLVETHEX",
+			"logo": "/assets/images/home/companies/solvethex-logo.png",
+			"href": "/"
+		},
+		{
+			"name": "L'ver Hoteles",
+			"logo": "/assets/images/home/companies/lver-logo.png",
+			"href": "/"
+		},
+		{
+			"name": "L'ver Hoteles",
+			"logo": "/assets/images/home/companies/lver-logo.png",
+			"href": "/"
+		},
+		{
+			"name": "L'ver Hoteles",
+			"logo": "/assets/images/home/companies/lver-logo.png",
+			"href": "/"
+		}
+	]
+}

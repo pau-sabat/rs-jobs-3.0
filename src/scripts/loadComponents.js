@@ -5,6 +5,7 @@ const componentMap = {
 	// Agregar más componentes aquí:
 	JobList: components.JobList,
 	SearchBar: components.SearchBar,
+	CompanySearch: components.CompanySearch,
 }
 
 export default function initializeSvelte() {
