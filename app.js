@@ -49,7 +49,7 @@ app.use('/', routes)
 
 // Middleware para manejo de errores 404
 app.use((req, res) => {
-	res.status(404).render('error', {
+	res.status(404).render('pages/error', {
 		message: 'Página no encontrada',
 		status: 404,
 	})
@@ -58,7 +58,7 @@ app.use((req, res) => {
 // Middleware para manejo de errores generales
 app.use((err, req, res, next) => {
 	console.error('Error del servidor:', err)
-	res.status(500).render('error', {
+	res.status(500).render('pages/error', {
 		message: 'Error interno del servidor',
 		status: 500,
 	})
