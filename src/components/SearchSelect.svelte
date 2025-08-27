@@ -45,4 +45,9 @@
 			{/each}
 		</div>
 	{/if}
+	{#if searchText && Array.isArray(filteredOptions) && filteredOptions.length === 0}
+		<div class="absolute top-full mt-2 left-0 right-0 bg-white border border-dark/20 rounded-lg shadow-lg z-10 max-h-72 overflow-y-auto">
+			<p class="px-3 py-4 text-small-mobile md:text-small-desktop text-dark/75 text-left">No se encontraron resultados</p>
+		</div>
+	{/if}
 </div>
