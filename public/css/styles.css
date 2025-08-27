@@ -67,7 +67,9 @@
 	@apply text-primary;
 }
 
-input[type='text'] {
+input[type='text'],
+input[type='email'],
+input[type='tel'] {
 	@apply border-b border-secondary/50 placeholder-secondary/50 focus:outline-none focus:ring-0 appearance-none bg-transparent;
 }
 

@@ -1,0 +1,38 @@
+extends ../layouts/base
+
+block title
+    | Contacto - R&S Jobs
+
+block content
+
+    .container
+        div(class="grid lg:grid-cols-12 gap-[25px] lg:gap-[30px] py-6 lg:py-12 xl:py-[100px]")
+            div(class="lg:col-span-8 flex flex-col shadow-md bg-white rounded-lg overflow-hidden")
+                div(class="p-[25px] lg:p-8 grow gap-4 lg:gap-6")
+                    div(class="flex flex-col gap-3 text-center mb-4 lg:mb-6")
+                        h1(class="text-secondary text-heading-mobile-2 md:text-heading-desktop-2 font-bold") Contacto
+                        p También puedes contactarnos al&nbsp;
+                            a(href="tel:900877735") 900 877 735
+                            | &nbsp;/&nbsp;
+                            a(href="tel:930500800") 930 500 800
+                            | .
+                    div(data-component="ContactForm")
+
+                div(class="py-4 px-6 lg:py-6 bg-gradient-secondary text-legal-mobile md:text-legal-desktop")
+                    p #[strong Información Básica de Protección de Datos:] R&S Jobs tratará los datos para gestionar sus peticiones y/o  solicitudes, cumplir con las obligaciones legales, y enviarle  información que pueda ser de su interés. Puede ejercer sus derechos de  protección de datos escribiendo un email a&nbsp;
+                        a(href="mailto:lopd@rs-jobs.com" class="text-primary underline") lopd@rs-jobs.com
+                        | y acceder a la información sobre el tratamiento de sus datos en la&nbsp;
+                        a(href="/politica-de-privacidad" target="_blank" class="text-primary underline") Política de privacidad
+                        | . Al pulsar el botón #[u "Enviar"] declara que ha leído y entiende la&nbsp;
+                        a(href="/politica-de-privacidad" target="_blank" class="text-primary underline") Política de privacidad
+                        | &nbsp;de y cómo se van a tratar sus datos para la gestión de su solicitud.
+
+            div(class="lg:col-span-4")
+                .flex.flex-col.gap-4
+                    img(src="/assets/images/contact/map.png" alt="Ubicación de nuestras oficinas" class="w-full h-auto object-cover")
+                    span
+                        strong O visítanos en nuestras oficinas en:
+                        br
+                        address(class="not-italic") Plaza Urquinaona, 7. 5º 1ª. 08010 - Barcelona
+
+
