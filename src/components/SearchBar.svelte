@@ -2,22 +2,15 @@
 	export let search = true
 	export let location = true
 	export let button = true
-	export let onSearch = searchText => {}
-
-	let searchText = ''
-
-	const handleSearch = () => {
-		onSearch(searchText)
-	}
 </script>
 
-<form class="bg-white p-2.5 rounded-lg shadow-md flex flex-col md:flex-row gap-4" novalidate name="search-bar">
+<div class="bg-white p-2.5 rounded-lg shadow-md flex flex-col md:flex-row gap-4">
 	{#if search}
 		<div class="flex items-center gap-2 w-full flex-grow">
 			<div class="flex items-center justify-center w-6 h-6">
 				<img src="/assets/images/icons/search.svg" alt="Buscar" class="w-4 h-4" />
 			</div>
-			<input type="text" placeholder="Puesto de trabajo o palabra clave" bind:value={searchText} name="search" class="flex-grow text-small-mobile md:text-small-desktop py-1.5" />
+			<input type="text" placeholder="Puesto de trabajo o palabra clave" name="search" class="flex-grow text-small-mobile md:text-small-desktop py-1.5" />
 		</div>
 	{/if}
 
@@ -33,6 +26,6 @@
 	{/if}
 
 	{#if button}
-		<button type="button" class="btn btn-primary focus:outline-none focus:ring-0" on:click={handleSearch}>Buscar</button>
+		<button type="submit" class="btn btn-primary focus:outline-none focus:ring-0">Buscar</button>
 	{/if}
-</form>
+</div>

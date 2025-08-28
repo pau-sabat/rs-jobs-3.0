@@ -10,7 +10,7 @@ mixin hero(data)
                 div(class="sr-only lg:not-sr-only lg:!mt-0 text-secondary text-heading-desktop-1 font-bold")!=md(hero.title)
                 div(class="hidden lg:block")!=md(hero.text)
                 div(class="!mt-0 lg:!mt-8 lg:w-[770px]")
-                    div(data-component="SearchBar" data-search="true" data-location="true" data-button="true")
+                    div(data-component="HeroSearch")
                 .flex.flex-col.gap-2
                     div(class="text-dark text-caption-mobile md:text-caption-desktop font-bold")!=md(hero.filter.title)
                     div(class="flex flex-wrap gap-2")

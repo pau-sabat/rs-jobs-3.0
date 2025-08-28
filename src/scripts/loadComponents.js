@@ -4,10 +4,10 @@ import * as components from '../components/index.js'
 const componentMap = {
 	// Agregar más componentes aquí:
 	JobList: components.JobList,
-	SearchBar: components.SearchBar,
 	CompanySearch: components.CompanySearch,
 	ContactForm: components.ContactForm,
 	LoginForm: components.LoginForm,
+	HeroSearch: components.HeroSearch,
 }
 
 export default function initializeSvelte() {
