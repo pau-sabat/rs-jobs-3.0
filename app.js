@@ -6,6 +6,9 @@ const fs = require('fs')
 app.set('view engine', 'pug')
 app.set('views', path.join(__dirname, 'src', 'views'))
 
+// Middleware para parsear JSON
+app.use(express.json())
+
 // Configure marked for safe HTML output
 let marked
 ;(async () => {

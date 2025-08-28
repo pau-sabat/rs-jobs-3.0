@@ -7,6 +7,7 @@ const componentMap = {
 	SearchBar: components.SearchBar,
 	CompanySearch: components.CompanySearch,
 	ContactForm: components.ContactForm,
+	LoginForm: components.LoginForm,
 }
 
 export default function initializeSvelte() {

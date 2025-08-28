@@ -69,9 +69,10 @@
 
 input[type='text'],
 input[type='email'],
-input[type='tel'] {
+input[type='tel'],
+input[type='password'] {
 	@apply border-b border-secondary/50 placeholder-secondary/50 focus:outline-none focus:ring-0 appearance-none bg-transparent;
-}
+}º
 
 input[type='radio'],
 input[type='checkbox'] {
