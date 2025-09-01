@@ -9,6 +9,8 @@
 			page = 1
 		} else if (page > totalPages) {
 			page = totalPages
+		} else {
+			currentPage = page
 		}
 
 		onPageChange(page)

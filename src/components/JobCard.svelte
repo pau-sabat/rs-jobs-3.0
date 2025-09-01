@@ -2,10 +2,11 @@
 	import { onMount } from 'svelte'
 	import dayjs from '../services/dayjs.mjs'
 
-	export let jobOffer
+	export let offer
+	export let compact = false
 
-	let company = jobOffer.company
-	let job = jobOffer.job
+	let company = offer.company
+	let job = offer.job
 
 	let publishedAt
 	let isRecent = false
@@ -26,14 +27,14 @@
 
 <a href={job.url} class="bg-white shadow-md hover:shadow-lg transition-shadow rounded-lg p-4 md:flex md:items-start md:gap-4">
 	<!-- Logo de la empresa (desktop) -->
-	<img src={company.logo} alt={`${company.name} logo`} class="w-[65px] h-[65px] hidden md:block" />
+	<img src={company.logo} alt={`${company.name} logo`} class={`w-[65px] h-[65px] hidden md:block ${compact ? '!hidden' : ''}`} />
 
-	<div class="flex flex-col gap-2 md:gap-4">
+	<div class="flex flex-col gap-2 md:gap-4 w-full">
 		<!-- Header con nombre de empresa y botón de guardar -->
 		<div class="flex items-start justify-between gap-4">
 			<div class="flex flex-grow items-center gap-2">
 				<!-- Logo de la empresa (mobile) -->
-				<img src={company.logo} alt={`${company.name} logo`} class="w-[35px] h-[35px] md:hidden" />
+				<img src={company.logo} alt={`${company.name} logo`} class="w-[35px] h-[35px] md:hidden {compact ? '!block' : ''}" />
 				<h3 class="text-primary text-caption-mobile md:text-caption-desktop">{company.name}</h3>
 
 				<!-- Badge destacada -->
@@ -43,8 +44,8 @@
 			</div>
 
 			<!-- Botón de guardar (mobile) -->
-			<button class="flex items-center justify-center w-8 h-8 md:hidden" aria-label="Guardar oferta" on:click|preventDefault={toggleSaveJob}>
-				<img src={isSaved ? '/assets/images/icons/heart-filled.svg' : '/assets/images/icons/heart-empty.svg'} alt="Corazón" class="w-[16px] h-[16px]" />
+			<button class="flex items-center justify-center w-8 h-8 md:hidden {compact ? '!flex' : ''}" aria-label="Guardar oferta" on:click|preventDefault={toggleSaveJob}>
+				<img src={isSaved ? '/assets/images/icons/heart-filled.svg' : '/assets/images/icons/heart-empty.svg'} alt="Corazón" class="w-5 h-[18.3px]" />
 			</button>
 		</div>
 
@@ -68,12 +69,14 @@
 		</div>
 
 		<!-- Descripción (solo desktop) -->
-		<p class="text-gray hidden md:line-clamp-2 md:text-caption-desktop">
-			{job.description}
-		</p>
+		{#if !compact}
+			<p class="text-gray hidden md:line-clamp-2 md:text-caption-desktop">
+				{job.description}
+			</p>
+		{/if}
 
 		<!-- Información adicional: ubicación, salario, categoría -->
-		<div class="flex flex-wrap gap-4 items-center text-legal-mobile md:text-legal-desktop text-gray">
+		<div class="flex flex-wrap gap-x-4 gap-y-1 items-center text-legal-mobile md:text-legal-desktop text-gray">
 			<!-- Ubicación -->
 			<div class="flex items-center gap-1">
 				<div class="flex items-center justify-center w-4 h-4 md:w-[18px] md:h-[18px]">
@@ -104,7 +107,9 @@
 	</div>
 
 	<!-- Botón de guardar (desktop) -->
-	<button class="items-center justify-center w-8 h-8 hidden md:flex shrink-0" aria-label="Guardar oferta" on:click|preventDefault={toggleSaveJob}>
-		<img src={isSaved ? '/assets/images/icons/heart-filled.svg' : '/assets/images/icons/heart-empty.svg'} alt="Corazón" class="w-5 h-[18.3px]" />
-	</button>
+	{#if !compact}
+		<button class="items-center justify-center w-8 h-8 hidden md:flex shrink-0" aria-label="Guardar oferta" on:click|preventDefault={toggleSaveJob}>
+			<img src={isSaved ? '/assets/images/icons/heart-filled.svg' : '/assets/images/icons/heart-empty.svg'} alt="Corazón" class="w-5 h-[18.3px]" />
+		</button>
+	{/if}
 </a>

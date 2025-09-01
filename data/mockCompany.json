@@ -1,0 +1,32 @@
+{
+	"name": "ElectryConsulting",
+	"featured": true,
+	"location": "Barcelona, Barcelona, España",
+	"web": "https://www.electryconsulting.com",
+	"description": "ElectryConsulting es una consultoría energética con una trayectoria  profesional en el sector de más de 10 años y una cartera de clientes en  constante crecimiento.  Reducimos las facturas eléctricas de pymes, grandes empresas y también  particulares a través de un servicio personalizado de gestión  energética.  Con más de 50 delegaciones repartidas por distintos lugares,  ElectryConsulting está presente en todas las comunidades autónomas del  país y ahora también en Portugal. La clave del éxito de  ElectryConsulting está en la fraguada estructura de asesores energéticos que hacen posible, gracias a su labor comercial, que seamos la compañía líder en la gestión y optimización de energía.",
+	"logo": "/assets/images/home/companies/electryconsulting-logo.png",
+	"featuredImage": "/assets/images/company/banner.png",
+	"images": ["/assets/images/company/01.png", "/assets/images/company/02.png", "/assets/images/company/03.png"],
+	"social": [
+		{
+			"name": "TikTok",
+			"url": "https://www.tiktok.com/@electryconsulting"
+		},
+		{
+			"name": "Instagram",
+			"url": "https://www.instagram.com/electryconsulting"
+		},
+		{
+			"name": "LinkedIn",
+			"url": "https://www.linkedin.com/company/electryconsulting"
+		},
+		{
+			"name": "Facebook",
+			"url": "https://www.facebook.com/electryconsulting"
+		},
+		{
+			"name": "X",
+			"url": "https://www.x.com/electryconsulting"
+		}
+	]
+}

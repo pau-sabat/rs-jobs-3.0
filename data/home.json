@@ -65,7 +65,7 @@
         "type": "company",
         "title": "SOLVE THE X",
         "tags": ["3 ofertas"],
-        "href": "/",
+        "href": "/empresa/solvethex",
         "image": "/assets/images/home/companies/solvethex.png",
         "logo": "/assets/images/home/companies/solvethex-logo.png"
       },
@@ -73,7 +73,7 @@
         "type": "company",
         "title": "ElectryConsulting",
         "tags": ["37 ofertas"],
-        "href": "/",
+        "href": "/empresa/electryconsulting",
         "image": "/assets/images/home/companies/electryconsulting.png",
         "logo": "/assets/images/home/companies/electryconsulting-logo.png"
       },
@@ -81,7 +81,7 @@
         "type": "company",
         "title": "L'ver Hoteles",
         "tags": ["7 ofertas"],
-        "href": "/",
+        "href": "/empresa/lver",
         "image": "/assets/images/home/companies/lver.png",
         "logo": "/assets/images/home/companies/lver-logo.png"
       },
@@ -89,7 +89,7 @@
         "type": "company",
         "title": "Netflix",
         "tags": ["9 ofertas"],
-        "href": "/",
+        "href": "/empresa/netflix",
         "image": "/assets/images/home/companies/netflix.png",
         "logo": "/assets/images/home/companies/netflix-logo.png"
       },
@@ -97,7 +97,7 @@
         "type": "company",
         "title": "Spotify",
         "tags": ["5 ofertas"],
-        "href": "/",
+        "href": "/empresa/spotify",
         "image": "/assets/images/home/companies/spotify.png",
         "logo": "/assets/images/home/companies/spotify-logo.png"
       },
@@ -105,7 +105,7 @@
         "type": "company",
         "title": "Instagram",
         "tags": ["23 ofertas"],
-        "href": "/",
+        "href": "/empresa/instagram",
         "image": "/assets/images/home/companies/instagram.png",
         "logo": "/assets/images/home/companies/instagram-logo.png"
       }
