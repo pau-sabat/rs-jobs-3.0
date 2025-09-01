@@ -1,19 +1,23 @@
 <script>
 	export let endpoint
-	let errors = []
-	let onSuccess = () => {}
+	export let errors = []
+	export let onSuccess = () => {}
 
-	async function submit(e) {
-		const result = await handleFormSubmit(e, endpoint)
-		if (!result.success) {
-			errors = result.errors
+	async function submit(event) {
+		event.preventDefault()
+		if (endpoint) {
+			const result = await handleFormSubmit(event, endpoint)
+			if (!result.success) {
+				errors = result.errors
+			} else {
+				onSuccess()
+			}
 		} else {
 			onSuccess()
 		}
 	}
 
 	export async function handleFormSubmit(event, endpoint) {
-		event.preventDefault()
 		const formData = new FormData(event.target)
 		const json = Object.fromEntries(formData)
 
@@ -33,6 +37,6 @@
 	}
 </script>
 
-<form on:submit={submit}>
+<form on:submit={submit} novalidate autocomplete="off">
 	<slot {errors}></slot>
 </form>

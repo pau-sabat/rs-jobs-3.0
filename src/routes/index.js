@@ -8,6 +8,7 @@ const companiesRoutes = require('./companies');
 const companyRoutes = require('./company');
 const contactRoutes = require('./contact');
 const loginRoutes = require('./login');
+const registerRoutes = require('./register');
 
 // Configurar rutas
 router.use('/', homeRoutes);
@@ -16,5 +17,6 @@ router.use('/busqueda-de-empresas', companiesRoutes);
 router.use('/empresa', companyRoutes);
 router.use('/contacto', contactRoutes);
 router.use('/login', loginRoutes);
+router.use('/registro', registerRoutes);
 
 module.exports = router;

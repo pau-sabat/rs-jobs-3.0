@@ -1,0 +1,33 @@
+extends ../layouts/base
+
+block title
+    | Registro candidato - R&S Jobs
+
+block content
+
+    .container
+        div(class="grid lg:grid-cols-12 gap-[30px] py-[25px] md:py-[50px] lg:py-[100px]")
+            div(class="lg:col-span-9 xl:col-span-8 flex flex-col gap-[25px]")
+                div(class="bg-white shadow-md rounded-lg overflow-hidden grow flex flex-col")
+                    div(class="grow p-6 lg:p-8 flex flex-col gap-4 lg:gap-6")
+                        div(class="text-center space-y-[12px]")
+                            h1(class="text-heading-mobile-2 md:text-heading-desktop-2 text-secondary font-bold") Registro candidato
+                            p ¡Vamos a crear tu cuenta!
+                        div(data-component="RegisterForm")
+
+                    div(class="bg-gradient-secondary py-4 px-6 lg:p-6 text-center")
+                        span(class="text-small-mobile md:text-small-desktop") ¿Tienes cuenta?&nbsp;
+                            a(href="/login" class="text-blue underline") ¡Iniciar sesión!
+                small(class="text-legal-mobile md:text-legal-desktop text-dark") #[strong Información Básica de Protección de Datos:] R&S Jobs tratará los datos para su registro y su cuenta en el portal, gestionar sus posibles candidaturas, cumplir con las obligaciones legales, y enviarle información que pueda ser de su interés. Puede ejercer sus derechos de protección de datos escribiendo un email a&nbsp;
+                    a(href="mailto:lopd@rs-jobs.com" class="text-primary underline") lopd@rs-jobs.com
+                    | &nbsp;y acceder a la información sobre el tratamiento de sus datos en la&nbsp;
+                    a(href="/politica-de-privacidad" class="text-primary underline") Política de privacidad
+                    | . Al pulsar el botón&nbsp;
+                    span(class="text-primary underline") "Regístrate"
+                    | &nbsp;declara que ha leído y entiende los&nbsp;
+                    a(href="/terminos-y-condiciones" class="text-primary underline") Términos y Condiciones
+                    | &nbsp;y&nbsp;
+                    a(href="/politica-de-privacidad" class="text-primary underline") Política de privacidad
+                    | &nbsp;y cómo se van a tratar sus datos para la gestión de su solicitud.
+            div(class="hidden lg:block lg:col-span-3 xl:col-span-4 shadow-md rounded-lg overflow-hidden")
+                img(src="/assets/images/register/register-decoration.png" alt="" class="w-full h-full object-cover")

@@ -11,6 +11,7 @@ const componentMap = {
 	JobCard: components.JobCard,
 	Paginator: components.Paginator,
 	CompanyJobs: components.CompanyJobs,
+	RegisterForm: components.RegisterForm,
 }
 
 export default function initializeSvelte() {
