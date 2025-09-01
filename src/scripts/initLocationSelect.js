@@ -1,10 +1,12 @@
 export default function initLocationSelect() {
-	loadCities()
+	const selects = document.querySelectorAll('select[name="location-select"]')
+	if (selects.length > 0) {
+		loadCities(selects)
+	}
 }
 
-const insertCities = citiesArray => {
-    const locationSelect = document.querySelectorAll('select[name="location-select"]')
-	locationSelect.forEach(select => {
+const insertCities = (citiesArray, selects) => {
+	selects.forEach(select => {
 		citiesArray.forEach(city => {
 			const option = document.createElement('option')
 			option.value = city.slug
@@ -14,7 +16,7 @@ const insertCities = citiesArray => {
 	})
 }
 
-const loadCities = () => {
+const loadCities = selects => {
 	fetch('/data/cities.json')
 		.then(response => {
 			if (!response.ok) {
@@ -23,7 +25,7 @@ const loadCities = () => {
 			return response.json()
 		})
 		.then(citiesArray => {
-			insertCities(citiesArray)
+			insertCities(citiesArray, selects)
 		})
 		.catch(error => {
 			console.error('Error cargando las ciudades:', error)
