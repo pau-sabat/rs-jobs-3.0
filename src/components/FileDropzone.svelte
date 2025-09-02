@@ -1,8 +1,13 @@
 <script>
-	// Props
 	export let accept = '.pdf,.doc,.docx,.png,.jpg,.jpeg'
 	export let maxSize = 5 * 1024 * 1024 // 5MB en bytes
-	export let maxFiles = 2
+	export let maxFiles = 1
+	export let name = `file-${Math.random().toString(36).substring(2, 15)}` // Nombre del input file
+
+	let fileInput
+	let isDragOver = false
+	let errorMessage = ''
+	let selectedFiles = []
 
 	// Mapeo de extensiones a MIME types
 	const fileTypeMap = {
@@ -11,27 +16,14 @@
 		'.docx': 'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
 		'.png': 'image/png',
 		'.jpg': 'image/jpeg',
-		'.jpeg': 'image/jpeg'
+		'.jpeg': 'image/jpeg',
 	}
 
 	// Obtener tipos permitidos basados en la prop accept
 	$: allowedExtensions = accept.split(',').map(ext => ext.trim())
-	$: allowedMimeTypes = allowedExtensions
-		.map(ext => fileTypeMap[ext])
-		.filter(Boolean)
+	$: allowedMimeTypes = allowedExtensions.map(ext => fileTypeMap[ext]).filter(Boolean)
 
-	// Variables internas
-	let fileInput
-	let isDragOver = false
-	let errorMessage = ''
-	let selectedFiles = []
-
-	// Eventos
-	import { createEventDispatcher } from 'svelte'
-	const dispatch = createEventDispatcher()
-
-	// Funciones para el dropzone
-	const validateFileCount = (files) => {
+	const validateFileCount = files => {
 		if (files.length > maxFiles) {
 			errorMessage = `Solo puedes subir un máximo de ${maxFiles} archivo${maxFiles > 1 ? 's' : ''}.`
 			return false
@@ -99,27 +91,30 @@
 				return
 			}
 
-			// Agregar archivo a la lista
 			selectedFiles = [...selectedFiles, file]
 		}
 
-		// Emitir evento con todos los archivos
-		dispatch('filesSelected', { files: selectedFiles })
+		updateFileInput()
 	}
 
 	const removeFile = (index = null) => {
 		if (index !== null) {
-			// Remover archivo específico por índice
 			selectedFiles = selectedFiles.filter((_, i) => i !== index)
 		} else {
-			// Remover todos los archivos
 			selectedFiles = []
 		}
 		fileInput.value = ''
 		errorMessage = ''
 
-		// Emitir evento con archivos actualizados
-		dispatch('filesSelected', { files: selectedFiles })
+		updateFileInput()
+	}
+
+	const updateFileInput = () => {
+		if (fileInput) {
+			const dataTransfer = new DataTransfer()
+			selectedFiles.forEach(file => dataTransfer.items.add(file))
+			fileInput.files = dataTransfer.files
+		}
 	}
 </script>
 
@@ -139,15 +134,13 @@
 				</p>
 			</div>
 
-            <!-- Botón para seleccionar archivo -->
-            <button type="button" class="btn btn-tertiary-outline cursor-pointer" on:click|stopPropagation={handleClick}>
-                Seleccionar archivo
-            </button>
-        </div>
+			<!-- Botón para seleccionar archivo -->
+			<button type="button" class="btn btn-tertiary-outline cursor-pointer" on:click|stopPropagation={handleClick}> Seleccionar archivo </button>
+		</div>
 	</div>
 
 	<!-- Input file oculto -->
-	<input type="file" bind:this={fileInput} {accept} multiple={maxFiles > 1} on:change={handleFileSelect} class="hidden" />
+	<input type="file" bind:this={fileInput} {name} id={name} {accept} multiple={maxFiles > 1} on:change={handleFileSelect} class="hidden" />
 
 	<!-- Mensaje de error -->
 	{#if errorMessage}

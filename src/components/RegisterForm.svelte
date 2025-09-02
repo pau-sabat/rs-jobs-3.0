@@ -3,16 +3,20 @@
 	import FileDropzone from './FileDropzone.svelte'
 
 	let steps = 3
-	let currentStep = 3
+	let currentStep = 1
 
 	$: progress = (currentStep / steps) * 100
 
 	const nextStep = () => {
 		if (currentStep === 1) {
-			console.log('register candidate')
+			console.log('register candidate (step 1)')
 			// POST register candidate
-		} else if (currentStep === 3) {
-			console.log('update (info + cv)')
+		} else if (currentStep === 2) {
+			console.log('register candidate info (step 2)')
+			// POST register candidate
+		}
+		else if (currentStep === 3) {
+			console.log('update (info + cv) (step 3)')
 			// PUT update (info + cv)
 		}
 		if (currentStep < steps) {
@@ -129,7 +133,7 @@
 				<div class="space-y-[12px]">
 					<label for="cv" class="text-small-mobile md:text-small-desktop font-bold">Currículum*</label>
 					<!-- Dropzone para CV -->
-					<FileDropzone accept=".pdf,.doc,.docx" id="cv" />
+					<FileDropzone accept=".pdf,.doc,.docx" name="cv" />
 				</div>
 				<button type="submit" class="btn btn-primary w-full md:w-fit self-end">Regístrate</button>
 			</div>

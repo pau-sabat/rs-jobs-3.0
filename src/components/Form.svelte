@@ -19,20 +19,42 @@
 
 	export async function handleFormSubmit(event, endpoint) {
 		const formData = new FormData(event.target)
-		const json = Object.fromEntries(formData)
 
-		try {
-			const res = await fetch(endpoint, {
-				method: 'POST',
-				headers: { 'Content-Type': 'application/json' },
-				body: JSON.stringify(json),
-			})
+		// Verificar si hay archivos en el FormData
+		const hasFiles = Array.from(formData.entries()).some(([key, value]) => value instanceof File)
 
-			const data = await res.json()
-			if (!res.ok) throw data
-			return { success: true, data }
-		} catch (err) {
-			return { success: false, errors: err }
+		if (hasFiles) {
+			// Si hay archivos, usar FormData directamente
+			try {
+				const res = await fetch(endpoint, {
+					method: 'POST',
+					body: formData,
+				})
+
+				const data = await res.json()
+				if (!res.ok) throw data
+				return { success: true, data }
+			} catch (err) {
+				return { success: false, errors: err }
+			}
+		} else {
+			// Si no hay archivos, convertir a JSON
+			const json = Object.fromEntries(formData)
+			console.log(json)
+
+			try {
+				const res = await fetch(endpoint, {
+					method: 'POST',
+					headers: { 'Content-Type': 'application/json' },
+					body: JSON.stringify(json),
+				})
+
+				const data = await res.json()
+				if (!res.ok) throw data
+				return { success: true, data }
+			} catch (err) {
+				return { success: false, errors: err }
+			}
 		}
 	}
 </script>
