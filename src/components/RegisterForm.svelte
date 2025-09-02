@@ -35,7 +35,7 @@
 	<div class="flex flex-col items-end">
 		<span class="text-caption-mobile md:text-caption-desktop">{currentStep}/{steps}</span>
 		<div class="w-full h-[7px] bg-gray/10 rounded-full overflow-hidden relative">
-			<div class=" h-full bg-blue absolute top-0 left-0" style={`width: ${progress}%`}></div>
+			<div class="h-full {progress === 100 ? 'bg-green' : 'bg-blue'} absolute top-0 left-0" style={`width: ${progress}%`}></div>
 		</div>
 	</div>
 
