@@ -57,7 +57,8 @@
 		}
 	})
 
-	function handlePageChange() {
+	function handlePageChange(page) {
+		currentPage = page
 		window.scrollTo({ top: 0, behavior: 'smooth' })
 	}
 </script>
@@ -88,7 +89,7 @@
 			</div>
 		</div>
 		<div class="flex flex-col gap-3 w-full col-span-7">
-			{#each currentPageJobs as job, index}
+			{#each currentPageJobs as job, index (job.job.title + currentPage)}
 				<JobCard offer={job} />
 				{#if index % 4 === 3 && index < currentPageJobs.length - 1}
 					<div class="flex flex-wrap items-center justify-center gap-6">

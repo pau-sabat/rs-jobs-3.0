@@ -12,8 +12,6 @@
 	let jobsPerPage = 6
 	let currentPage = 1
 
-	let content
-
 	$: startIndex = (currentPage - 1) * jobsPerPage
 	$: endIndex = startIndex + jobsPerPage
 	$: currentPageJobs = jobs.slice(startIndex, endIndex)
@@ -26,7 +24,9 @@
 		fetch('/data/jobs.json')
 			.then(response => response.json())
 			.then(data => {
-				jobs = data.jobs || []
+				// Filtrar trabajos por empresa
+				const allJobs = data.jobs || []
+				jobs = allJobs.filter(job => job.company && job.company.name && job.company.name.toLowerCase() === company.toLowerCase())
 				totalPages = Math.ceil(jobs.length / jobsPerPage)
 				updatePublishedJobsNumber()
 			})
@@ -44,13 +44,12 @@
 		}
 	}
 
-	const onPageChange = () => {
-		if (!content) return
-		content.scrollIntoView({ behavior: 'smooth', block: 'start' })
+	const onPageChange = async page => {
+		currentPage = page
 	}
 </script>
 
-<div class="flex flex-col gap-[25px]" bind:this={content}>
+<div class="flex flex-col gap-[25px]">
 	<div class="bg-white lg:bg-transparent rounded-lg overflow-hidden">
 		<Alert title="Activar alerta para esta empresa" compact />
 	</div>
@@ -59,7 +58,7 @@
 			<div class="flex flex-col gap-3">
 				<span class="font-bold text-dark">{jobs.length} ofertas de empleo en {company}</span>
 				<div class="grid gap-3 md:grid-cols-2 xl:grid-cols-3">
-					{#each currentPageJobs as job}
+					{#each currentPageJobs as job (job.job.title + currentPage)}
 						<JobCard offer={job} compact />
 					{/each}
 				</div>
