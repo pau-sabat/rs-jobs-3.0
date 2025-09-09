@@ -13,6 +13,7 @@ const componentMap = {
 	CompanyJobs: components.CompanyJobs,
 	RegisterForm: components.RegisterForm,
 	Alert: components.Alert,
+	Save: components.Save,
 }
 
 export default function initializeSvelte() {

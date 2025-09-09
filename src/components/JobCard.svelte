@@ -1,5 +1,6 @@
 <script>
 	import { onMount } from 'svelte'
+	import Save from './Save.svelte'
 	import dayjs from '../services/dayjs.mjs'
 
 	export let offer
@@ -19,10 +20,6 @@
 			isRecent = publishedAt.isAfter(dayjs().subtract(24, 'hours'))
 		}
 	})
-
-	const toggleSaveJob = () => {
-		isSaved = !isSaved
-	}
 </script>
 
 <a href={job.url} class="bg-white shadow-md hover:shadow-lg transition-shadow rounded-lg p-4 md:flex md:items-start md:gap-4">
@@ -44,9 +41,9 @@
 			</div>
 
 			<!-- Botón de guardar (mobile) -->
-			<button class="flex items-center justify-center w-8 h-8 md:hidden {compact ? '!flex' : ''}" aria-label="Guardar oferta" on:click|preventDefault={toggleSaveJob}>
-				<img src={isSaved ? '/assets/images/icons/heart-filled.svg' : '/assets/images/icons/heart-empty.svg'} alt="Corazón" class="w-5 h-[18.3px]" />
-			</button>
+			<div class="md:hidden">
+				<Save bind:isSaved text="Guardar oferta"/>
+			</div>
 		</div>
 
 		<!-- Título del trabajo y condiciones -->
@@ -108,8 +105,8 @@
 
 	<!-- Botón de guardar (desktop) -->
 	{#if !compact}
-		<button class="items-center justify-center w-8 h-8 hidden md:flex shrink-0" aria-label="Guardar oferta" on:click|preventDefault={toggleSaveJob}>
-			<img src={isSaved ? '/assets/images/icons/heart-filled.svg' : '/assets/images/icons/heart-empty.svg'} alt="Corazón" class="w-5 h-[18.3px]" />
-		</button>
+		<div class="hidden md:block">
+			<Save bind:isSaved text="Guardar oferta"/>
+		</div>
 	{/if}
 </a>
