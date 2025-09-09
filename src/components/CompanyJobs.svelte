@@ -49,20 +49,21 @@
 	}
 </script>
 
-<div class="flex flex-col gap-[25px]">
-	<div class="bg-white lg:bg-transparent rounded-lg overflow-hidden">
-		<Alert title="Activar alerta para esta empresa" compact />
+<div class="flex flex-col gap-3">
+	<div class="flex flex-col gap-[25px] lg:flex-row-reverse lg:items-center lg:justify-between">
+		<div class="bg-white lg:bg-transparent rounded-lg overflow-hidden">
+			<Alert title="Activar alerta para esta empresa" compact />
+		</div>
+		<span class="font-bold text-dark">{jobs.length} ofertas de empleo en {company}</span>
 	</div>
 	{#if jobs.length > 0}
 		<div class="flex flex-col gap-3 md:gap-5 lg:gap-10">
-			<div class="flex flex-col gap-3">
-				<span class="font-bold text-dark">{jobs.length} ofertas de empleo en {company}</span>
-				<div class="grid gap-3 md:grid-cols-2 xl:grid-cols-3">
-					{#each currentPageJobs as job (job.job.title + currentPage)}
-						<JobCard offer={job} compact />
-					{/each}
-				</div>
+			<div class="grid gap-3 md:grid-cols-2 xl:grid-cols-3">
+				{#each currentPageJobs as job (job.job.title + currentPage)}
+					<JobCard offer={job} compact />
+				{/each}
 			</div>
+
 			<Paginator {totalPages} {jobsPerPage} {currentPage} {onPageChange} text="Ver más ofertas" />
 		</div>
 	{/if}
