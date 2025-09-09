@@ -9,6 +9,7 @@ const companyRoutes = require('./company');
 const contactRoutes = require('./contact');
 const loginRoutes = require('./login');
 const registerRoutes = require('./register');
+const jobOfferRoutes = require('./job');
 
 // Configurar rutas
 router.use('/', homeRoutes);
@@ -18,5 +19,6 @@ router.use('/empresa', companyRoutes);
 router.use('/contacto', contactRoutes);
 router.use('/login', loginRoutes);
 router.use('/registro', registerRoutes);
+router.use('/oferta-de-empleo', jobOfferRoutes)
 
 module.exports = router;

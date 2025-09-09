@@ -1,0 +1,39 @@
+{
+	"company": {
+		"name": "ElectryConsulting",
+		"logo": "/assets/images/home/companies/electryconsulting-logo.png",
+		"featuredImage": "/assets/images/company/banner.png",
+		"featured": true
+	},
+	"job": {
+		"title": "Responsable comercial de seguros - Ourense",
+		"description": "¡Únete a nuestro equipo! <br/> En ElectryConsulting buscamos profesionales autónomos del sector  seguros, que quieran compaginar con el sector energético para expandir  nuestra cartera de productos, asesorando clientes en la optimización de  sus facturas de luz y gas, brindando soluciones personalizadas para  reducir costes y mejorar la eficiencia energética.",
+		"jobDescription": "<ul><li>Gestionar la distribución de nuestros productos a través de tu red de clientes.</li><li>Asesoramiento al cliente de los productos.</li></ul>",
+		"benefits": "<ul><li>Contrato en régimen mercantil.</li><li>Comisiones elevadas.</li><li>Flexibilidad horaria.</li></ul>",
+		"requirements": "<ul><li>Visión estratégica y de negocios para identificar oportunidades de crecimiento.</li><li>Habilidades comunicativas para establecer relaciones comerciales con clientes.</li><li>Asesores/as comerciales con cartera de clientes propia.</li><li>Capacidad para trabajar de manera ágil, organizada y con enfoque en resultados.</li></ul>Si reúnes los requisitos queremos conocerte, inscríbete a nuestra oferta.",
+		"experience": "1 Año en Comercial y ventas",
+		"tags": ["Ventas", "Seguros", "Consultoría", "Comercial", "Energía"],
+		"knowledge": [
+			{
+				"title": "Habilidades comunicativas",
+				"level": "Experto"
+			}
+		],
+		"minimum_education": "Educación secundaria obligatoria",
+		"language": [
+			{
+				"title": "Español (España)",
+				"level": "Lengua materna"
+			}
+		],
+		"salary": "2000€ - 3000€ Brutos/mes",
+		"location": "Ourense, Ourense, España",
+        "contractType": "Contrato indefinido",
+        "modality": "Híbrido",
+        "work_schedule": "Jornada completa",
+		"vacancies": 1,
+		"sector": "Energía renovable y medio ambiente",
+		"publishedAt": "2025-09-09T10:20:00.000Z",
+		"category": "Comercial y ventas"
+	}
+}

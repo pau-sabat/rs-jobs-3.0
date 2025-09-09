@@ -133,3 +133,7 @@ select:focus {
 .testimonials-swiper .swiper-pagination-bullet-active {
 	opacity: 1;
 }
+
+ul {
+	@apply list-disc list-outside pl-6;
+}

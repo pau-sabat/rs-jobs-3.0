@@ -31,16 +31,16 @@ block content
                         if data.location
                             div(class="flex items-center gap-1.5")
                                 div(class="flex items-center justify-center text-primary w-6 h-6")
-                                    +svg('location')
+                                    +svg('location', '14', '20')
                                 =data.location
                         if data.web
                             div(class="flex items-center gap-1.5")
                                 div(class="flex items-center justify-center text-primary w-6 h-6")
-                                    +svg('web')
+                                    +svg('web', '20', '20')
                                 a(href=data.web, target="_blank")= data.web.replace('https://', '').replace('http://', '').replace('www.', '')
                         div(class="flex items-center gap-1.5")
                             div(class="flex items-center justify-center w-6 h-6 text-primary")
-                                +svg('search')
+                                +svg('search', '17.5', '17.5')
                             .font-bold
                                 span(id="offers-number")
                                 | &nbsp;ofertas publicadas

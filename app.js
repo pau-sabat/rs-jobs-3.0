@@ -20,10 +20,23 @@ let marked
 	})
 })()
 
-app.use((req, res, next) => {
+
+let dayjs
+const loadDayjs = async () => {
+	const dayjsModule = await import('./src/services/dayjs.mjs')
+	dayjs = dayjsModule.default
+}
+loadDayjs()
+
+app.use(async (req, res, next) => {
+	// Asegurar que dayjs esté cargado
+	if (!dayjs) {
+		await loadDayjs()
+	}
 	res.locals.fs = fs
 	res.locals.path = path
 	res.locals.process = process
+	res.locals.dayjs = dayjs
 	next()
 })
 

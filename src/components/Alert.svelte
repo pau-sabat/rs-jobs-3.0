@@ -12,7 +12,7 @@
 	}
 </script>
 
-<button on:click={handleClick} class={`w-full flex flex-col text-left gap-2 ${big ? 'p-6' : 'p-2.5'} h-fit`}>
+<button on:click={handleClick} class={`w-full flex flex-col text-left gap-2 ${big ? 'p-4' : 'p-2.5'} h-fit`}>
 	<div class="flex items-center justify-between gap-4">
 		<div class="flex items-center gap-2">
 			<div class="flex items-center justify-center h-6 w-6">
@@ -30,5 +30,8 @@
 			<h4 class="font-bold text-primary text-small-mobile md:text-small-desktop">{title}</h4>
 			<p class="text-legal-mobile md:text-legal-desktop text-dark">{text}</p>
 		</div>
+	{/if}
+	{#if compact && text}
+		<p class="text-caption-mobile md:text-caption-desktop text-dark">{text}</p>
 	{/if}
 </button>

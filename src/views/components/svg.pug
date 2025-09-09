@@ -1,3 +1,8 @@
 
-mixin svg(name)
-    != fs.readFileSync(path.join(process.cwd(), 'public', 'assets', 'images', 'icons', `${name}.svg`), 'utf8')
+mixin svg(name, width, height)
+    - const svgPath = path.join(process.cwd(), 'public', 'assets', 'images', 'icons', name + '.svg')
+    - const svgContent = fs.readFileSync(svgPath, 'utf8')
+    - const defaultWidth = width || '14'
+    - const defaultHeight = height || '12'
+    - const modifiedSvg = svgContent.replace(/width="[^"]*"/, 'width="' + defaultWidth + '"').replace(/height="[^"]*"/, 'height="' + defaultHeight + '"')
+    != modifiedSvg
