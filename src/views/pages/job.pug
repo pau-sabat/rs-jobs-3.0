@@ -13,21 +13,17 @@ block content
     - const jobDetails = [{ icon:{name:'wallet', width:'20', height:'16'}, label: 'Salario', value: job.salary }, { icon: {name:'location', width:'14', height:'20'}, label: 'Ubicación', value: job.location }, { icon: {name:'contract', width:'18', height:'20'}, label: 'Tipo de contrato', value: job.contractType }, { icon: {name:'monitor', width:'20', height:'18'}, label: 'Modalidad', value: job.modality }, { icon: {name:'briefcase-time', width:'21', height:'21'}, label: 'Tipo de jornada', value: job.work_schedule }, { icon: {name:'users', width:'22', height:'16'}, label: 'Vacantes', value: job.vacancies }, { icon: {name:'buildings', width:'22', height:'18'}, label: 'Sector', value: job.sector }, { icon: {name:'briefcase', width:'20', height:'19'}, label: 'Categoría', value: job.category }]
 
     .container
-        div(class="bg-light fixed bottom-0 left-0 right-0 p-6 pt-3 md:hidden z-10 flex items-center gap-4")
-            a(href="#" class="btn btn-primary w-full") Enviar solicitud
-            div(class="bg-white rounded-full w-[50px] h-[50px] flex items-center justify-center shrink-0")
-                div(data-component="Save" data-text="Guardar oferta")
         div(class="flex flex-col py-6 md:py-8")
             img(src=company.featuredImage, alt=`${company.name} banner`, class="hidden md:block w-full mb-[30px] h-auto rounded-lg rounded-2xlmax-h-[200px] object-cover")
-            div(class="flex flex-col gap-6")
-                div(class="flex flex-col gap-3")
-                    div(class="space-y-[6px]")
-                        .flex.items-center.justify-start.gap-2
-                            img(src=company.logo, alt=`${company.name} logo`, class="w-[35px] h-[35px] rounded-full object-cover")
-                            h2(class="text-small-mobile md:text-small-desktop font-bold text-primary")=company.name
+            div(class="grid grid-cols-1 gap-6 lg:grid-cols-12 lg:gap-[30px]")
+                div(class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-3 lg:col-span-12")
+                    div(class="grid grid-rows-[auto_auto] grid-cols-[auto_1fr] gap-y-1.5 gap-x-2 lg:gap-x-4 grow")
+                        img(src=company.logo, alt=`${company.name} logo`, class="w-[35px] h-[35px] lg:w-[65px] lg:h-[65px] rounded-full object-cover col-span-1 lg:row-span-2")
+                        div(class="flex items-center justify-start gap-2 lg:gap-4 col-span-1")
+                            h2(class="text-small-mobile md:text-small-desktop lg:text-heading-desktop-4 font-bold text-primary")=company.name
                             if company.featured
-                                span(class="text-blue bg-blue/10 px-2 py-[2px] rounded-[3px] text-legal-mobile md:text-legal-desktop") Destacada
-                        div(class="flex items-center justify-start gap-1 text-legal-mobile md:text-legal-desktop text-gray")
+                                span(class="text-blue bg-blue/10 px-2 py-[2px] rounded-[3px] text-legal-mobile md:text-legal-desktop lg:text-caption-desktop") Destacada
+                        div(class="flex items-center justify-start gap-1 text-legal-mobile md:text-legal-desktop lg:text-caption-desktop text-gray col-span-2 lg:col-span-1")
                             span=job.work_schedule
                             span |
                             span=job.contractType
@@ -35,9 +31,14 @@ block content
                             span(class=isRecent ? 'text-green' : 'text-gray') #{publishedAt ? publishedAt.fromNow() : ''}
                             if isRecent
                                 span(class="text-green bg-green/10 px-2 py-[2px] rounded-[3px]") Nueva
-                    h1(class="text-heading-mobile-3 md:text-heading-desktop-3 font-bold")=job.title
-                div(class="space-y-[12px]")
-                    div(class="bg-gradient-secondary rounded-lg p-4 flex flex-col gap-2")
+                    div(class="bg-light lg:bg-transparent fixed lg:static bottom-0 left-0 right-0 p-6 pt-3 lg:p-0 z-10")
+                        div(class="flex items-center gap-4 max-w-[600px] lg:max-w-none mx-auto")
+                            a(href="#" class="btn btn-primary w-full") Enviar solicitud
+                            div(class="bg-white rounded-full w-[50px] h-[50px] flex items-center justify-center shrink-0")
+                                div(data-component="Save" data-text="Guardar oferta")
+                    h1(class="text-heading-mobile-3 md:text-heading-desktop-3 font-bold lg:hidden")=job.title
+                div(class="space-y-[12px] lg:space-y-[16px] lg:col-span-4 lg:order-3")
+                    div(class="bg-gradient-secondary rounded-lg p-4 flex flex-col gap-2 lg:gap-3 lg:p-6")
                         each detail in jobDetails
                             .flex.items-center.gap-4
                                 div(class="flex items-center justify-center w-6 h-6 text-primary")
@@ -45,9 +46,23 @@ block content
                                 .flex.flex-col
                                     span(class="text-legal-mobile md:text-legal-desktop text-gray")=detail.label
                                     span(class="text-small-mobile md:text-small-desktop font-semibold")=detail.value
-                    .bg-white.rounded-lg
+                    div(class="bg-white rounded-lg lg:p-2")
                         div(data-component="Alert" data-compact="true" data-big="true" data-text="Te avisaremos de ofertas similares a esta")
-                .flex.flex-col.gap-3
+                    div(class="hidden lg:flex flex-col gap-3 lg:gap-4 items-center")
+                        div(class="flex items-center gap-[18px]")
+                            span.font-bold.text-secondary ¡Comparte esta oferta!
+                            .flex.items-center.gap-2
+                                a(href='/')
+                                    img(src="/assets/images/social/linkedin.svg" alt="Linkedin logo" class="w-8 h-8")
+                                a(href='/')
+                                    img(src="/assets/images/social/facebook.svg" alt="Facebook logo" class="w-8 h-8")
+                                a(href='/')
+                                    img(src="/assets/images/social/X.svg" alt="X logo" class="w-8 h-8")
+                                a(href='/' class="bg-primary text-white rounded-[9px] flex items-center justify-center w-8 h-8")
+                                    +svg('copy', '17', '17')
+                        a(href="#" class="text-red underline text-small-desktop") Denunciar oferta
+                div(class="flex flex-col gap-3 lg:gap-6 lg:bg-white lg:rounded-lg lg:p-8 lg:col-span-8 lg:order-2")
+                    h1(class="text-heading-mobile-3 md:text-heading-desktop-3 font-bold hidden lg:block")=job.title
                     div(class="flex flex-col gap-1")
                         h2.font-bold Descripción
                         div(class="text-small-mobile md:text-small-desktop text-gray")!=md(job.description)
@@ -81,7 +96,8 @@ block content
                         div(class="text-small-mobile md:text-small-desktop text-gray flex items-center gap-2")
                             span.font-bold=job.language[0].title
                             span(class="text-green bg-green/10 px-2 py-[2px] rounded-[3px] text-caption-mobile md:text-caption-desktop")=job.language[0].level
-                .flex.flex-col.gap-3.items-center
+                    a(href="#" class="btn btn-primary w-fit !hidden lg:!block") Enviar solicitud
+                div(class="flex flex-col gap-3 items-center lg:hidden")
                     div(class="flex items-center gap-[18px]")
                         span.font-bold.text-secondary ¡Comparte esta oferta!
                         .flex.items-center.gap-2
@@ -93,4 +109,4 @@ block content
                                 img(src="/assets/images/social/X.svg" alt="X logo" class="w-8 h-8")
                             a(href='/' class="bg-primary text-white rounded-[9px] flex items-center justify-center w-8 h-8")
                                 +svg('copy', '17', '17')
-                    a(href="#" class="text-red underline") Denunciar oferta
+                    a(href="#" class="text-red underline text-small-mobile") Denunciar oferta
