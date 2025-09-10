@@ -1,4 +1,5 @@
 <script>
+	import Icon from './Icon.svelte'
 	import { onMount, onDestroy } from 'svelte'
 
 	export let filters = {}
@@ -68,7 +69,7 @@
 
 <button type="button" bind:this={filtersButton} on:click={toggleFilters} class="flex items-center gap-2.5 px-3 py-1.5 border border-primary font-bold text-primary rounded-[4px] lg:hidden">
 	<div class="flex items-center justify-center w-6 h-6">
-		<img src="/assets/images/icons/filters.svg" alt="Filtros" class="w-[18px] h-3" />
+		<Icon name="filters" className="w-[18px] h-3" />
 	</div>
 	Filtros
 </button>

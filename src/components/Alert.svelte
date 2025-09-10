@@ -1,4 +1,5 @@
 <script>
+	import Icon from './Icon.svelte'
 	import Switch from './Switch.svelte'
 
 	export let active = false
@@ -16,7 +17,7 @@
 	<div class="flex items-center justify-between gap-4">
 		<div class="flex items-center gap-2">
 			<div class="flex items-center justify-center h-6 w-6">
-				<img src="/assets/images/icons/alert-bell.svg" alt="Campana" class="w-5 h-5" />
+				<Icon name="alert-bell" className="w-5 h-5 text-primary" />
 			</div>
 			{#if compact}
 				<h4 class="font-bold text-primary md:text-caption-desktop">{title}</h4>

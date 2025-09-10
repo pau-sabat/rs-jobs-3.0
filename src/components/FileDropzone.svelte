@@ -1,4 +1,6 @@
 <script>
+	import Icon from './Icon.svelte'
+
 	export let accept = '.pdf,.doc,.docx,.png,.jpg,.jpeg'
 	export let maxSize = 5 * 1024 * 1024 // 5MB en bytes
 	export let maxFiles = 1
@@ -121,8 +123,8 @@
 <div class="w-full">
 	<div class="lg:border-2 border-gray lg:border-dashed rounded-lg p-6 text-center transition-all duration-200 cursor-pointer {errorMessage ? 'border-red bg-red/10' : selectedFiles.length > 0 ? 'border-green bg-green/10' : isDragOver ? '!border-blue bg-blue/10' : ' hover:border-blue hover:bg-blue/10'}" role="button" aria-label="Área para arrastrar y soltar archivos" on:dragover={handleDragOver} on:dragleave={handleDragLeave} on:drop={handleDrop} on:click={handleClick} on:keydown={handleKeyDown} tabindex="0">
 		<div class="flex flex-col items-center gap-6">
-			<div class="flex items-center justify-center w-12 h-12 md:w-12 md:h-12">
-				<img src="/assets/images/icons/upload.svg" alt="Subir archivo" />
+			<div class="flex items-center justify-center w-12 h-12">
+				<Icon name="upload" className="w-12 h-8" alt="Subir archivo" />
 			</div>
 			<div class="flex flex-col gap-2">
 				<h3 class="text-small-mobile md:text-small-desktop font-bold">Seleccione un archivo<span class="hidden lg:inline">&nbsp;o arrastre y suelte aquí.</span></h3>

@@ -1,4 +1,6 @@
 <script>
+	import Icon from './Icon.svelte'
+
 	export let isSaved = false
 	export let text = 'Guardar'
 
@@ -8,5 +10,9 @@
 </script>
 
 <button class="flex items-center justify-center w-8 h-8" aria-label={text} on:click|preventDefault={toggleSave}>
-	<img src={isSaved ? '/assets/images/icons/heart-filled.svg' : '/assets/images/icons/heart-empty.svg'} alt="Corazón" class="w-5 h-[18.3px]" />
+	{#if isSaved}
+		<Icon name="heart-filled" className="w-5 h-[18.3px] text-red" />
+	{:else}
+		<Icon name="heart-empty" className="w-5 h-[18.3px] text-red" />
+	{/if}
 </button>

@@ -1,5 +1,6 @@
 <script>
 	import Form from './Form.svelte'
+	import Icon from './Icon.svelte'
 
 	function handleSuccess() {
 		console.log('success')
@@ -12,14 +13,16 @@
 			<div class="flex flex-col gap-3">
 				<div class="flex items-center gap-2 w-full flex-grow">
 					<div class="flex items-center justify-center w-6 h-6">
-						<img src="/assets/images/icons/mail.svg" alt="Email" class="w-5 h-4" />
+						<Icon name="mail" className="w-5 h-4 text-secondary" />
 					</div>
-					<input type="email" placeholder="Correo electrónico" name="mail" class="flex-grow text-small-mobile md:text-small-desktop py-1.5" />
+					<label for="email" class="sr-only">Email</label>
+					<input type="email" placeholder="Correo electrónico" name="email" class="flex-grow text-small-mobile md:text-small-desktop py-1.5" />
 				</div>
 				<div class="flex items-center gap-2 w-full flex-grow">
 					<div class="flex items-center justify-center w-6 h-6">
-						<img src="/assets/images/icons/lock.svg" alt="Candado" class="w-4 h-[21px]" />
+						<Icon name="lock" className="w-4 h-[21px] text-secondary" />
 					</div>
+					<label for="password" class="sr-only">Contraseña</label>
 					<input type="password" placeholder="Contraseña" name="password" class="flex-grow text-small-mobile md:text-small-desktop py-1.5" />
 				</div>
 				<a href="/" class="mx-auto w-fit text-blue underline text-small-mobile md:text-small-desktop">¿Olvidaste tu contraseña?</a>

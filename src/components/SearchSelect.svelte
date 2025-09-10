@@ -1,4 +1,6 @@
 <script>
+	import Icon from './Icon.svelte'
+
 	export let options = []
 	export let placeholder = 'Buscar'
 	export let searchKey = 'name'
@@ -31,8 +33,9 @@
 <div class="relative">
 	<div class="flex items-center gap-2 w-full flex-grow">
 		<div class="flex items-center justify-center w-6 h-6">
-			<img src="/assets/images/icons/search.svg" alt="Buscar" class="w-4 h-4" />
+			<Icon name="search" className="w-4 h-4 text-blue" />
 		</div>
+		<label for="search" class="sr-only">{placeholder}</label>
 		<input type="text" {placeholder} bind:value={searchText} name="search" class="flex-grow text-small-mobile md:text-small-desktop py-1.5" on:focus={handleInputFocus} on:blur={handleInputBlur} />
 	</div>
 

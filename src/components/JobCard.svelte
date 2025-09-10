@@ -1,4 +1,5 @@
 <script>
+	import Icon from './Icon.svelte'
 	import { onMount } from 'svelte'
 	import Save from './Save.svelte'
 	import dayjs from '../services/dayjs.mjs'
@@ -77,10 +78,7 @@
 			<!-- Ubicación -->
 			<div class="flex items-center gap-1">
 				<div class="flex items-center justify-center w-4 h-4 md:w-[18px] md:h-[18px]">
-					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 11 15" fill="none" class="w-[9px] h-[13px] md:w-[10.5px] md:h-[15px]">
-						<path d="M5.25 0C2.3475 0 0 2.3475 0 5.25C0 9.1875 5.25 15 5.25 15C5.25 15 10.5 9.1875 10.5 5.25C10.5 2.3475 8.1525 0 5.25 0ZM1.5 5.25C1.5 3.18 3.18 1.5 5.25 1.5C7.32 1.5 9 3.18 9 5.25C9 7.41 6.84 10.6425 5.25 12.66C3.69 10.6575 1.5 7.3875 1.5 5.25Z" fill="#6C757D" />
-						<path d="M5.25 7.125C6.28553 7.125 7.125 6.28553 7.125 5.25C7.125 4.21447 6.28553 3.375 5.25 3.375C4.21447 3.375 3.375 4.21447 3.375 5.25C3.375 6.28553 4.21447 7.125 5.25 7.125Z" fill="#6C757D" />
-					</svg>
+					<Icon name="location" className="w-[9px] h-[13px] md:w-[10.5px] md:h-[15px]" />
 				</div>
 				<span>{job.location}</span>
 			</div>
@@ -88,7 +86,7 @@
 			<!-- Salario -->
 			<div class="flex items-center gap-1">
 				<div class="flex items-center justify-center w-4 h-4 md:w-[18px] md:h-[18px]">
-					<img src="/assets/images/icons/wallet.svg" alt="Salario" class="w-[13.3px] h-[10.7px] md:w-[15px] md:h-[12px]" />
+					<Icon name="wallet" className="w-[13.3px] h-[10.7px] md:w-[15px] md:h-[12px]" />
 				</div>
 				<span>{job.salary}</span>
 			</div>
@@ -96,7 +94,7 @@
 			<!-- Categoría (solo desktop) -->
 			<div class="items-center gap-1 hidden md:flex">
 				<div class="flex items-center justify-center w-4 h-4 md:w-[18px] md:h-[18px]">
-					<img src="/assets/images/icons/briefcase.svg" alt="Categoría" class="w-auto h-auto" />
+					<Icon name="briefcase" className="w-[15px] h-[14.25px]" />
 				</div>
 				<span>{job.category}</span>
 			</div>

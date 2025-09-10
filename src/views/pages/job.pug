@@ -1,5 +1,4 @@
 extends ../layouts/base
-include ../components/svg.pug
 
 block title
     | #{data.job.title || 'Oferta de empleo'} - R&S Jobs
@@ -10,7 +9,7 @@ block content
     - const job = data.job
     - const publishedAt = job.publishedAt ? dayjs(job.publishedAt) : null
     - const isRecent = publishedAt ? publishedAt.isAfter(dayjs().subtract(24, 'hours')) : false
-    - const jobDetails = [{ icon:{name:'wallet', width:'20', height:'16'}, label: 'Salario', value: job.salary }, { icon: {name:'location', width:'14', height:'20'}, label: 'Ubicación', value: job.location }, { icon: {name:'contract', width:'18', height:'20'}, label: 'Tipo de contrato', value: job.contractType }, { icon: {name:'monitor', width:'20', height:'18'}, label: 'Modalidad', value: job.modality }, { icon: {name:'briefcase-time', width:'21', height:'21'}, label: 'Tipo de jornada', value: job.work_schedule }, { icon: {name:'users', width:'22', height:'16'}, label: 'Vacantes', value: job.vacancies }, { icon: {name:'buildings', width:'22', height:'18'}, label: 'Sector', value: job.sector }, { icon: {name:'briefcase', width:'20', height:'19'}, label: 'Categoría', value: job.category }]
+    - const jobDetails = [{ icon:{name:'wallet', className:'w-[20px] h-[16px]'}, label: 'Salario', value: job.salary }, { icon: {name:'location', className:'w-[14px] h-[20px]'}, label: 'Ubicación', value: job.location }, { icon: {name:'contract', className:'w-[18px] h-[20px]'}, label: 'Tipo de contrato', value: job.contractType }, { icon: {name:'monitor', className:'w-[20px] h-[18px]'}, label: 'Modalidad', value: job.modality }, { icon: {name:'briefcase-time', className:'w-[21px] h-[21px]'}, label: 'Tipo de jornada', value: job.work_schedule }, { icon: {name:'users', className:'w-[22px] h-[16px]'}, label: 'Vacantes', value: job.vacancies }, { icon: {name:'buildings', className:'w-[22px] h-[18px]'}, label: 'Sector', value: job.sector }, { icon: {name:'briefcase', className:'w-[20px] h-[19px]'}, label: 'Categoría', value: job.category }]
 
     .container
         div(class="flex flex-col py-6 md:py-8")
@@ -42,7 +41,7 @@ block content
                         each detail in jobDetails
                             .flex.items-center.gap-4
                                 div(class="flex items-center justify-center w-6 h-6 text-primary")
-                                    +svg(detail.icon.name, detail.icon.width, detail.icon.height)
+                                    +svg(detail.icon.name, detail.icon.className)
                                 .flex.flex-col
                                     span(class="text-legal-mobile md:text-legal-desktop text-gray")=detail.label
                                     span(class="text-small-mobile md:text-small-desktop font-semibold")=detail.value
@@ -59,7 +58,7 @@ block content
                                 a(href='/')
                                     img(src="/assets/images/social/X.svg" alt="X logo" class="w-8 h-8")
                                 a(href='/' class="bg-primary text-white rounded-[9px] flex items-center justify-center w-8 h-8")
-                                    +svg('copy', '17', '17')
+                                    +svg('copy', 'w-[17px] h-[17px]')
                         a(href="#" class="text-red underline text-small-desktop") Denunciar oferta
                 div(class="flex flex-col gap-3 lg:gap-6 lg:bg-white lg:rounded-lg lg:p-8 lg:col-span-8 lg:order-2")
                     h1(class="text-heading-mobile-3 md:text-heading-desktop-3 font-bold hidden lg:block")=job.title
@@ -108,5 +107,5 @@ block content
                             a(href='/')
                                 img(src="/assets/images/social/X.svg" alt="X logo" class="w-8 h-8")
                             a(href='/' class="bg-primary text-white rounded-[9px] flex items-center justify-center w-8 h-8")
-                                +svg('copy', '17', '17')
+                                +svg('copy', 'w-[17px] h-[17px]')
                     a(href="#" class="text-red underline text-small-mobile") Denunciar oferta

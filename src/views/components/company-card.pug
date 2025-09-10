@@ -8,7 +8,7 @@ mixin companyCard(data)
                     span(class="text-caption-mobile lg:text-caption-desktop font-bold text-white py-1.5 px-3 rounded-[32px] bg-white/35")=tag
 
 
-        .bg-white.px-4.py-3.flex.items-center.justify-between.gap-4
+        .bg-white.px-4.py-3.flex.items-center.justify-between.gap-4.text-dark
             img(src=data.logo alt=`${data.title} logo` class="w-[30px] md:w-[35px] h-[30px] md:h-[35px] object-contain")
-            h3(class="text-heading-mobile-4 lg:text-heading-desktop-4 font-bold text-dark flex-grow text-left")=data.title
-            img(src='/assets/images/icons/arrow-right.svg' alt='Ver más' class="w-[7.5px] h-3 object-contain")
+            h3(class="text-heading-mobile-4 lg:text-heading-desktop-4 font-bold flex-grow text-left")=data.title
+            +svg('arrow-right', 'w-[7.5px] h-3', 'Ver más')
