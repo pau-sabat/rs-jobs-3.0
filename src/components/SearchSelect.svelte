@@ -33,7 +33,7 @@
 <div class="relative">
 	<div class="flex items-center gap-2 w-full flex-grow">
 		<div class="flex items-center justify-center w-6 h-6">
-			<Icon name="search" className="w-4 h-4 text-blue" />
+			<Icon name="search" className="w-4 h-4 text-secondary" />
 		</div>
 		<label for="search" class="sr-only">{placeholder}</label>
 		<input type="text" {placeholder} bind:value={searchText} name="search" class="flex-grow text-small-mobile md:text-small-desktop py-1.5" on:focus={handleInputFocus} on:blur={handleInputBlur} />
