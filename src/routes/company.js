@@ -3,9 +3,7 @@ const router = express.Router()
 const fs = require('fs')
 const path = require('path')
 
-// Ruta para la página de búsqueda de trabajo
 router.get('/:company', async (req, res) => {
-	//mock data fetching
 	// fetch(`/data/mockCompany.json`)
 	// 	.then(response => response.json())
 	// 	.then(companyData => {

@@ -60,7 +60,6 @@
 		window.removeEventListener('resize', handleResize)
 		document.removeEventListener('keydown', handleKeydown)
 		document.removeEventListener('click', handleClick)
-		// Ensure backdrop is hidden when component is destroyed
 		if (isOpen) {
 			document.dispatchEvent(new CustomEvent('closeBackdrop'))
 		}

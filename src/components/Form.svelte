@@ -20,11 +20,9 @@
 	export async function handleFormSubmit(event, endpoint) {
 		const formData = new FormData(event.target)
 
-		// Verificar si hay archivos en el FormData
 		const hasFiles = Array.from(formData.entries()).some(([key, value]) => value instanceof File)
 
 		if (hasFiles) {
-			// Si hay archivos, usar FormData directamente
 			try {
 				const res = await fetch(endpoint, {
 					method: 'POST',
@@ -38,7 +36,6 @@
 				return { success: false, errors: err }
 			}
 		} else {
-			// Si no hay archivos, convertir a JSON
 			const json = Object.fromEntries(formData)
 			console.log(json)
 

@@ -10,14 +10,11 @@
 	const nextStep = () => {
 		if (currentStep === 1) {
 			console.log('register candidate (step 1)')
-			// POST register candidate
 		} else if (currentStep === 2) {
 			console.log('register candidate info (step 2)')
-			// POST register candidate
 		}
 		else if (currentStep === 3) {
 			console.log('update (info + cv) (step 3)')
-			// PUT update (info + cv)
 		}
 		if (currentStep < steps) {
 			currentStep++

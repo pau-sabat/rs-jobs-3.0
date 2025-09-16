@@ -11,18 +11,15 @@
 	$: if (name) {
 		hasError = false
 
-		// Si ya tenemos el SVG en caché, lo usamos directamente
 		if (svgCache.has(name)) {
 			const cachedSvg = svgCache.get(name)
 			svgContent = modifySvg(cachedSvg, className, alt)
 		}
-		// Si ya hay un fetch en progreso para este icono, esperamos a que termine
 		else if (pendingFetches.has(name)) {
 			pendingFetches.get(name).then(svg => {
 				svgContent = modifySvg(svg, className, alt)
 			})
 		}
-		// Creamos una nueva promesa de fetch
 		else {
 			const fetchPromise = fetch(`/assets/images/icons/${name}.svg`)
 				.then(res => {
@@ -32,9 +29,7 @@
 					return res.text()
 				})
 				.then(text => {
-					// Guardamos en caché
 					svgCache.set(name, text)
-					// Removemos de pending
 					pendingFetches.delete(name)
 					return text
 				})
@@ -42,15 +37,12 @@
 					console.warn(`Error: Icon "${name}" not found`)
 					hasError = true
 					svgContent = ''
-					// Removemos de pending también en caso de error
 					pendingFetches.delete(name)
 					throw error
 				})
 
-			// Guardamos la promesa en pending
 			pendingFetches.set(name, fetchPromise)
 
-			// Procesamos el resultado
 			fetchPromise.then(svg => {
 				svgContent = modifySvg(svg, className, alt)
 			})
@@ -58,10 +50,8 @@
 	}
 
 	function modifySvg(svg, className, alt) {
-		// inyectamos className al <svg>
 		let modifiedSvg = svg.replace('<svg ', `<svg class="${className}" `)
 
-		// Si no hay alt, agregamos aria-hidden="true", si hay alt, agregamos aria-label
 		if (alt) {
 			modifiedSvg = modifiedSvg.replace('<svg ', `<svg aria-label="${alt}" `)
 		} else {

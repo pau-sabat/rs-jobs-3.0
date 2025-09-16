@@ -4,12 +4,10 @@ mixin navbar(data)
     nav(class="mx-auto px-6 lg:px-8 py-3 relative")
       .flex.items-center.justify-between
 
-        // Logo
         .flex.items-center
           a(href="/")
             img(src='/assets/images/logo.svg' alt="RSJobs logo" class="w-[176px] h-[41px]")
 
-        // Desktop
         div(class="hidden lg:flex items-center gap-[26px]")
           .flex.items-center.gap-2
             a(href='/ofertas-trabajo' class="text-secondary font-semibold px-1.5") Buscar trabajo
@@ -30,7 +28,6 @@ mixin navbar(data)
             svg(width="14" height="15" viewBox="0 0 14 15" fill="none" class="hidden" data-close="true")
               path(d="M14 1.91L12.59 0.5L7 6.09L1.41 0.5L0 1.91L5.59 7.5L0 13.09L1.41 14.5L7 8.91L12.59 14.5L14 13.09L8.41 7.5L14 1.91Z" fill="currentColor")
 
-      // Mobile Menu (Hidden by default)
       #mobile-menu(class="hidden lg:hidden fixed top-[65px] right-0 w-[70%] max-w-[350px] h-[calc(100vh-65px)] bg-light shadow-md transform translate-x-full transition-transform duration-300 ease-in-out z-50 overflow-y-auto")
         .px-6.py-4.flex.flex-col.items-stretch.justify-between.min-h-full.gap-10
           .flex.flex-col.gap-4

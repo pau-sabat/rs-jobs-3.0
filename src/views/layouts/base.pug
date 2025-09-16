@@ -12,13 +12,11 @@ html(lang="es")
         link(rel="icon" href="/assets/images/favicon-32x32.png")
 
     body(class="text-body-mobile md:text-body-desktop bg-light text-dark flex flex-col min-h-screen")
-        // Incluir componentes
         include ../components/navbar
         include ../components/footer
         include ../components/backdrop
         include ../components/svg
 
-        // Usar los mixins con los datos del JSON
         +navbar(data)
 
         main(class="flex flex-col flex-1")
@@ -32,5 +30,4 @@ html(lang="es")
 
         script(src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js")
 
-        // Script de Vite - Bundle generado automáticamente
         script(src="/static/bundle.js")

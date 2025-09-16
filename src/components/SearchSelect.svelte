@@ -23,7 +23,6 @@
 	}
 
 	function handleInputBlur() {
-		// Pequeño delay para permitir que se ejecute el click en las opciones
 		setTimeout(() => {
 			showDropdown = false
 		}, 150)
