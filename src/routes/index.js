@@ -25,5 +25,8 @@ router.use('/categorias', categoriesRoutes)
 router.use('/politica-de-cookies', (req, res) => {
 	res.render('pages/cookies')
 })
+router.use('/politica-de-privacidad-para-candidatos', (req, res) => {
+	res.render('pages/privacy-candidate')
+})
 
 module.exports = router
