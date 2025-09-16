@@ -28,5 +28,8 @@ router.use('/politica-de-cookies', (req, res) => {
 router.use('/politica-de-privacidad-para-candidatos', (req, res) => {
 	res.render('pages/privacy-candidate')
 })
+router.use('/aviso-legal', (req, res) => {
+	res.render('pages/legal-notice')
+})
 
 module.exports = router
