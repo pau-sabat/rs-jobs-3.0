@@ -65,12 +65,10 @@
 
 <div class="flex flex-col gap-6 md:gap-8">
 	<SearchBar location={showLocation} />
-	<div class="flex flex-col gap-4 lg:flex-row lg:flex-nowrap items-center justify-between text-small-mobile lg:text-small-desktop">
-		<div class="w-full lg:w-auto flex items-center justify-between gap-4">
+	<div class="flex flex-col gap-4 lg:flex-row lg:flex-nowrap items-center justify-between lg:justify-end text-small-mobile lg:text-small-desktop">
+		<div class="w-full lg:w-auto lg:hidden flex items-center justify-between gap-4">
 			{jobs.length} empleos
-			<div class="lg:hidden">
-				<JobFilters {filters} />
-			</div>
+			<JobFilters {filters} />
 		</div>
 		<div class="flex items-center gap-4">
 			Ordenar por
