@@ -23,38 +23,38 @@
     "subtitle": "13.401 empleos - 293 añadidos hoy",
     "cta": {
       "text": "Ver todas las categorías >",
-      "href": "/"
+      "href": "/categorias"
     },
     "items": [
       {
-        "text": "Marketing",
+        "name": "Marketing",
         "icon": "📢",
-        "href": "/"
+        "href": "/categorias/marketing"
       },
       {
-        "text": "Comercial",
+        "name": "Comercial",
         "icon": "💼",
-        "href": "/"
+        "href": "/categorias/comercial-ventas"
       },
       {
-        "text": "Contabilidad / Finanzas",
+        "name": "Contabilidad / Finanzas",
         "icon": "💸",
-        "href": "/"
+        "href": "/categorias/contabilidad-finanzas"
       },
       {
-        "text": "Diseño / Creatividad",
+        "name": "Diseño / Creatividad",
         "icon": "🧑‍🎨",
-        "href": "/"
+        "href": "/categorias/diseno-creatividad"
       },
       {
-        "text": "Desarrollo",
+        "name": "Desarrollo",
         "icon": "💻",
-        "href": "/"
+        "href": "/categorias/desarrollo-it"
       },
       {
-        "text": "Atención al cliente",
+        "name": "Atención al cliente",
         "icon": "📠",
-        "href": "/"
+        "href": "/categorias/atencion-al-cliente"
       }
     ]
   },

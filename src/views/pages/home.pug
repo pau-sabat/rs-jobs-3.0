@@ -5,7 +5,7 @@ block title
 
 block content
     include ../components/hero
-    include ../components/categories
+    include ../components/top-categories
     include ../components/card-list
     include ../components/cta
     include ../components/testimonials
@@ -15,7 +15,7 @@ block content
     section
         +hero(data)
     section(class="pb-[50px] lg:pb-[100px]")
-        +categories(data)
+        +top-categories(data)
         +card-list(data, 'companies-list')
     section.bg-gradient-secondary
         +cta(data)

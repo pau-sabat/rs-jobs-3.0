@@ -1,4 +1,4 @@
-mixin categories(data)
+mixin top-categories(data)
 
     - const categories = data.categories
 
@@ -15,4 +15,4 @@ mixin categories(data)
                     each item in categories.items
                         a(href=item.href class="flex gap-2.5 items-center justify-center px-3 py-2 border border-primary rounded-full whitespace-nowrap")
                             span=item.icon
-                            span.font-bold=item.text
+                            span.font-bold=item.name

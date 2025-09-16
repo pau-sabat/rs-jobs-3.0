@@ -1,0 +1,15 @@
+extends ../layouts/base
+
+block title
+    | Categorías - R&S Jobs
+
+block content
+
+    .container
+        div(class="flex flex-col gap-6 md:gap-8 py-6 lg:py-12 xl:py-[100px]")
+            h1(class="font-bold text-secondary text-heading-mobile-2 md:text-heading-desktop-2 text-center") Todas las categorías
+            div(class="flex flex-wrap items-center justify-center gap-2 md:gap-3")
+                each item in data.categories
+                    a(href=item.href class="flex gap-2.5 items-center justify-center px-3 py-2 border border-primary rounded-full whitespace-nowrap")
+                        span=item.icon
+                        span.font-bold=item.name
