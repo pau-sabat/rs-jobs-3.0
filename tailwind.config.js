@@ -29,6 +29,7 @@ module.exports = {
         red: '#DC3545',
         yellow: '#FFC107',
         cyan: '#17A2B8',
+        'gray-2': '#6D6D6D'
       },
       fontSize: {
         'heading-mobile-1': ['32px', { lineHeight: '120%' }],
