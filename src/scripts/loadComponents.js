@@ -14,6 +14,7 @@ const componentMap = {
 	RegisterForm: components.RegisterForm,
 	Alert: components.Alert,
 	Save: components.Save,
+	CookieBanner: components.CookieBanner,
 }
 
 export default function initializeSvelte() {
