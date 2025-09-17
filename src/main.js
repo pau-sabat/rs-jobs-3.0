@@ -10,9 +10,9 @@ if (document.readyState === 'loading') {
 }
 
 function main() {
+	initBackdrop()
 	initializeSvelte()
 	initNavbar()
-	initBackdrop()
 	initSwiper()
 	initLocationSelect()
 }
