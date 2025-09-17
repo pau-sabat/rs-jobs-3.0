@@ -2,7 +2,7 @@
 	import { onMount } from 'svelte'
 
 	let isOpen = false
-	let banner = null
+
 	let config = {
 		analytics: false,
 		advertising: false,
@@ -43,7 +43,7 @@
 	const acceptOptions = () => {
 		config.analytics = true
 		config.advertising = true
-        console.log(config)
+		console.log(config)
 		saveConfig()
 	}
 
@@ -89,28 +89,13 @@
 				open()
 			})
 		})
-
-        document.addEventListener('keydown', (event) => {
-            if (event.key === 'Escape') {
-                close()
-            }
-        })
-
-        document.addEventListener('click', (event) => {
-            const isClickInsideBanner = banner && banner.contains(event.target)
-            const isClickInsideTriggers = Array.from(triggers).some(trigger => trigger.contains(event.target))
-
-            if (isOpen && !isClickInsideBanner && !isClickInsideTriggers) {
-                close()
-            }
-        })
 	})
 </script>
 
 {#if isOpen}
 	<div class="fixed w-full top-0 left-0 h-screen z-[100] overflow-y-auto">
 		<div class="container py-5">
-			<div bind:this={banner} class="bg-white shadow-md rounded-lg p-6 flex flex-col gap-6" id="cookie-banner" role="dialog" aria-labelledby="cookie-title" aria-describedby="cookie-description">
+			<div class="bg-white shadow-md rounded-lg p-6 flex flex-col gap-6" id="cookie-banner" role="dialog" aria-labelledby="cookie-title" aria-describedby="cookie-description">
 				<h2 id="cookie-title" class="font-bold text-heading-mobile-2 md:text-heading-desktop-2 text-secondary uppercase text-center">PANEL DE CONFIGURACIÓN</h2>
 				<p id="cookie-description">R&S utiliza cookies propias y de terceros, para garantizar el correcto funcionamiento de este Sitio Web, así como cookies de personalización, analíticas, publicitarias y de elaboración de perfiles basados en hábitos de navegación del usuario (por ejemplo, páginas visitadas). Para aceptar todas las cookies, haz clic en "ACEPTAR TODO". Haz clic en "OPCIONES" para aceptar únicamente las cookies marcadas en las casillas de configuración disponibles en este banner o pulsa en "RECHAZAR TODO" para rechazar las cookies no necesarias. Información adicional en nuestra <a href="/politica-de-cookies" class="text-primary">Política de Cookies</a>.</p>
 				<div class="grid gap-2.5 md:grid-cols-3">
