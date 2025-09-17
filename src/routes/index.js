@@ -31,5 +31,8 @@ router.use('/politica-de-privacidad-para-candidatos', (req, res) => {
 router.use('/aviso-legal', (req, res) => {
 	res.render('pages/legal-notice')
 })
+router.use('/terminos-y-condiciones-para-candidatos', (req, res) => {
+	res.render('pages/terms-candidate')
+})
 
 module.exports = router
