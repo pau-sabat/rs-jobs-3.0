@@ -1,9 +1,9 @@
-<script>
-	export let endpoint
-	export let errors = []
-	export let onSuccess = () => {}
+<script lang="ts">
+	export let endpoint: string | undefined = undefined
+	export let errors: any[] = []
+	export let onSuccess: () => void = () => {}
 
-	async function submit(event) {
+	async function submit(event: Event): Promise<void> {
 		event.preventDefault()
 		if (endpoint) {
 			const result = await handleFormSubmit(event, endpoint)
@@ -17,10 +17,10 @@
 		}
 	}
 
-	export async function handleFormSubmit(event, endpoint) {
-		const formData = new FormData(event.target)
+	export async function handleFormSubmit(event: Event, endpoint: string): Promise<{ success: boolean; data?: any; errors?: any }> {
+		const formData = new FormData(event.target as HTMLFormElement)
 
-		const hasFiles = Array.from(formData.entries()).some(([key, value]) => value instanceof File)
+		const hasFiles = Array.from(formData.entries()).some(([, value]) => value instanceof File)
 
 		if (hasFiles) {
 			try {

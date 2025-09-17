@@ -1,18 +1,18 @@
-<script>
+<script lang="ts">
 	import Icon from './Icon.svelte'
 
-	export let accept = '.pdf,.doc,.docx,.png,.jpg,.jpeg'
-	export let maxSize = 5 * 1024 * 1024 // 5MB en bytes
-	export let maxFiles = 1
-	export let name = `file-${Math.random().toString(36).substring(2, 15)}` // Nombre del input file
+	export let accept: string = '.pdf,.doc,.docx,.png,.jpg,.jpeg'
+	export let maxSize: number = 5 * 1024 * 1024 // 5MB en bytes
+	export let maxFiles: number = 1
+	export let name: string = `file-${Math.random().toString(36).substring(2, 15)}` // Nombre del input file
 
-	let fileInput
-	let isDragOver = false
-	let errorMessage = ''
-	let selectedFiles = []
+	let fileInput: HTMLInputElement
+	let isDragOver: boolean = false
+	let errorMessage: string = ''
+	let selectedFiles: File[] = []
 
 	// Mapeo de extensiones a MIME types
-	const fileTypeMap = {
+	const fileTypeMap: Record<string, string> = {
 		'.pdf': 'application/pdf',
 		'.doc': 'application/msword',
 		'.docx': 'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
@@ -25,7 +25,7 @@
 	$: allowedExtensions = accept.split(',').map(ext => ext.trim())
 	$: allowedMimeTypes = allowedExtensions.map(ext => fileTypeMap[ext]).filter(Boolean)
 
-	const validateFileCount = files => {
+	const validateFileCount = (files: FileList): boolean => {
 		if (files.length > maxFiles) {
 			errorMessage = `Solo puedes subir un máximo de ${maxFiles} archivo${maxFiles > 1 ? 's' : ''}.`
 			return false
@@ -33,45 +33,46 @@
 		return true
 	}
 
-	const handleDragOver = event => {
+	const handleDragOver = (event: DragEvent): void => {
 		event.preventDefault()
 		isDragOver = true
 	}
 
-	const handleDragLeave = event => {
+	const handleDragLeave = (event: DragEvent): void => {
 		event.preventDefault()
 		isDragOver = false
 	}
 
-	const handleDrop = event => {
+	const handleDrop = (event: DragEvent): void => {
 		event.preventDefault()
 		isDragOver = false
 
-		const files = event.dataTransfer.files
-		if (files.length > 0 && validateFileCount(files)) {
+		const files = event.dataTransfer?.files
+		if (files && files.length > 0 && validateFileCount(files)) {
 			processFiles(files)
 		}
 	}
 
-	const handleClick = () => {
+	const handleClick = (): void => {
 		fileInput.click()
 	}
 
-	const handleKeyDown = event => {
+	const handleKeyDown = (event: KeyboardEvent): void => {
 		if (event.key === 'Enter' || event.key === ' ') {
 			event.preventDefault()
 			handleClick()
 		}
 	}
 
-	const handleFileSelect = event => {
-		const files = event.target.files
-		if (files.length > 0 && validateFileCount(files)) {
+	const handleFileSelect = (event: Event): void => {
+		const target = event.target as HTMLInputElement
+		const files = target.files
+		if (files && files.length > 0 && validateFileCount(files)) {
 			processFiles(files)
 		}
 	}
 
-	const processFiles = files => {
+	const processFiles = (files: FileList): void => {
 		// Limpiar mensaje de error anterior
 		errorMessage = ''
 
@@ -99,7 +100,7 @@
 		updateFileInput()
 	}
 
-	const removeFile = (index = null) => {
+	const removeFile = (index: number | null = null): void => {
 		if (index !== null) {
 			selectedFiles = selectedFiles.filter((_, i) => i !== index)
 		} else {
@@ -111,7 +112,7 @@
 		updateFileInput()
 	}
 
-	const updateFileInput = () => {
+	const updateFileInput = (): void => {
 		if (fileInput) {
 			const dataTransfer = new DataTransfer()
 			selectedFiles.forEach(file => dataTransfer.items.add(file))

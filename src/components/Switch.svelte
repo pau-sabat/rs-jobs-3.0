@@ -1,5 +1,5 @@
-<script>
-    export let active = false
+<script lang="ts">
+    export let active: boolean = false
 </script>
 
 <div class="relative inline-block w-9 h-5">

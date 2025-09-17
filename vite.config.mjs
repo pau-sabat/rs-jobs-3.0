@@ -3,7 +3,13 @@ import { svelte } from '@sveltejs/vite-plugin-svelte'
 
 export default defineConfig({
 	root: 'src',
-	plugins: [svelte()],
+	plugins: [
+		svelte({
+			preprocess: {
+				typescript: true
+			}
+		})
+	],
 	build: {
 		outDir: '../public/static',
 		rollupOptions: {
@@ -18,4 +24,10 @@ export default defineConfig({
 	server: {
 		port: 5173,
 	},
+	resolve: {
+		alias: {
+			'$lib': '/src/lib',
+			'$app': '/src/app'
+		}
+	}
 })

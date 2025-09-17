@@ -1,12 +1,12 @@
-<script>
+<script lang="ts">
 	import Icon from './Icon.svelte'
 
-	export let options = []
-	export let placeholder = 'Buscar'
-	export let searchKey = 'name'
+	export let options: any[] = []
+	export let placeholder: string = 'Buscar'
+	export let searchKey: string = 'name'
 
-	let searchText = ''
-	let showDropdown = false
+	let searchText: string = ''
+	let showDropdown: boolean = false
 
 	$: filteredOptions = options.filter(option => option?.[searchKey]?.toLowerCase().includes(searchText.toLowerCase()))
 
@@ -16,13 +16,13 @@
 		showDropdown = false
 	}
 
-	function handleInputFocus() {
+	function handleInputFocus(): void {
 		if (searchText && filteredOptions.length > 0) {
 			showDropdown = true
 		}
 	}
 
-	function handleInputBlur() {
+	function handleInputBlur(): void {
 		setTimeout(() => {
 			showDropdown = false
 		}, 150)

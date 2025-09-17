@@ -1,12 +1,12 @@
-<script>
+<script lang="ts">
 	import { svgCache, pendingFetches } from '../services/iconCache.js'
 
-	export let name
-	export let className = ''
-	export let alt = ''
+	export let name: string
+	export let className: string = ''
+	export let alt: string = ''
 
-	let svgContent = ''
-	let hasError = false
+	let svgContent: string = ''
+	let hasError: boolean = false
 
 	$: if (name) {
 		hasError = false
@@ -16,7 +16,7 @@
 			svgContent = modifySvg(cachedSvg, className, alt)
 		}
 		else if (pendingFetches.has(name)) {
-			pendingFetches.get(name).then(svg => {
+			pendingFetches.get(name)?.then((svg: string) => {
 				svgContent = modifySvg(svg, className, alt)
 			})
 		}
@@ -43,13 +43,13 @@
 
 			pendingFetches.set(name, fetchPromise)
 
-			fetchPromise.then(svg => {
+			fetchPromise.then((svg: string) => {
 				svgContent = modifySvg(svg, className, alt)
 			})
 		}
 	}
 
-	function modifySvg(svg, className, alt) {
+	function modifySvg(svg: string, className: string, alt: string): string {
 		let modifiedSvg = svg.replace('<svg ', `<svg class="${className}" `)
 
 		if (alt) {

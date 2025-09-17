@@ -1,16 +1,17 @@
-<script>
+<script lang="ts">
 	import { onMount } from 'svelte'
 	import Alert from './Alert.svelte'
 	import JobCard from './JobCard.svelte'
 	import Paginator from './Paginator.svelte'
+	import type { Offer } from '$lib/types'
 
-	export let company
+	export let company: string
 
-	let jobs = []
+	let jobs: Offer[] = []
 
-	let totalPages = 1
-	let jobsPerPage = 6
-	let currentPage = 1
+	let totalPages: number = 1
+	let jobsPerPage: number = 6
+	let currentPage: number = 1
 
 	$: startIndex = (currentPage - 1) * jobsPerPage
 	$: endIndex = startIndex + jobsPerPage
@@ -20,13 +21,13 @@
 		await fetchJobs()
 	})
 
-	const fetchJobs = async () => {
+	const fetchJobs = async (): Promise<void> => {
 		fetch('/data/jobs.json')
 			.then(response => response.json())
 			.then(data => {
 				// Filtrar trabajos por empresa
 				const allJobs = data.jobs || []
-				jobs = allJobs.filter(job => job.company && job.company.name && job.company.name.toLowerCase() === company.toLowerCase())
+				jobs = allJobs.filter((job: any) => job.company && job.company.name && job.company.name.toLowerCase() === company.toLowerCase())
 				totalPages = Math.ceil(jobs.length / jobsPerPage)
 				updatePublishedJobsNumber()
 			})
@@ -37,14 +38,14 @@
 			})
 	}
 
-	const updatePublishedJobsNumber = () => {
+	const updatePublishedJobsNumber = (): void => {
 		const elements = document.getElementById('offers-number')
 		if (elements) {
-			elements.innerHTML = jobs.length
+			elements.innerHTML = jobs.length.toString()
 		}
 	}
 
-	const onPageChange = async page => {
+	const onPageChange = async (page: number): Promise<void> => {
 		currentPage = page
 	}
 </script>
@@ -64,7 +65,7 @@
 				{/each}
 			</div>
 
-			<Paginator {totalPages} {jobsPerPage} {currentPage} {onPageChange} text="Ver más ofertas" />
+			<Paginator {totalPages} {currentPage} {onPageChange} text="Ver más ofertas" />
 		</div>
 	{/if}
 </div>

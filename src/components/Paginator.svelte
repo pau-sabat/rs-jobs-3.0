@@ -1,12 +1,12 @@
-<script>
+<script lang="ts">
 	import Icon from './Icon.svelte'
 
-	export let totalPages = 1
-	export let currentPage = 1
-	export let text = 'Ver más'
-	export let onPageChange = () => {}
+	export let totalPages: number = 1
+	export let currentPage: number = 1
+	export let text: string = 'Ver más'
+	export let onPageChange: (page: number) => void = () => {}
 
-	function handlePageChange(page) {
+	function handlePageChange(page: number): void {
 		if (page < 1) {
 			page = 1
 		} else if (page > totalPages) {

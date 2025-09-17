@@ -1,9 +1,9 @@
-<script>
+<script lang="ts">
 	import Icon from './Icon.svelte'
 
-	export let search = true
-	export let location = true
-	export let button = true
+	export let search: boolean = true
+	export let location: boolean = true
+	export let button: boolean = true
 </script>
 
 <div class="bg-white p-2.5 rounded-lg shadow-md flex flex-col md:flex-row gap-4">

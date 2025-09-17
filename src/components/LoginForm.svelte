@@ -1,14 +1,14 @@
-<script>
+<script lang="ts">
 	import Form from './Form.svelte'
 	import Icon from './Icon.svelte'
 
-	function handleSuccess() {
+	function handleSuccess(): void {
 		console.log('success')
 	}
 </script>
 
 <Form endpoint="/api/login" onSuccess={handleSuccess}>
-	<div novalidate class="flex flex-col gap-4 md:gap-6 items-center">
+	<div class="flex flex-col gap-4 md:gap-6 items-center">
 		<div class="w-full flex flex-col gap-4">
 			<div class="flex flex-col gap-3">
 				<div class="flex items-center gap-2 w-full flex-grow">

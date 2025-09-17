@@ -1,57 +1,60 @@
-<script>
+<script lang="ts">
 	import { onMount } from 'svelte'
 
-	let isOpen = false
+	let isOpen: boolean = false
 
-	let config = {
+	let config: {
+		analytics: boolean
+		advertising: boolean
+	} = {
 		analytics: false,
 		advertising: false,
 	}
 
-	let triggers = []
+	let triggers: Element[] = []
 
-	function setCookie(name, value, days) {
+	function setCookie(name: string, value: string, days: number): void {
 		const expires = new Date(Date.now() + days * 864e5).toUTCString()
 		document.cookie = `${name}=${value}; expires=${expires}; path=/`
 	}
 
-	function getCookie(name) {
+	function getCookie(name: string): string | undefined {
 		return document.cookie
 			.split('; ')
 			.find(row => row.startsWith(name + '='))
 			?.split('=')[1]
 	}
 
-	const saveConfig = () => {
-		setCookie('cookie-consent', JSON.stringify(config))
+	const saveConfig = (): void => {
+		setCookie('cookie-consent', JSON.stringify(config), 365)
 		initCookies()
 		close()
 	}
 
-	const rejectCookies = () => {
+	const rejectCookies = (): void => {
 		config.analytics = false
 		config.advertising = false
 		saveConfig()
 	}
 
-	const acceptCookies = () => {
+	const acceptCookies = (): void => {
 		config.analytics = true
 		config.advertising = true
 		saveConfig()
 	}
 
-	const acceptOptions = () => {
+	const acceptOptions = (): void => {
 		config.analytics = true
 		config.advertising = true
 		console.log(config)
 		saveConfig()
 	}
 
-	const initCookies = () => {
+	const initCookies = (): void => {
 		console.log('init cookies')
 	}
 
-	const close = () => {
+	const close = (): void => {
 		isOpen = false
 		triggers.forEach(trigger => {
 			trigger.setAttribute('aria-expanded', 'false')
@@ -59,7 +62,7 @@
 		document.dispatchEvent(new CustomEvent('closeBackdrop'))
 	}
 
-	const open = () => {
+	const open = (): void => {
 		isOpen = true
 		triggers.forEach(trigger => {
 			trigger.setAttribute('aria-expanded', 'true')
@@ -83,7 +86,7 @@
 			open()
 		}
 
-		triggers = document.querySelectorAll('[aria-haspopup="dialog"]')
+		triggers = Array.from(document.querySelectorAll('[aria-haspopup="dialog"]'))
 		triggers.forEach(trigger => {
 			trigger.addEventListener('click', () => {
 				open()

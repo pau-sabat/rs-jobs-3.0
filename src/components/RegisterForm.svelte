@@ -1,13 +1,13 @@
-<script>
+<script lang="ts">
 	import Form from './Form.svelte'
 	import FileDropzone from './FileDropzone.svelte'
 
-	let steps = 3
-	let currentStep = 1
+	let steps: number = 3
+	let currentStep: number = 1
 
 	$: progress = (currentStep / steps) * 100
 
-	const nextStep = () => {
+	const nextStep = (): void => {
 		if (currentStep === 1) {
 			console.log('register candidate (step 1)')
 		} else if (currentStep === 2) {
@@ -21,11 +21,11 @@
 		}
 	}
 
-	const prevStep = () => {
-		if (currentStep > 1) {
-			currentStep--
-		}
-	}
+	// const prevStep = (): void => {
+	// 	if (currentStep > 1) {
+	// 		currentStep--
+	// 	}
+	// }
 </script>
 
 <div class="flex flex-col gap-4 md:gap-6">

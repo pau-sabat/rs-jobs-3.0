@@ -1,14 +1,14 @@
-<script>
+<script lang="ts">
 	import Icon from './Icon.svelte'
 	import Switch from './Switch.svelte'
 
-	export let active = false
-	export let title = 'Activar alerta'
-	export let text = ''
-	export let big = false
-	export let compact = false
+	export let active: boolean = false
+	export let title: string = 'Activar alerta'
+	export let text: string = ''
+	export let big: boolean = false
+	export let compact: boolean = false
 
-	const handleClick = () => {
+	const handleClick = (): void => {
 		active = !active
 	}
 </script>

@@ -1,10 +1,10 @@
-<script>
+<script lang="ts">
 	import Icon from './Icon.svelte'
 
-	export let isSaved = false
-	export let text = 'Guardar'
+	export let isSaved: boolean = false
+	export let text: string = 'Guardar'
 
-	const toggleSave = () => {
+	const toggleSave = (): void => {
 		isSaved = !isSaved
 	}
 </script>

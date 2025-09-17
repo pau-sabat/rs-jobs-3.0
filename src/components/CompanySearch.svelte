@@ -1,10 +1,11 @@
-<script>
+<script lang="ts">
 	import { onMount } from 'svelte'
 	import SearchSelect from './SearchSelect.svelte'
+	import type { Company } from '$lib/types'
 
-	let companies = []
+	let companies: Company[] = []
 
-	const fetchCompanies = async () => {
+	const fetchCompanies = async (): Promise<void> => {
 		try {
 			const response = await fetch('/data/companies.json')
 			const data = await response.json()

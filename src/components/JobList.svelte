@@ -1,23 +1,24 @@
-<script>
+<script lang="ts">
 	import Paginator from './Paginator.svelte'
 	import JobCard from './JobCard.svelte'
 	import SearchBar from './SearchBar.svelte'
 	import Alert from './Alert.svelte'
 	import JobFilters from './JobFilters.svelte'
 	import { onMount } from 'svelte'
+	import type { Offer } from '$lib/types'
 
-	let jobs = []
-	let filters = {}
-	let totalPages = 1
-	let jobsPerPage = 8
-	let currentPage = 1
-	let showLocation = false
+	let jobs: Offer[] = []
+	let filters: any = {}
+	let totalPages: number = 1
+	let jobsPerPage: number = 8
+	let currentPage: number = 1
+	let showLocation: boolean = false
 
 	$: startIndex = (currentPage - 1) * jobsPerPage
 	$: endIndex = startIndex + jobsPerPage
 	$: currentPageJobs = jobs.slice(startIndex, endIndex)
 
-	async function fetchFilters() {
+	async function fetchFilters(): Promise<void> {
 		try {
 			const response = await fetch('/data/filters.json')
 			const data = await response.json()
@@ -28,8 +29,8 @@
 		}
 	}
 
-	onMount(async () => {
-		const updateShowLocation = () => {
+	onMount(() => {
+		const updateShowLocation = (): void => {
 			showLocation = window.innerWidth >= 768
 		}
 
@@ -37,7 +38,7 @@
 
 		window.addEventListener('resize', updateShowLocation)
 
-		await Promise.all([
+		Promise.all([
 			fetch('/data/jobs.json')
 				.then(response => response.json())
 				.then(data => {
@@ -57,7 +58,7 @@
 		}
 	})
 
-	function handlePageChange(page) {
+	function handlePageChange(page: number): void {
 		currentPage = page
 		window.scrollTo({ top: 0, behavior: 'smooth' })
 	}
@@ -91,9 +92,9 @@
 				<JobCard offer={job} />
 				{#if index % 4 === 3 && index < currentPageJobs.length - 1}
 					<div class="flex flex-wrap items-center justify-center gap-6">
-						{#each [1, 2, 3, 4] as i}
-							<a href="/" class="bg-dark/50 w-[calc(50%-12px)] max-w-[170px] max-h-[130px] aspect-[170/130] flex items-center justify-center"> Company Logo </a>
-						{/each}
+				{#each [1, 2, 3, 4] as _}
+					<a href="/" class="bg-dark/50 w-[calc(50%-12px)] max-w-[170px] max-h-[130px] aspect-[170/130] flex items-center justify-center"> Company Logo </a>
+				{/each}
 					</div>
 				{/if}
 			{/each}

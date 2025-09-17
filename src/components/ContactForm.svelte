@@ -1,7 +1,7 @@
-<script>
+<script lang="ts">
 	import Form from './Form.svelte'
 
-	function handleSuccess() {
+	function handleSuccess(): void {
 		console.log('success')
 	}
 </script>

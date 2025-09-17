@@ -1,14 +1,13 @@
-<script>
+<script lang="ts">
 	import Icon from './Icon.svelte'
 	import { onMount, onDestroy } from 'svelte'
 
-	export let filters = {}
+	export let filters: any = {}
 
-	let isOpen = false
-	let filtersMenu
-	let filtersButton
+	let isOpen: boolean = false
+	let filtersButton: HTMLElement | undefined
 
-	function toggleFilters() {
+	function toggleFilters(): void {
 		if (window.innerWidth >= 1024) return
 
 		if (isOpen) {
@@ -18,34 +17,34 @@
 		}
 	}
 
-	function openFilters() {
+	function openFilters(): void {
 		isOpen = true
 		document.dispatchEvent(new CustomEvent('openBackdrop'))
 		document.dispatchEvent(new CustomEvent('z-index', { detail: 60 }))
 	}
 
-	function closeFilters() {
+	function closeFilters(): void {
 		isOpen = false
 		document.dispatchEvent(new CustomEvent('closeBackdrop'))
 		document.dispatchEvent(new CustomEvent('z-index', { detail: 40 }))
 	}
 
-	function handleResize() {
+	function handleResize(): void {
 		if (window.innerWidth > 1024 && isOpen) {
 			closeFilters()
 		}
 	}
 
-	function handleKeydown(event) {
+	function handleKeydown(event: KeyboardEvent): void {
 		if (event.key === 'Escape' && isOpen) {
 			closeFilters()
 		}
 	}
 
-	function handleClick(event) {
+	function handleClick(event: MouseEvent): void {
 		if (window.innerWidth >= 1024) return
 
-		if (isOpen && !filtersButton.contains(event.target)) {
+		if (isOpen && filtersButton && !filtersButton.contains(event.target as Node)) {
 			closeFilters()
 		}
 	}
@@ -73,7 +72,7 @@
 	Filtros
 </button>
 
-<div bind:this={filtersMenu} class={`fixed lg:static top-0 right-0 w-full sm:w-[70%] lg:w-full z-[70] lg:z-auto h-screen lg:h-auto max-w-[342px] lg:max-w-full bg-light transform ${isOpen ? 'translate-x-0' : 'translate-x-full'} lg:translate-x-0 transition-transform duration-300 ease-out overflow-y-auto`}>
+<div class={`fixed lg:static top-0 right-0 w-full sm:w-[70%] lg:w-full z-[70] lg:z-auto h-screen lg:h-auto max-w-[342px] lg:max-w-full bg-light transform ${isOpen ? 'translate-x-0' : 'translate-x-full'} lg:translate-x-0 transition-transform duration-300 ease-out overflow-y-auto`}>
 	<form novalidate on:submit|preventDefault class="flex flex-col gap-6 px-4 py-6 lg:p-0">
 		<button on:click={closeFilters} type="button" class="btn btn-secondary text-caption-mobile lg:hidden">Ver ofertas</button>
 

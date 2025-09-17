@@ -1,19 +1,20 @@
-<script>
+<script lang="ts">
 	import Icon from './Icon.svelte'
 	import { onMount } from 'svelte'
 	import Save from './Save.svelte'
 	import dayjs from '../services/dayjs.mjs'
+	import type { Offer } from '$lib/types'
 
-	export let offer
-	export let compact = false
+	export let offer: Offer
+	export let compact: boolean = false
 
 	let company = offer.company
 	let job = offer.job
 
-	let publishedAt
-	let isRecent = false
+	let publishedAt: any
+	let isRecent: boolean = false
 
-	let isSaved = false
+	let isSaved: boolean = false
 
 	onMount(() => {
 		if (job.publishedAt) {
