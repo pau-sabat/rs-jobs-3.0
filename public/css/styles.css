@@ -1,3 +1,7 @@
+/* ============================================
+   FUENTES PERSONALIZADAS
+   ============================================ */
+
 @font-face {
 	font-family: 'RethinkSans';
 	src: url('../assets/fonts/RethinkSans.ttf') format('truetype');
@@ -12,16 +16,36 @@
 	font-style: normal;
 }
 
+/* ============================================
+   TAILWIND CSS
+   ============================================ */
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* ============================================
+   LAYOUT Y CONTENEDORES
+   ============================================ */
+
+.container {
+	@apply max-w-[1170px] mx-auto px-6 xl:px-0;
+}
+
+.container-sm {
+	@apply max-w-[970px] mx-auto px-6 lg:px-0;
+}
+
+/* ============================================
+   SISTEMA DE BOTONES
+   ============================================ */
 
 /* Botón base */
 .btn {
 	@apply inline-flex items-center justify-center px-3 py-1.5 rounded-[4px] font-bold;
 }
 
-/* Botón primario */
+/* Botones primarios */
 .btn-primary {
 	@apply bg-primary text-white transition-all;
 }
@@ -38,7 +62,7 @@
 	@apply bg-primary text-white;
 }
 
-/* Botón secundario */
+/* Botones secundarios */
 .btn-secondary {
 	@apply bg-secondary text-white transition-all;
 }
@@ -55,6 +79,7 @@
 	@apply bg-secondary text-white;
 }
 
+/* Botones terciarios */
 .btn-tertiary-outline {
 	@apply bg-transparent text-gray shadow-[inset_0_0_0_1px_#6C757D] font-normal transition-all;
 }
@@ -67,36 +92,31 @@
 	@apply bg-secondary text-white;
 }
 
-.container {
-	@apply max-w-[1170px] mx-auto px-6 xl:px-0;
-}
+/* ============================================
+   FORMULARIOS Y CONTROLES
+   ============================================ */
 
-.container-sm {
-	@apply max-w-[970px] mx-auto px-6 lg:px-0;
-}
-
-.text-secondary strong {
-	@apply text-primary;
-}
-
+/* Inputs de texto */
 input:not([type='radio']):not([type='checkbox']) {
 	@apply border-b border-secondary/50 placeholder-secondary/50 focus:outline-none focus:ring-0 appearance-none bg-transparent;
 }
 
+/* Inputs de radio y checkbox */
 input[type='radio'],
 input[type='checkbox'] {
 	@apply accent-blue;
 }
 
+/* Select personalizado */
 select {
 	@apply bg-transparent focus:outline-none focus:ring-0 text-ellipsis overflow-hidden border-b border-secondary/50 pb-2 pr-8;
-	/* Custom arrow */
+	/* Flecha personalizada */
 	background-image: url('/assets/images/icons/arrow-down.svg');
 	background-repeat: no-repeat;
 	background-position: right 0.5rem center;
 	background-size: 0.75rem 0.75rem;
 
-	/* Safari specific styles */
+	/* Estilos específicos para Safari */
 	-webkit-appearance: none !important;
 	-moz-appearance: none !important;
 	appearance: none !important;
@@ -110,6 +130,7 @@ select {
 	color: inherit;
 }
 
+/* Select con color primario */
 select.text-primary {
 	background-image: url('/assets/images/icons/arrow-down-pink.svg');
 }
@@ -120,20 +141,15 @@ select:focus {
 	box-shadow: none;
 }
 
-.testimonials-swiper .swiper-pagination {
-	position: relative;
-	margin-top: 12px;
+/* ============================================
+   TIPOGRAFÍA Y TEXTO
+   ============================================ */
+
+.text-secondary strong {
+	@apply text-primary;
 }
 
-.testimonials-swiper .swiper-pagination-bullet {
-	@apply bg-primary;
-	opacity: 0.3;
-}
-
-.testimonials-swiper .swiper-pagination-bullet-active {
-	opacity: 1;
-}
-
+/* Listas */
 ul, ol {
 	@apply list-outside pl-6;
 }
@@ -145,6 +161,10 @@ ul {
 ol {
 	@apply list-decimal;
 }
+
+/* ============================================
+   TABLAS
+   ============================================ */
 
 .table-container {
 	@apply overflow-x-auto;
@@ -164,13 +184,29 @@ tr {
 }
 
 th {
-@apply px-[5px] py-3 md:px-[20px];
+	@apply px-[5px] py-3 md:px-[20px];
 }
 
 td {
 	@apply px-[5px] py-2.5 md:px-[20px];
+	@apply text-caption-mobile md:text-small-desktop;
 }
 
-td {
-	@apply text-caption-mobile md:text-small-desktop;
+/* ============================================
+   COMPONENTES ESPECÍFICOS
+   ============================================ */
+
+/* Swiper */
+.swiper .swiper-pagination {
+	position: relative;
+	margin-top: 12px;
+}
+
+.swiper .swiper-pagination-bullet {
+	@apply bg-primary;
+	opacity: 0.3;
+}
+
+.swiper .swiper-pagination-bullet-active {
+	opacity: 1;
 }
