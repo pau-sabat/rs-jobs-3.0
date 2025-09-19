@@ -1,6 +1,8 @@
 import * as components from '../components/index.js'
+import Loading from '../components/Loading.svelte'
+import Backdrop from '../components/Backdrop.svelte'
 
-// Mapeo de nombres de componentes a clases
+// Mapping of component names to classes
 const componentMap = {
 	// Agregar más componentes aquí:
 	JobList: components.JobList,
@@ -18,7 +20,14 @@ const componentMap = {
 }
 
 export default function initializeSvelte() {
-	// Buscar todos los contenedores con atributo data-component
+	// Load global components
+	const globalTarget = document.getElementById('global-svelte')
+	if (globalTarget) {
+		new Loading({ target: globalTarget })
+		new Backdrop({ target: globalTarget })
+	}
+
+	// Search all containers with data-component attribute
 	const containers = document.querySelectorAll('[data-component]')
 
 	containers.forEach(container => {
@@ -27,25 +36,25 @@ export default function initializeSvelte() {
 
 		if (ComponentClass) {
 			try {
-				// Leer todos los atributos data-* y convertirlos en props
+				// Read all data-* attributes and convert them to props
 				const props = {}
 				Array.from(container.attributes).forEach(attr => {
 					if (attr.name.startsWith('data-') && attr.name !== 'data-component') {
-						// Convertir kebab-case o snake_case a camelCase
+						// Convert kebab-case or snake_case to camelCase
 						let propName = attr.name.replace('data-', '')
 						let value = attr.value
 
-						// Intentar convertir a número si es posible
+						// Try to convert to number if possible
 						if (!isNaN(value) && value !== '') {
 							value = Number(value)
 						}
 
-						// Intentar parsear JSON si el valor parece ser JSON
+						// Try to parse JSON if the value seems to be JSON
 						if (typeof value === 'string' && (value.startsWith('{') || value.startsWith('['))) {
 							try {
 								value = JSON.parse(value)
 							} catch (e) {
-								// Si falla el parse, mantener el valor original
+								// If the parse fails, keep the original value
 								console.warn(`Failed to parse JSON for ${propName}:`, value)
 							}
 						}
@@ -63,7 +72,7 @@ export default function initializeSvelte() {
 			}
 		} else {
 			console.warn(`⚠️ Component ${componentName} not found in componentMap - removing container from DOM`)
-			// Quitar el contenedor del DOM para evitar problemas de diseño
+			// Remove the container from the DOM to avoid design problems
 			container.remove()
 		}
 	})

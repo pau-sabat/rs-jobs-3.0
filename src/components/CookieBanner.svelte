@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { backdropService } from '../services/backdropService'
 	import { onMount } from 'svelte'
 
 	let isOpen: boolean = false
@@ -59,7 +60,7 @@
 		triggers.forEach(trigger => {
 			trigger.setAttribute('aria-expanded', 'false')
 		})
-		document.dispatchEvent(new CustomEvent('closeBackdrop'))
+		backdropService.hide()
 	}
 
 	const open = (): void => {
@@ -67,7 +68,7 @@
 		triggers.forEach(trigger => {
 			trigger.setAttribute('aria-expanded', 'true')
 		})
-		document.dispatchEvent(new CustomEvent('openBackdrop'))
+		backdropService.show()
 	}
 
 	onMount(() => {

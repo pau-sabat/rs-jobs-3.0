@@ -1,3 +1,5 @@
+import { backdropService } from "../services/backdropService"
+
 export default function initNavbar() {
 	const mobileMenuButton = document.getElementById('mobile-menu-button')
 	const mobileMenu = document.getElementById('mobile-menu')
@@ -17,8 +19,7 @@ export default function initNavbar() {
 		mobileMenuButton.setAttribute('aria-label', 'Close mobile menu')
 		mobileMenuButton.querySelector('[data-open]').classList.add('hidden')
 		mobileMenuButton.querySelector('[data-close]').classList.remove('hidden')
-		// Dispatch event from document to trigger backdrop
-		document.dispatchEvent(new CustomEvent('openBackdrop'))
+		backdropService.show(40)
 		// Trigger animation after a small delay
 		requestAnimationFrame(() => {
 			mobileMenu.classList.remove('translate-x-full')
@@ -31,8 +32,7 @@ export default function initNavbar() {
 		mobileMenuButton.setAttribute('aria-label', 'Open mobile menu')
 		mobileMenuButton.querySelector('[data-open]').classList.remove('hidden')
 		mobileMenuButton.querySelector('[data-close]').classList.add('hidden')
-		// Dispatch event from document to trigger backdrop
-		document.dispatchEvent(new CustomEvent('closeBackdrop'))
+		backdropService.hide()
 
 		setTimeout(() => {
 			mobileMenu.classList.add('hidden')

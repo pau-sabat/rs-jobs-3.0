@@ -14,7 +14,6 @@ html(lang="es")
     body(class="text-body-mobile md:text-body-desktop bg-light text-dark flex flex-col min-h-screen")
         include ../components/navbar
         include ../components/footer
-        include ../components/backdrop
         include ../components/svg
 
         +navbar(data)
@@ -24,9 +23,8 @@ html(lang="es")
 
         +footer(data)
 
-        +backdrop
-
         div(data-component="CookieBanner")
+        div#global-svelte
 
         script(src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js")
 

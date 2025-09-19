@@ -1,35 +1,35 @@
 <script lang="ts">
-	import { onMount, onDestroy } from 'svelte';
-	import { loadingService } from '../services/loadingService';
+	import { onMount, onDestroy } from 'svelte'
+	import { loadingService } from '../services/loadingService'
 
 	// Reactive loading state
-	export let loading: boolean = false;
-	let unsubscribe: (() => void) | null = null;
+	let loading: boolean = false
+	let unsubscribe: (() => void) | null = null
 
 	// Subscribe to service changes
 	onMount(() => {
 		// Get initial state
-		loading = loadingService.isLoading();
+		loading = loadingService.isLoading()
 
 		// Subscribe to changes
-		unsubscribe = loadingService.subscribe((isLoading) => {
-			loading = isLoading;
-		});
+		unsubscribe = loadingService.subscribe(isLoading => {
+			loading = isLoading
+		})
 
-		// Expose service globally for easy access (from JS files)
-		(window as any).Loading = loadingService;
-	});
+		// expose in window
+		// ;(window as any).Loading = loadingService
+	})
 
 	onDestroy(() => {
 		if (unsubscribe) {
-			unsubscribe();
+			unsubscribe()
 		}
 
 		// Clean up global references
-		if ((window as any).Loading === loadingService) {
-			delete (window as any).Loading;
-		}
-	});
+		// if ((window as any).Loading === loadingService) {
+		// 	delete (window as any).Loading;
+		// }
+	})
 </script>
 
 {#if loading}

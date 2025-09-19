@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { backdropService } from '../services/backdropService'
 	import Icon from './Icon.svelte'
 	import { onMount, onDestroy } from 'svelte'
 
@@ -19,14 +20,12 @@
 
 	function openFilters(): void {
 		isOpen = true
-		document.dispatchEvent(new CustomEvent('openBackdrop'))
-		document.dispatchEvent(new CustomEvent('z-index', { detail: 60 }))
+		backdropService.show()
 	}
 
 	function closeFilters(): void {
 		isOpen = false
-		document.dispatchEvent(new CustomEvent('closeBackdrop'))
-		document.dispatchEvent(new CustomEvent('z-index', { detail: 40 }))
+		backdropService.hide()
 	}
 
 	function handleResize(): void {
@@ -60,7 +59,7 @@
 		document.removeEventListener('keydown', handleKeydown)
 		document.removeEventListener('click', handleClick)
 		if (isOpen) {
-			document.dispatchEvent(new CustomEvent('closeBackdrop'))
+			backdropService.hide()
 		}
 	})
 </script>

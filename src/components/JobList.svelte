@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { loadingService } from '../services/loadingService'
 	import Paginator from './Paginator.svelte'
 	import JobCard from './JobCard.svelte'
 	import SearchBar from './SearchBar.svelte'
@@ -9,10 +10,11 @@
 
 	let jobs: Offer[] = []
 	let filters: any = {}
+	let showLocation: boolean = false
+
 	let totalPages: number = 1
 	let jobsPerPage: number = 8
 	let currentPage: number = 1
-	let showLocation: boolean = false
 
 	$: startIndex = (currentPage - 1) * jobsPerPage
 	$: endIndex = startIndex + jobsPerPage
@@ -38,6 +40,8 @@
 
 		window.addEventListener('resize', updateShowLocation)
 
+		loadingService.show()
+
 		Promise.all([
 			fetch('/data/jobs.json')
 				.then(response => response.json())
@@ -51,7 +55,12 @@
 					totalPages = 1
 				}),
 			fetchFilters(),
-		])
+		]).finally(() => {
+			setTimeout(() => {
+				//TODO: remove mock delay
+				loadingService.hide()
+			}, 1000)
+		})
 
 		return () => {
 			window.removeEventListener('resize', updateShowLocation)
@@ -92,9 +101,9 @@
 				<JobCard offer={job} />
 				{#if index % 4 === 3 && index < currentPageJobs.length - 1}
 					<div class="flex flex-wrap items-center justify-center gap-6">
-				{#each [1, 2, 3, 4] as _}
-					<a href="/" class="bg-dark/50 w-[calc(50%-12px)] max-w-[170px] max-h-[130px] aspect-[170/130] flex items-center justify-center"> Company Logo </a>
-				{/each}
+						{#each [1, 2, 3, 4] as _}
+							<a href="/" class="bg-dark/50 w-[calc(50%-12px)] max-w-[170px] max-h-[130px] aspect-[170/130] flex items-center justify-center"> Company Logo </a>
+						{/each}
 					</div>
 				{/if}
 			{/each}
