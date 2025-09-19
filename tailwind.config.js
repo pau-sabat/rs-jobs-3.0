@@ -54,6 +54,9 @@ module.exports = {
         'md': '0 2px 8px 0 rgba(0, 0, 0, 0.15)',
         'lg': '0 2px 16px 0 rgba(0, 0, 0, 0.15)'
       },
+      dropShadow: {
+        'md': '0 2px 8px rgba(0, 0, 0, 0.15)',
+      },
       backgroundImage: {
         'gradient-primary': 'linear-gradient(rgba(240, 56, 107, 0.05), rgba(240, 56, 107, 0.05))',
         'gradient-secondary': 'linear-gradient(rgba(11, 42, 82, 0.05), rgba(11, 42, 82, 0.05))',

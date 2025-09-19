@@ -12,6 +12,6 @@ mixin top-categories()
                     a(href="/categorias" class="text-small-mobile lg:text-small-desktop text-primary underline") Ver todas las categorías >
                 .flex.flex-nowrap.justify-between.gap-2.overflow-x-auto
                     each item in categories
-                        a(href=item.href class="flex gap-2.5 items-center justify-center px-3 py-2 border border-primary rounded-full whitespace-nowrap")
+                        a(href=item.href class="flex gap-2.5 items-center justify-center px-3 py-2 border border-primary bg-transparent hover:bg-primary/5 transition-all rounded-full whitespace-nowrap")
                             span=item.icon
                             span.font-bold=item.name
