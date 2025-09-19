@@ -1,9 +1,9 @@
 include review
 include color-card
 
-mixin testimonials(data)
-    - const testimonials = data.testimonials
-    - const ctaCards = data.ctaCards
+mixin testimonials()
+    - const testimonials = [{"text": "Este mes estuve buscando trabajo en el sector hostelería donde llevo años desarrollándome profesionalmente. Me inscribí a varias ofertas siendo  una de ellas la empresa R&S que contactó conmigo.  Me citaron con Marta Venero y tuvimos una primera cita en sus  instalaciones. Tras esta primera toma de contacto fui seleccionado para  una segunda entrevista con la dirección del restaurante y posteriormente con el equipo jefe de sala. Quisiera agradecer la profesionalidad y el  carácter humano que me proporcionó R&S acompañándome a todas las  entrevistas y apoyándome en todo momento. Muchas gracias Marta Venero por ser tan atenta, cercana y profesional. Mañana empiezo un nuevo  proyecto con mucha ilusión y quería agradecer a R&S jobs por su  gestión!!!", "name": "Fernanda Barrera"}, {"text": "Contraté sus servicios para incorporar una vacante en el despacho y estamos muy contentos. Son ágiles, serios y muy  profesionales. Agradecidos a la empresa, así  como a Marta y su equipo  por la calidad de los candidatos presentados y por todas las gestiones y apoyo que nos brindaron en el proceso de selección. Muy recomendables.", "name": "Nic Fer"}, {"text": "Mónica es muy amable y profesional. Sin duda, recomiendo a R&S Jobs. Son diferentes y mejores en su sector.", "name": "Rocio Moreno"}]
+    - const ctaCards = [{"title": "Potencia tu búsqueda de empleo", "description": "Descubre consejos, guías y buenas prácticas para encontrar trabajo de forma más rápida y efectiva.", "cta": "IR AL BLOG", "image": "/assets/images/home/blog.png", "href": "/"}, {"title": "¿Buscas talento para tu empresa?", "description": "Publica ofertas y encuentra candidatos en nuestro portal especializado para empleadores y RRHH.", "cta": "BUSCO TALENTO", "image": "/assets/images/home/rrhh.png", "href": "/"}]
     - const colors = ['bg-green', 'bg-blue', 'bg-red']
 
     .container(class="py-[50px] md:py-[100px]")
@@ -21,7 +21,6 @@ mixin testimonials(data)
                         .swiper-slide
                             +review(testimonial, color)
                 .swiper-pagination
-
 
             div(class="flex flex-col items-start gap-8 md:w-[50%]")
                 img(src="/assets/images/home/google-reviews.png" alt="Google Reviews" class="w-[182px] h-auto")

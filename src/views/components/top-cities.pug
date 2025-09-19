@@ -1,0 +1,15 @@
+include ./city-card
+
+mixin top-cities()
+
+    - const cities = [{"type": "city", "text": "#### Madrid", "href": "/", "image": "/assets/images/home/cities/madrid.png", "info": "+190 ofertas"}, {"type": "city", "text": "#### Barcelona", "href": "/", "image": "/assets/images/home/cities/barcelona.png", "info": "+230 ofertas"}, {"type": "city", "text": "#### Sevilla", "href": "/", "image": "/assets/images/home/cities/sevilla.png", "info": "+170 ofertas"}, {"type": "city", "text": "#### Valencia", "href": "/", "image": "/assets/images/home/cities/valencia.png", "info": "+150 ofertas"}]
+
+    .container.flex.flex-col.gap-8
+        .flex.flex-col.gap-4
+            div(class=`text-center text-heading-mobile-3 lg:text-heading-desktop-3 font-bold text-secondary`) No importa donde estés, #[strong(class="text-primary") ¡tenemos un trabajo para ti!]
+            div(class="text-center text-dark") Descubre trabajos en las principales ciudades del país.
+        div(class="grid grid-cols-1 md:grid-cols-2 gap-4 lg:grid-cols-3 xl:grid-cols-4")
+            each item in cities
+                +cityCard(item)
+
+

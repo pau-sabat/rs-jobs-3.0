@@ -6,23 +6,24 @@ block title
 block content
     include ../components/hero
     include ../components/top-categories
-    include ../components/card-list
+    include ../components/top-companies
     include ../components/cta
     include ../components/testimonials
     include ../components/sos-trabajo
     include ../components/process
+    include ../components/top-cities
 
     section
-        +hero(data)
+        +hero()
     section(class="pb-[50px] lg:pb-[100px]")
-        +top-categories(data)
-        +card-list(data, 'companies-list')
+        +top-categories()
+        +top-companies()
     section.bg-gradient-secondary
-        +cta(data)
+        +cta()
     section.bg-light
-        +testimonials(data)
+        +testimonials()
     section.bg-gradient-secondary
         +sos-trabajo
     section(class="bg-light pb-[50px] lg:pb-[100px]")
         +process
-        +card-list(data, 'cities-list')
+        +top-cities()

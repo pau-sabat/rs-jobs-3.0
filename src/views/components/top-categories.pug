@@ -1,18 +1,17 @@
-mixin top-categories(data)
+mixin top-categories()
 
-    - const categories = data.categories
+    - const categories = [{"name": "Marketing", "icon": "📢", "href": "/categorias/marketing"}, {"name": "Comercial", "icon": "💼", "href": "/categorias/comercial-ventas"}, {"name": "Contabilidad / Finanzas", "icon": "💸", "href": "/categorias/contabilidad-finanzas"}, {"name": "Diseño / Creatividad", "icon": "🧑‍🎨", "href": "/categorias/diseno-creatividad"}, {"name": "Desarrollo", "icon": "💻", "href": "/categorias/desarrollo-it"}, {"name": "Atención al cliente", "icon": "📠", "href": "/categorias/atencion-al-cliente"}]
 
     div(class="pt-6 pb-[50px] lg:pt-[50px] lg:pb-[100px]")
         .container
             .flex.flex-col.gap-4
                 div(class="flex flex-col gap-4 md:flex-row justify-between md:items-end")
                     div(class="flex flex-col lg:flex-row gap-2 lg:gap-4 lg:items-end")
-                        h2(class="text-heading-mobile-3 lg:text-heading-desktop-3 font-bold text-primary")=categories.title
-                        p(class="text-small-mobile lg:text-small-desktop text-secondary")=categories.subtitle
-                    a(href=categories.cta.href class="text-small-mobile lg:text-small-desktop text-primary underline")=categories.cta.text
-
+                        h2(class="text-heading-mobile-3 lg:text-heading-desktop-3 font-bold text-primary") Categorías más buscadas
+                        p(class="text-small-mobile lg:text-small-desktop text-secondary") 13.401 empleos - 293 añadidos hoy
+                    a(href="/categorias" class="text-small-mobile lg:text-small-desktop text-primary underline") Ver todas las categorías >
                 .flex.flex-nowrap.justify-between.gap-2.overflow-x-auto
-                    each item in categories.items
+                    each item in categories
                         a(href=item.href class="flex gap-2.5 items-center justify-center px-3 py-2 border border-primary rounded-full whitespace-nowrap")
                             span=item.icon
                             span.font-bold=item.name
