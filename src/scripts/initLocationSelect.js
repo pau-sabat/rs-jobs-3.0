@@ -1,5 +1,5 @@
 export default function initLocationSelect() {
-	const selects = document.querySelectorAll('select[name="location-select"]')
+	const selects = document.querySelectorAll('select[id="location-select"]')
 	if (selects.length > 0) {
 		loadCities(selects)
 	}

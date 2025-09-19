@@ -1,120 +1,140 @@
-{
-    "categories": [
-        {
-            "icon": "🗂️",
-            "name": "Administración / Secretariado",
-            "href": "/categorias/administracion-secretariad"
-        },
-        {
-            "icon": "🎭️",
-            "name": "Arte / Cultura / Espectáculos",
-            "href": "/categorias/arte-cultura-espectaculos"
-        },
-        {
-            "icon": "📠",
-            "name": "Atención al Cliente",
-            "href": "/categorias/atencion-al-cliente"
-        },
-        {
-            "icon": "🔬",
-            "name": "Ciencia / Investigación",
-            "href": "/categorias/ciencia-investigacion"
-        },
-        {
-            "icon": "💼",
-            "name": "Comercial / Ventas",
-            "href": "/categorias/comercial-ventas"
-        },
-        {
-            "icon": "📣",
-            "name": "Comunicación / Medios / RRPP",
-            "href": "/categorias/comunicacion-medios-rrpp"
-        },
-        {
-            "icon": "🧑🛒",
-            "name": "Compras / Aprovisionamiento",
-            "href": "/categorias/compras-aprovisionamiento"
-        },
-        {
-            "icon": "🧱",
-            "name": "Construcción / Inmobiliaria",
-            "href": "/categorias/construccion-inmobiliaria"
-        },
-        {
-            "icon": "💸",
-            "name": "Contabilidad / Finanzas",
-            "href": "/categorias/contabilidad-finanzas"
-        },
-        {
-            "icon": "🏃",
-            "name": "Deporte / Bienestar",
-            "href": "/categorias/deporte-bienestar"
-        },
-        {
-            "icon": "💻",
-            "name": "Desarrollo / IT",
-            "href": "/categorias/desarrollo-it"
-        },
-        {
-            "icon": "🧑‍🎨",
-            "name": "Diseño / Creatividad",
-            "href": "/categorias/diseno-creatividad"
-        },
-        {
-            "icon": "📚",
-            "name": "Educación / Formación",
-            "href": "/categorias/educacion-formacion"
-        },
-        {
-            "icon": "♻",
-            "name": "Energía / Medioambiente / Sostenibilidad",
-            "href": "/categorias/energia-medioambiente-sostenibilidad"
-        },
-        {
-            "icon": "🍽",
-            "name": "Hostelería / Turismo",
-            "href": "/categorias/hosteleria-turismo"
-        },
-        {
-            "icon": "⚙️",
-            "name": "Ingeniería",
-            "href": "/categorias/ingenieria"
-        },
-        {
-            "icon": "⚖️️",
-            "name": "Legal / Asesoría jurídica",
-            "href": "/categorias/legal-asesoria-juridica"
-        },
-        {
-            "icon": "🚚",
-            "name": "Logística / Transporte / Almacenes",
-            "href": "/categorias/logistica-transporte-almacenes"
-        },
-        {
-            "icon": "📢",
-            "name": "Marketing",
-            "href": "/categorias/marketing"
-        },
-        {
-            "icon": "🏭",
-            "name": "Producción / Operarios",
-            "href": "/categorias/produccion-operarios"
-        },
-        {
-            "icon": "🤝",
-            "name": "Recursos Humanos",
-            "href": "/categorias/recursos-humanos"
-        },
-        {
-            "icon": "🩺",
-            "name": "Sanidad / Salud / Enfermería",
-            "href": "/categorias/sanidad-salud-enfermeria"
-        },
-        {
-            "icon": "🫶",
-            "name": "Voluntariado / ONG / Social",
-            "href": "/categorias/voluntariado-ong-social"
-        }
-
-    ]
-}
+[
+	{
+		"icon": "🗂️",
+		"name": "Administración / Secretariado",
+		"href": "/categorias/administracion-secretariad",
+		"slug": "administracion-secretariad"
+	},
+	{
+		"icon": "🎭️",
+		"name": "Arte / Cultura / Espectáculos",
+		"href": "/categorias/arte-cultura-espectaculos",
+		"slug": "arte-cultura-espectaculos"
+	},
+	{
+		"icon": "📠",
+		"name": "Atención al Cliente",
+		"href": "/categorias/atencion-al-cliente",
+		"slug": "atencion-al-cliente"
+	},
+	{
+		"icon": "🔬",
+		"name": "Ciencia / Investigación",
+		"href": "/categorias/ciencia-investigacion",
+		"slug": "ciencia-investigacion"
+	},
+	{
+		"icon": "💼",
+		"name": "Comercial / Ventas",
+		"href": "/categorias/comercial-ventas",
+		"slug": "comercial-ventas"
+	},
+	{
+		"icon": "📣",
+		"name": "Comunicación / Medios / RRPP",
+		"href": "/categorias/comunicacion-medios-rrpp",
+		"slug": "comunicacion-medios-rrpp"
+	},
+	{
+		"icon": "🧑🛒",
+		"name": "Compras / Aprovisionamiento",
+		"href": "/categorias/compras-aprovisionamiento",
+		"slug": "compras-aprovisionamiento"
+	},
+	{
+		"icon": "🧱",
+		"name": "Construcción / Inmobiliaria",
+		"href": "/categorias/construccion-inmobiliaria",
+		"slug": "construccion-inmobiliaria"
+	},
+	{
+		"icon": "💸",
+		"name": "Contabilidad / Finanzas",
+		"href": "/categorias/contabilidad-finanzas",
+		"slug": "contabilidad-finanzas"
+	},
+	{
+		"icon": "🏃",
+		"name": "Deporte / Bienestar",
+		"href": "/categorias/deporte-bienestar",
+		"slug": "deporte-bienestar"
+	},
+	{
+		"icon": "💻",
+		"name": "Desarrollo / IT",
+		"href": "/categorias/desarrollo-it",
+		"slug": "desarrollo-it"
+	},
+	{
+		"icon": "🧑‍🎨",
+		"name": "Diseño / Creatividad",
+		"href": "/categorias/diseno-creatividad",
+		"slug": "diseno-creatividad"
+	},
+	{
+		"icon": "📚",
+		"name": "Educación / Formación",
+		"href": "/categorias/educacion-formacion",
+		"slug": "educacion-formacion"
+	},
+	{
+		"icon": "♻",
+		"name": "Energía / Medioambiente / Sostenibilidad",
+		"href": "/categorias/energia-medioambiente-sostenibilidad",
+		"slug": "energia-medioambiente-sostenibilidad"
+	},
+	{
+		"icon": "🍽",
+		"name": "Hostelería / Turismo",
+		"href": "/categorias/hosteleria-turismo",
+		"slug": "hosteleria-turismo"
+	},
+	{
+		"icon": "⚙️",
+		"name": "Ingeniería",
+		"href": "/categorias/ingenieria",
+		"slug": "ingenieria"
+	},
+	{
+		"icon": "⚖️️",
+		"name": "Legal / Asesoría jurídica",
+		"href": "/categorias/legal-asesoria-juridica",
+		"slug": "legal-asesoria-juridica"
+	},
+	{
+		"icon": "🚚",
+		"name": "Logística / Transporte / Almacenes",
+		"href": "/categorias/logistica-transporte-almacenes",
+		"slug": "logistica-transporte-almacenes"
+	},
+	{
+		"icon": "📢",
+		"name": "Marketing",
+		"href": "/categorias/marketing",
+		"slug": "marketing"
+	},
+	{
+		"icon": "🏭",
+		"name": "Producción / Operarios",
+		"href": "/categorias/produccion-operarios",
+		"slug": "produccion-operarios"
+	},
+	{
+		"icon": "🤝",
+		"name": "Recursos Humanos",
+		"href": "/categorias/recursos-humanos",
+		"slug": "recursos-humanos"
+	},
+	{
+		"icon": "🩺",
+		"name": "Sanidad / Salud / Enfermería",
+		"href": "/categorias/sanidad-salud-enfermeria",
+		"slug": "sanidad-salud-enfermeria"
+	},
+	{
+		"icon": "🫶",
+		"name": "Voluntariado / ONG / Social",
+		"href": "/categorias/voluntariado-ong-social",
+		"slug": "voluntariado-ong-social"
+	}
+]
