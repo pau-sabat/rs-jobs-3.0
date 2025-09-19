@@ -39,11 +39,11 @@
 	{#if currentStep === 1}
 		<Form onSuccess={nextStep}>
 			<div class="grid md:grid-cols-2 gap-3 md:gap-y-[18px] md:gap-x-[30px]">
-				<input type="text" id="name" name="name" placeholder="Nombre*" class="py-1.5 text-small-mobile md:text-small-desktop" />
+				<input type="text" id="name" name="name" autocomplete="off" placeholder="Nombre*" class="py-1.5 text-small-mobile md:text-small-desktop" />
 				<input type="text" id="first_surname" name="first_surname" placeholder="Primer apellido*" class="py-1.5 text-small-mobile md:text-small-desktop" />
 				<input type="text" id="second_surname" name="second_surname" placeholder="Segundo apellido" class="py-1.5 text-small-mobile md:text-small-desktop" />
-				<input type="tel" id="phone" name="phone" placeholder="Teléfono*" class="py-1.5 text-small-mobile md:text-small-desktop" />
-				<input type="email" id="email" name="email" placeholder="Correo electrónico*" class="py-1.5 text-small-mobile md:text-small-desktop" />
+				<input type="tel" id="phone" name="phone" autocomplete="off" placeholder="Teléfono*" class="py-1.5 text-small-mobile md:text-small-desktop" />
+				<input type="email" id="email" name="email" autocomplete="off" placeholder="Correo electrónico*" class="py-1.5 text-small-mobile md:text-small-desktop" />
 				<input type="email" id="email_confirmation" name="email_confirmation" placeholder="Confirmar correo electrónico*" class="py-1.5 text-small-mobile md:text-small-desktop" />
 				<input type="password" id="password" name="password" placeholder="Contraseña*" class="py-1.5 text-small-mobile md:text-small-desktop" />
 				<input type="password" id="password_confirmation" name="password_confirmation" placeholder="Confirmar contraseña*" class="py-1.5 text-small-mobile md:text-small-desktop" />

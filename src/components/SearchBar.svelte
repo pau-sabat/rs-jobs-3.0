@@ -13,7 +13,7 @@
 				<Icon name="search" className="w-4 h-4 text-secondary" />
 			</div>
 			<label for="search" class="sr-only">Buscar puesto de trabajo o palabra clave</label>
-			<input type="text" placeholder="Puesto de trabajo o palabra clave" name="search" class="flex-grow text-small-mobile md:text-small-desktop py-1.5" />
+			<input type="text" placeholder="Puesto de trabajo o palabra clave" name="search" id="search" class="flex-grow text-small-mobile md:text-small-desktop py-1.5" />
 		</div>
 	{/if}
 
@@ -23,7 +23,7 @@
 				<Icon name="location" className="w-3.5 h-5 text-secondary" />
 			</div>
 			<label for="location-select" class="sr-only">Ubicación</label>
-			<select name="location-select" class="flex-grow text-small-mobile md:text-small-desktop py-1.5 border-b border-secondary/50">
+			<select name="location-select" id="location-select" class="flex-grow text-small-mobile md:text-small-desktop py-1.5 border-b border-secondary/50">
 				<option value="">Selecciona la provincia</option>
 			</select>
 		</div>

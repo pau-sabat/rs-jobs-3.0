@@ -112,15 +112,15 @@
 		</fieldset>
 
 		<div class="flex flex-col gap-2">
-			<label for="location" class="text-small-mobile md:text-small-desktop font-bold">Provincias</label>
-			<select name="location-select" class=" flex-grow text-caption-mobile md:text-caption-desktop py-1 border-b border-secondary/50">
+			<label for="location-select" class="text-small-mobile md:text-small-desktop font-bold">Provincias</label>
+			<select name="location-select" id="location-select" class=" flex-grow text-caption-mobile md:text-caption-desktop py-1 border-b border-secondary/50">
 				<option value="">Selecciona la provincia</option>
 			</select>
 		</div>
 
 		<div class="flex flex-col gap-2">
 			<label for="category" class="text-small-mobile md:text-small-desktop font-bold">Categoría</label>
-			<select name="category" class=" flex-grow text-caption-mobile md:text-caption-desktop py-1 border-b border-secondary/50">
+			<select name="category" id="category" class=" flex-grow text-caption-mobile md:text-caption-desktop py-1 border-b border-secondary/50">
 				<option value="">Selecciona la categoría</option>
 			</select>
 		</div>
@@ -140,8 +140,8 @@
 		{/if}
 
 		<div class="flex flex-col gap-2">
-			<label for="category" class="text-small-mobile md:text-small-desktop font-bold">Tipo de jornada</label>
-			<select name="category" class=" flex-grow text-caption-mobile md:text-caption-desktop py-1 border-b border-secondary/50">
+			<label for="workday-type" class="text-small-mobile md:text-small-desktop font-bold">Tipo de jornada</label>
+			<select name="workday-type" id="workday-type" class=" flex-grow text-caption-mobile md:text-caption-desktop py-1 border-b border-secondary/50">
 				<option value="">Selecciona el tipo de jornada</option>
 			</select>
 		</div>
