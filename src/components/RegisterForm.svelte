@@ -12,12 +12,16 @@
 			console.log('register candidate (step 1)')
 		} else if (currentStep === 2) {
 			console.log('register candidate info (step 2)')
-		}
-		else if (currentStep === 3) {
+		} else if (currentStep === 3) {
 			console.log('update (info + cv) (step 3)')
 		}
 		if (currentStep < steps) {
 			currentStep++
+		}
+
+		const loginLink = document.getElementById('login-link')
+		if (loginLink && currentStep !== 1) {
+			loginLink.classList.add('hidden')
 		}
 	}
 
