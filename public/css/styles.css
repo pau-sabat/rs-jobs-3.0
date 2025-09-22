@@ -130,6 +130,10 @@ select {
 	color: inherit;
 }
 
+select:has(option[data-default]:checked) {
+	@apply text-secondary/50;
+}
+
 /* Select con color primario */
 select.text-primary {
 	background-image: url('/assets/images/icons/arrow-down-pink.svg');
@@ -150,7 +154,8 @@ select:focus {
 }
 
 /* Listas */
-ul, ol {
+ul,
+ol {
 	@apply list-outside pl-6;
 }
 

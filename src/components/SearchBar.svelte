@@ -24,7 +24,7 @@
 			</div>
 			<label for="location-select" class="sr-only">Ubicación</label>
 			<select name="location-select" id="location-select" class="flex-grow text-small-mobile md:text-small-desktop py-1.5 border-b border-secondary/50">
-				<option value="">Selecciona la provincia</option>
+				<option value="" data-default>Selecciona la provincia</option>
 			</select>
 		</div>
 	{/if}

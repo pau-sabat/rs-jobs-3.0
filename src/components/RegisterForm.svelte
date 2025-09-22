@@ -56,7 +56,7 @@
 			<div class="grid md:grid-cols-2 gap-3 md:gap-y-[18px] md:gap-x-[30px] items-stretch">
 				<input type="date" id="birthdate" name="birthdate" placeholder="Fecha de nacimiento (dd/mm/yyyy)" class="py-1.5 text-small-mobile md:text-small-desktop" />
 				<select name="gender" class="text-small-mobile md:text-small-desktop py-1.5 border-b border-secondary/50">
-					<option value="">Género (opcional)</option>
+					<option value="" data-default>Género (opcional)</option>
 					<option value="male">Masculino</option>
 					<option value="female">Femenino</option>
 					<option value="other">Otro</option>
@@ -106,17 +106,17 @@
 				</div>
 
 				<select name="country" autocomplete="off" class="text-small-mobile md:text-small-desktop py-1.5 border-b border-secondary/50">
-					<option value="">País*</option>
+					<option value="" data-default>País*</option>
 					<option value="spain">España</option>
 					<option value="other">Otro</option>
 				</select>
 
 				<select name="province" class="text-small-mobile md:text-small-desktop py-1.5 border-b border-secondary/50">
-					<option value="">Provincia*</option>
+					<option value="" data-default>Provincia*</option>
 				</select>
 
 				<select name="town" class="text-small-mobile md:text-small-desktop py-1.5 border-b border-secondary/50">
-					<option value="">Población*</option>
+					<option value="" data-default>Población*</option>
 				</select>
 
 				<input type="text" id="postal_code" name="postal_code" placeholder="Código postal*" autocomplete="off" class="py-1.5 text-small-mobile md:text-small-desktop" />
