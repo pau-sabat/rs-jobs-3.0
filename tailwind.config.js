@@ -4,7 +4,6 @@ module.exports = {
     "./src/**/*.{js,svelte,ts}",
     "./src/views/**/*.pug",
     "./public/**/*.{html,js,css}",
-    "./app.js"
   ],
   theme: {
     extend: {

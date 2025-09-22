@@ -19,7 +19,7 @@ mixin navbar(data)
             svg(width="10" height="5" viewBox="0 0 10 5" fill="none")
               path(d="M0 0L5 5L10 0H0Z" fill="currentColor")
           a(href='/login').btn.btn-primary Soy empresa
-          a(href='/').btn.btn-secondary-outline Acceso candidato
+          a(href='/login').btn.btn-secondary-outline Acceso candidato
 
         div(class="lg:hidden")
           button(aria-label="Open mobile menu").h-6.w-6.flex.items-center.justify-center.text-secondary#mobile-menu-button
@@ -32,14 +32,14 @@ mixin navbar(data)
         .px-6.py-4.flex.flex-col.items-stretch.justify-between.min-h-full.gap-10
           .flex.flex-col.gap-4
             a(href='/ofertas-trabajo' class="text-secondary font-bold h-10 flex items-center justify-center") Buscar trabajo
-            a(href='/' class="text-secondary font-bold h-10 flex items-center justify-center") Buscar empresa
+            a(href='/busqueda-de-empresas' class="text-secondary font-bold h-10 flex items-center justify-center") Buscar empresa
             .flex.items-center.justify-center.h-10
               button(class="flex items-center gap-1.5 p-2 text-secondary")
                 | es
                 svg(width="10" height="5" viewBox="0 0 10 5" fill="none")
                   path(d="M0 0L5 5L10 0H0Z" fill="currentColor")
           .flex.flex-col.gap-2
-            a.btn(class=`btn-secondary-outline` href='/') Soy empresa
-            a.btn(class=`btn-primary` href='/') Acceso candidato
+            a.btn(class=`btn-secondary-outline` href='/login') Soy empresa
+            a.btn(class=`btn-primary` href='/login') Acceso candidato
 
 

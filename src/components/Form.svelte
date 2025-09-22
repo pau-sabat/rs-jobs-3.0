@@ -2,6 +2,7 @@
 	export let endpoint: string | undefined = undefined
 	export let errors: any[] = []
 	export let onSuccess: () => void = () => {}
+	export let method: string = 'POST'
 
 	async function submit(event: Event): Promise<void> {
 		event.preventDefault()
@@ -25,7 +26,7 @@
 		if (hasFiles) {
 			try {
 				const res = await fetch(endpoint, {
-					method: 'POST',
+					method: method,
 					body: formData,
 				})
 
@@ -41,7 +42,7 @@
 
 			try {
 				const res = await fetch(endpoint, {
-					method: 'POST',
+					method: method,
 					headers: { 'Content-Type': 'application/json' },
 					body: JSON.stringify(json),
 				})
