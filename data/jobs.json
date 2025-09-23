@@ -223,6 +223,40 @@
 		},
 		{
 			"company": {
+				"name": "ElectryConsulting",
+				"logo": "/assets/images/home/companies/electryconsulting-logo.png",
+				"featured": true
+			},
+			"job": {
+				"url": "/oferta-de-empleo/test",
+				"title": "Project Manager de Sostenibilidad",
+				"description": "Buscamos un project manager para liderar iniciativas de sostenibilidad energética. Coordinarás proyectos de eficiencia energética, gestionarás equipos multidisciplinarios y asegurarás la entrega exitosa de soluciones sostenibles.",
+				"conditions": ["Jornada completa", "Contrato indefinido", "Gestión de equipos"],
+				"publishedAt": "2025-01-24T09:45:00.000Z",
+				"location": "Valencia",
+				"salary": "3500€ - 4500€ Brutos/mes",
+				"category": "Gestión de proyectos"
+			}
+		},
+		{
+			"company": {
+				"name": "ElectryConsulting",
+				"logo": "/assets/images/home/companies/electryconsulting-logo.png",
+				"featured": true
+			},
+			"job": {
+				"url": "/oferta-de-empleo/test",
+				"title": "Project Manager de Sostenibilidad",
+				"description": "Buscamos un project manager para liderar iniciativas de sostenibilidad energética. Coordinarás proyectos de eficiencia energética, gestionarás equipos multidisciplinarios y asegurarás la entrega exitosa de soluciones sostenibles.",
+				"conditions": ["Jornada completa", "Contrato indefinido", "Gestión de equipos"],
+				"publishedAt": "2025-01-24T09:45:00.000Z",
+				"location": "Valencia",
+				"salary": "3500€ - 4500€ Brutos/mes",
+				"category": "Gestión de proyectos"
+			}
+		},
+		{
+			"company": {
 				"name": "L'ver Hoteles",
 				"logo": "/assets/images/home/companies/lver-logo.png",
 				"featured": true

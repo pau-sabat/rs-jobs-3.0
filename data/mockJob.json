@@ -3,7 +3,8 @@
 		"name": "ElectryConsulting",
 		"logo": "/assets/images/home/companies/electryconsulting-logo.png",
 		"featuredImage": "/assets/images/company/banner.png",
-		"featured": true
+		"featured": true,
+		"link": "/empresa/electryconsulting"
 	},
 	"job": {
 		"title": "Responsable comercial de seguros - Ourense",

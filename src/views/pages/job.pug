@@ -13,13 +13,15 @@ block content
 
     .container
         div(class="flex flex-col py-6 md:py-8")
-            img(src=company.featuredImage, alt=`${company.name} banner`, class="hidden md:block w-full mb-[30px] h-auto rounded-lg rounded-2xlmax-h-[200px] object-cover")
+            img(src=company.featuredImage, alt=`${company.name} banner`, class="hidden md:block w-full mb-[30px] h-auto rounded-2xl max-h-[200px] object-cover")
             div(class="grid grid-cols-1 gap-6 lg:grid-cols-12 lg:gap-[30px]")
                 div(class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-3 lg:col-span-12")
                     div(class="grid grid-rows-[auto_auto] grid-cols-[auto_1fr] gap-y-1.5 gap-x-2 lg:gap-x-4 grow")
-                        img(src=company.logo, alt=`${company.name} logo`, class="w-[35px] h-[35px] lg:w-[65px] lg:h-[65px] rounded-full object-cover col-span-1 lg:row-span-2")
+                        a(href=company.link class="w-[35px] h-[35px] lg:w-[65px] lg:h-[65px] col-span-1 lg:row-span-2")
+                            img(src=company.logo, alt=`${company.name} logo`, class="w-full h-full rounded-full overflow-hidden object-cover")
                         div(class="flex items-center justify-start gap-2 lg:gap-4 col-span-1")
-                            h2(class="text-small-mobile md:text-small-desktop lg:text-heading-desktop-4 font-bold text-primary")=company.name
+                            h2(class="text-small-mobile md:text-small-desktop lg:text-heading-desktop-4 font-bold text-primary")
+                                a(href=company.link)=company.name
                             if company.featured
                                 span(class="text-blue bg-blue/10 px-2 py-[2px] rounded-[3px] text-legal-mobile md:text-legal-desktop lg:text-caption-desktop") Destacada
                         div(class="flex items-center justify-start gap-1 text-legal-mobile md:text-legal-desktop lg:text-caption-desktop text-gray col-span-2 lg:col-span-1")
@@ -51,11 +53,11 @@ block content
                         div(class="flex items-center gap-[18px]")
                             span.font-bold.text-secondary ¡Comparte esta oferta!
                             .flex.items-center.gap-2
-                                a(href='/')
+                                a(href='/' aria-label="Compartir en Linkedin")
                                     img(src="/assets/images/social/linkedin.svg" alt="Linkedin logo" class="w-8 h-8")
-                                a(href='/')
+                                a(href='/' aria-label="Compartir en Facebook")
                                     img(src="/assets/images/social/facebook.svg" alt="Facebook logo" class="w-8 h-8")
-                                a(href='/')
+                                a(href='/' aria-label="Compartir en X")
                                     img(src="/assets/images/social/X.svg" alt="X logo" class="w-8 h-8")
                                 button(onclick="navigator.clipboard.writeText(window.location.href)" aria-label="Copiar enlace de la oferta" class="bg-primary text-white rounded-[9px] flex items-center justify-center w-8 h-8")
                                     +svg('copy', 'w-[17px] h-[17px]')

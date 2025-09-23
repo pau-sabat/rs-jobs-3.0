@@ -4,6 +4,7 @@
 	import JobCard from './JobCard.svelte'
 	import Paginator from './Paginator.svelte'
 	import type { Offer } from '$lib/types'
+	import { loadingService } from '../services/loadingService'
 
 	export let company: string
 
@@ -22,6 +23,7 @@
 	})
 
 	const fetchJobs = async (): Promise<void> => {
+		loadingService.show()
 		fetch('/data/jobs.json')
 			.then(response => response.json())
 			.then(data => {
@@ -35,6 +37,12 @@
 				console.error('Error fetching jobs:', error)
 				jobs = []
 				totalPages = 1
+			})
+			.finally(() => {
+				setTimeout(() => {
+					//TODO: remove mock delay
+					loadingService.hide()
+				}, 1000)
 			})
 	}
 

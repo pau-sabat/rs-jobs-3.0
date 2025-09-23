@@ -10,8 +10,8 @@ block content
 
     .container
         div(class="flex flex-col py-6 md:py-8")
-            div(class="relative mb-[50px] lg:mb-[100px]")
-                img(src=data.featuredImage, alt=`${data.name} banner`, class="w-full h-auto aspect-[366/100] rounded-lg lg:rounded-2xl object-cover")
+            div(class="relative mb-[50px] lg:mb-[130px]")
+                img(src=data.featuredImage, alt=`${data.name} banner`, class="w-full h-auto aspect-[366/100] lg:aspect-[1170/200] max-h-[200px] rounded-lg lg:rounded-2xl object-cover")
                 div(class="absolute -bottom-7 lg:bottom-auto lg:top-[70%] left-1/2 lg:left-5 -translate-x-1/2 lg:translate-x-0 bg-white flex items-center justify-center rounded-full overflow-hidden w-[75px] h-[75px] lg:w-[150px] lg:h-[150px]")
                     img(src=data.logo, alt=`${data.name} logo`, class="w-[93%] h-[93%] rounded-full overflow-hidden object-contain")
 
@@ -24,7 +24,7 @@ block content
                                 div(class="text-legal-mobile lg:text-legal-desktop text-blue bg-blue/10 py-0.5 px-2 rounded-[3.3px]") Destacada
                         div(class="hidden lg:flex items-center justify-center gap-2")
                             each social in data.social
-                                a(href=social.url, target="_blank")
+                                a(href=social.url, target="_blank", aria-label=`Seguir a ${data.name} en ${social.name}`)
                                     != fs.readFileSync(path.join(process.cwd(), 'public', 'assets', 'images', 'social', `${social.name.toLowerCase()}.svg`), 'utf8')
 
                     div(class="flex flex-wrap justify-center md:justify-start gap-x-2 gap-y-1 text-small-mobile lg:text-small-desktop")
