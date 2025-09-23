@@ -1,38 +1,36 @@
 const express = require('express')
 const router = express.Router()
+const { render, renderWithData } = require('../middlewares/renderMiddleware')
+const fileService = require('../services/fileService')
 
-// Importar rutas específicas
-const homeRoutes = require('./home')
-const jobRoutes = require('./jobs')
-const companiesRoutes = require('./companies')
-const companyRoutes = require('./company')
-const contactRoutes = require('./contact')
-const loginRoutes = require('./login')
-const registerRoutes = require('./register')
-const jobOfferRoutes = require('./job')
-const categoriesRoutes = require('./categories')
+router.get('/', render('home'))
+router.get('/ofertas-trabajo', render('search-job'))
+router.get('/busqueda-de-empresas', render('search-company'))
+router.use(
+	'/empresa',
+	renderWithData('company', async req => {
+		const data = fileService.readJson('mockCompany')
+		return { data }
+	})
+)
+router.get('/oferta-de-empleo', renderWithData('job', async req => {
+	const data = fileService.readJson('mockJob')
+	return { data }
+}))
+router.get(
+	'/categorias',
+	renderWithData('categories', async req => {
+		const categoriesData = fileService.readJson('categories')
+		return { data: categoriesData || [] }
+	})
+)
 
-// Configurar rutas
-router.use('/', homeRoutes)
-router.use('/ofertas-trabajo', jobRoutes)
-router.use('/busqueda-de-empresas', companiesRoutes)
-router.use('/empresa', companyRoutes)
-router.use('/contacto', contactRoutes)
-router.use('/login', loginRoutes)
-router.use('/registro', registerRoutes)
-router.use('/oferta-de-empleo', jobOfferRoutes)
-router.use('/categorias', categoriesRoutes)
-router.use('/politica-de-cookies', (req, res) => {
-	res.render('pages/cookies')
-})
-router.use('/politica-de-privacidad-para-candidatos', (req, res) => {
-	res.render('pages/privacy-candidate')
-})
-router.use('/aviso-legal', (req, res) => {
-	res.render('pages/legal-notice')
-})
-router.use('/terminos-y-condiciones-para-candidatos', (req, res) => {
-	res.render('pages/terms-candidate')
-})
+router.get('/contacto', render('contact'))
+router.get('/login', render('login'))
+router.get('/registro', render('register'))
+router.get('/politica-de-cookies', render('cookies'))
+router.get('/politica-de-privacidad-para-candidatos', render('privacy-candidate'))
+router.get('/aviso-legal', render('legal-notice'))
+router.get('/terminos-y-condiciones-para-candidatos', render('terms-candidate'))
 
 module.exports = router
