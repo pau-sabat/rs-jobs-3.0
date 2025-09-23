@@ -17,6 +17,7 @@ const componentMap: Record<string, any> = {
 	Alert: components.Alert,
 	Save: components.Save,
 	CookieBanner: components.CookieBanner,
+	LanguageSelector: components.LanguageSelector,
 };
 
 export default function initializeSvelte(): void {
