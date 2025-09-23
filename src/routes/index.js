@@ -1,11 +1,18 @@
-const express = require('express')
+import express from 'express'
 const router = express.Router()
-const { render, renderWithData } = require('../middlewares/renderMiddleware')
-const fileService = require('../services/fileService')
+import { render, renderWithData } from '../middlewares/renderMiddleware.js'
+import fileService from '../services/fileService.js'
+import { changeLanguage } from '../controllers/languageController.js'
 
+// Language routes
+router.get('/change-language', changeLanguage)
+
+// Main routes
 router.get('/', renderWithData('home', async req => {
 	const data = fileService.readJson('cities')
-	return { data: data || [] }
+	return {
+		data: data || [],
+	}
 }))
 router.get('/ofertas-trabajo', render('search-job'))
 router.get('/busqueda-de-empresas', render('search-company'))
@@ -36,4 +43,4 @@ router.get('/politica-de-privacidad-para-candidatos', render('privacy-candidate'
 router.get('/aviso-legal', render('legal-notice'))
 router.get('/terminos-y-condiciones-para-candidatos', render('terms-candidate'))
 
-module.exports = router
+export default router

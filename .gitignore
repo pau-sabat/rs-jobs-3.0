@@ -13,3 +13,6 @@ npm-debug.log*
 # Archivos temporales
 .tmp/
 .cache/
+
+# Env
+.env

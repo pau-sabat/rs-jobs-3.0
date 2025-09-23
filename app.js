@@ -1,7 +1,36 @@
-const express = require('express')
+import i18next from 'i18next'
+import Backend from 'i18next-fs-backend'
+import middleware from 'i18next-http-middleware'
+import { languageMiddleware } from './src/middlewares/languageMiddleware.js'
+import routes from './src/routes/index.js'
+import express from 'express'
+import path from 'path'
+import fs from 'fs'
+import { fileURLToPath } from 'url'
+
+const PORT = process.env.PORT || 3000
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = path.dirname(__filename)
+
+i18next
+	.use(Backend)
+	.use(middleware.LanguageDetector)
+	.init({
+		backend: {
+			loadPath: path.join(process.cwd(), 'src/locales', '{{lng}}', '{{ns}}.json'),
+		},
+		detection: {
+			order: ['path', 'cookie', 'header'],
+			caches: ['cookie'],
+		},
+		fallbackLng: 'es',
+		preload: ['es', 'ca'],
+		returnObjects: true,
+	})
+
 const app = express()
-const path = require('path')
-const fs = require('fs')
+
+app.use(middleware.handle(i18next))
 
 app.set('view engine', 'pug')
 app.set('views', path.join(__dirname, 'src', 'views'))
@@ -19,7 +48,6 @@ let marked
 		gfm: true,
 	})
 })()
-
 
 let dayjs
 const loadDayjs = async () => {
@@ -57,8 +85,7 @@ app.use('/static', express.static(path.join(__dirname, 'public/static')))
 // Ruta específica para archivos de datos JSON
 app.use('/data', express.static(path.join(__dirname, 'data')))
 
-// Importar y usar rutas
-const routes = require('./src/routes')
+app.use(languageMiddleware)
 
 // Usar rutas principales
 app.use('/', routes)
@@ -80,7 +107,6 @@ app.use((err, req, res, next) => {
 	})
 })
 
-const PORT = 3000
 app.listen(PORT, () => {
 	console.log(`Server running at http://localhost:${PORT}`)
 })
