@@ -1,4 +1,3 @@
-export { default as initLocationSelect } from './initLocationSelect'
 export { default as initNavbar } from './initNavbar'
 export { initSwiper } from './swiper'
 export { default as initCategoriesSelect } from './initCategoriesSelect'

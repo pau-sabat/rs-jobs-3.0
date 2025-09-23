@@ -1,6 +1,6 @@
 // Punto de entrada principal para Vite
+import { initCategoriesSelect, initNavbar, initSwiper, jobOffer } from './scripts/index';
 import initializeSvelte from './scripts/loadComponents';
-import { initNavbar, initLocationSelect, initSwiper, initCategoriesSelect, jobOffer } from './scripts/index';
 
 // Ejecutar cuando el DOM esté listo
 if (document.readyState === 'loading') {
@@ -13,7 +13,6 @@ function main(): void {
 	initializeSvelte();
 	initNavbar();
 	initSwiper();
-	initLocationSelect();
 	initCategoriesSelect();
 	jobOffer();
 }
