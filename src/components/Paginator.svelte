@@ -23,7 +23,7 @@
 			{text}
 		</button>
 	</div>
-	<div class="hidden md:flex flex-nowrap gap-2 items-center justify-center font-bold">
+	<div class="hidden md:flex flex-nowrap gap-2 items-stretch justify-center font-bold">
 		<button on:click={() => handlePageChange(currentPage - 1)} disabled={currentPage <= 1} class="text-secondary flex items-center gap-2.5 py-1.5 px-3 rounded-[4px] transition-colors disabled:opacity-50 disabled:cursor-not-allowed enabled:hover:bg-secondary/10">
 			<span class="h-6 w-6 flex items-center justify-center">
 				<Icon name="arrow-right" className="w-4 h-4 rotate-180" />
@@ -35,7 +35,7 @@
 				<span>{page}</span>
 			</button>
 		{/each}
-		<button on:click={() => handlePageChange(currentPage + 1)} disabled={currentPage >= totalPages} class="text-secondary flex items-center gap-2.5 px-3 rounded-[4px] transition-colors disabled:opacity-50 disabled:cursor-not-allowed enabled:hover:bg-secondary/10">
+		<button on:click={() => handlePageChange(currentPage + 1)} disabled={currentPage >= totalPages} class="text-secondary flex items-center gap-2.5 py-1.5 px-3 rounded-[4px] transition-colors disabled:opacity-50 disabled:cursor-not-allowed enabled:hover:bg-secondary/10">
 			Siguiente
 			<span class="h-6 w-6 flex items-center justify-center">
 				<Icon name="arrow-right" className="w-4 h-4" />

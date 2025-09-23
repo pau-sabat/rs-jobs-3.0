@@ -30,7 +30,7 @@ block content
                             span(class=isRecent ? 'text-green' : 'text-gray') #{publishedAt ? publishedAt.fromNow() : ''}
                             if isRecent
                                 span(class="text-green bg-green/10 px-2 py-[2px] rounded-[3px]") Nueva
-                    div(class="bg-light lg:bg-transparent fixed lg:static bottom-0 left-0 right-0 p-6 pt-3 lg:p-0 z-10")
+                    div(id="job-cta" class="bg-light lg:bg-transparent fixed lg:static bottom-0 left-0 right-0 p-6 pt-3 lg:p-0 z-10")
                         div(class="flex items-center gap-4 max-w-[600px] lg:max-w-none mx-auto")
                             a(href="#" class="btn btn-primary w-full") Enviar solicitud
                             div(class="bg-white rounded-full w-[50px] h-[50px] flex items-center justify-center shrink-0")
@@ -39,7 +39,7 @@ block content
                 div(class="space-y-[12px] lg:space-y-[16px] lg:col-span-4 lg:order-3")
                     div(class="bg-gradient-secondary rounded-lg p-4 flex flex-col gap-2 lg:gap-3 lg:p-6")
                         each detail in jobDetails
-                            .flex.items-center.gap-4
+                            .flex.items-center.gap-3
                                 div(class="flex items-center justify-center w-6 h-6 text-primary")
                                     +svg(detail.icon.name, detail.icon.className)
                                 .flex.flex-col
@@ -57,7 +57,7 @@ block content
                                     img(src="/assets/images/social/facebook.svg" alt="Facebook logo" class="w-8 h-8")
                                 a(href='/')
                                     img(src="/assets/images/social/X.svg" alt="X logo" class="w-8 h-8")
-                                a(href='/' class="bg-primary text-white rounded-[9px] flex items-center justify-center w-8 h-8")
+                                button(onclick="navigator.clipboard.writeText(window.location.href)" aria-label="Copiar enlace de la oferta" class="bg-primary text-white rounded-[9px] flex items-center justify-center w-8 h-8")
                                     +svg('copy', 'w-[17px] h-[17px]')
                         a(href="#" class="text-red underline text-small-desktop") Denunciar oferta
                 div(class="flex flex-col gap-3 lg:gap-6 lg:bg-white lg:rounded-lg lg:p-8 lg:col-span-8 lg:order-2")
@@ -106,6 +106,7 @@ block content
                                 img(src="/assets/images/social/facebook.svg" alt="Facebook logo" class="w-8 h-8")
                             a(href='/')
                                 img(src="/assets/images/social/X.svg" alt="X logo" class="w-8 h-8")
-                            a(href='/' class="bg-primary text-white rounded-[9px] flex items-center justify-center w-8 h-8")
+                            button(onclick="navigator.clipboard.writeText(window.location.href)" aria-label="Copiar enlace de la oferta" class="bg-primary text-white rounded-[9px] flex items-center justify-center w-8 h-8")
                                 +svg('copy', 'w-[17px] h-[17px]')
                     a(href="#" class="text-red underline text-small-mobile") Denunciar oferta
+
