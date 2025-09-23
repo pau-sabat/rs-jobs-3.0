@@ -16,7 +16,7 @@ export default defineConfig({
 	build: {
 		outDir: '../public/static',
 		rollupOptions: {
-			input: 'src/main.js',
+			input: 'src/main.ts',
 			output: {
 				entryFileNames: 'bundle.js',
 				chunkFileNames: 'bundle.js',

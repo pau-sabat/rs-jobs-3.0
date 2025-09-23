@@ -26,16 +26,6 @@
 			"$app/*": ["./src/app/*"]
 		}
 	},
-	"include": [
-		"src/**/*.d.ts",
-		"src/**/*.ts",
-		"src/**/*.svelte"
-	],
-	"exclude": [
-		"node_modules/**",
-		"dist/**",
-		"public/**",
-		"src/**/*.js",
-		"src/**/*.mjs"
-	]
+	"include": ["src/**/*.d.ts", "src/**/*.ts", "src/**/*.svelte", "src/main.ts"],
+	"exclude": ["node_modules/**", "dist/**", "public/**", "src/**/*.js", "src/**/*.mjs"]
 }
