@@ -1,29 +1,10 @@
-declare global {
-	class Swiper {
-		constructor(element: HTMLElement, config: any);
-	}
-}
+import Swiper from 'swiper'
+import { Autoplay, Pagination } from 'swiper/modules'
+import 'swiper/swiper-bundle.css'
 
-interface SwiperConfig {
-	slidesPerView: number;
-	spaceBetween: number;
-	loop: boolean;
-	autoplay: {
-		delay: number;
-		disableOnInteraction: boolean;
-	};
-	grabCursor: boolean;
-	watchOverflow: boolean;
-	observer: boolean;
-	observeParents: boolean;
-	pagination: {
-		el: string;
-		clickable: boolean;
-	};
-}
-
-const componentMap: Record<string, SwiperConfig> = {
+const componentMap: Record<string, any> = {
 	'.testimonials-swiper': {
+		modules: [Autoplay, Pagination],
 		slidesPerView: 1,
 		spaceBetween: 20,
 		loop: true,
@@ -40,13 +21,13 @@ const componentMap: Record<string, SwiperConfig> = {
 			clickable: true,
 		},
 	},
-};
+}
 
 export const initSwiper = (): void => {
 	Object.entries(componentMap).forEach(([selector, config]) => {
-		const element = document.querySelector(selector) as HTMLElement;
+		const element = document.querySelector(selector) as HTMLElement
 		if (element) {
-			new Swiper(element, config);
+			new Swiper(element, config)
 		}
-	});
-};
+	})
+}
