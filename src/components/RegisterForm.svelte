@@ -115,7 +115,7 @@
 					<option value="other">Otro</option>
 				</select>
 
-				<select name="province" class="text-small-mobile md:text-small-desktop py-1.5 border-b border-secondary/50">
+				<select name="province" id="location-select" class="text-small-mobile md:text-small-desktop py-1.5 border-b border-secondary/50">
 					<option value="" data-default>Provincia*</option>
 				</select>
 
