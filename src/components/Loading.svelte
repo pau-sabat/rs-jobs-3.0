@@ -6,6 +6,16 @@
 	let loading: boolean = false
 	let unsubscribe: (() => void) | null = null
 
+	// Function to prevent scroll
+	function preventScroll() {
+		document.body.style.overflow = 'hidden'
+	}
+
+	// Function to restore scroll
+	function restoreScroll() {
+		document.body.style.overflow = ''
+	}
+
 	// Subscribe to service changes
 	onMount(() => {
 		// Get initial state
@@ -14,7 +24,18 @@
 		// Subscribe to changes
 		unsubscribe = loadingService.subscribe(isLoading => {
 			loading = isLoading
+			// Control scroll based on loading state
+			if (isLoading) {
+				preventScroll()
+			} else {
+				restoreScroll()
+			}
 		})
+
+		// Handle initial state
+		if (loading) {
+			preventScroll()
+		}
 
 		// expose in window
 		// ;(window as any).Loading = loadingService
@@ -24,6 +45,9 @@
 		if (unsubscribe) {
 			unsubscribe()
 		}
+
+		// Always restore scroll when component is destroyed
+		restoreScroll()
 
 		// Clean up global references
 		// if ((window as any).Loading === loadingService) {

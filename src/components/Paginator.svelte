@@ -31,8 +31,8 @@
 			Anterior
 		</button>
 		{#each Array.from({ length: totalPages }, (_, i) => i + 1) as page}
-			<button on:click={() => handlePageChange(page)} class="text-secondary flex items-center py-1.5 px-3 rounded-[4px] transition-colors {currentPage === page ? 'bg-secondary text-white' : 'hover:bg-secondary/10'}">
-				{page}
+			<button on:click={() => handlePageChange(page)} class="text-secondary flex items-center justify-center py-1.5 px-3 w-[39px] h-[39px] rounded-[4px] transition-colors {currentPage === page ? 'bg-secondary text-white' : 'hover:bg-secondary/10'}">
+				<span>{page}</span>
 			</button>
 		{/each}
 		<button on:click={() => handlePageChange(currentPage + 1)} disabled={currentPage >= totalPages} class="text-secondary flex items-center gap-2.5 px-3 rounded-[4px] transition-colors disabled:opacity-50 disabled:cursor-not-allowed enabled:hover:bg-secondary/10">

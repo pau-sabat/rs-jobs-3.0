@@ -7,6 +7,7 @@
 	import JobFilters from './JobFilters.svelte'
 	import { onMount } from 'svelte'
 	import type { Offer } from '$lib/types'
+	import Form from './Form.svelte'
 
 	let jobs: Offer[] = []
 	let filters: any = {}
@@ -19,6 +20,13 @@
 	$: startIndex = (currentPage - 1) * jobsPerPage
 	$: endIndex = startIndex + jobsPerPage
 	$: currentPageJobs = jobs.slice(startIndex, endIndex)
+
+	const featuredCompanies: { link: string; image: string; class: string }[] = [
+		{ link: '/empresa/solvethex', image: '/assets/images/home/companies/solvethex-logo.png', class: 'bg-black' },
+		{ link: '/empresa/lver', image: '/assets/images/home/companies/lver-logo.png', class: 'bg-[#00A5AC]' },
+		{ link: '/empresa/electryconsulting', image: '/assets/images/home/companies/electryconsulting-logo.png', class: 'bg-white' },
+		{ link: '/empresa/spotify', image: '/assets/images/home/companies/spotify-logo.png', class: 'bg-black' },
+	]
 
 	async function fetchFilters(): Promise<void> {
 		try {
@@ -74,14 +82,16 @@
 </script>
 
 <div class="flex flex-col gap-6 md:gap-8">
-	<SearchBar location={showLocation} />
+	<Form endpoint="/search">
+		<SearchBar location={showLocation} />
+	</Form>
 	<div class="flex flex-col gap-4 lg:flex-row lg:flex-nowrap items-center justify-between lg:justify-end text-small-mobile lg:text-small-desktop">
 		<div class="w-full lg:w-auto lg:hidden flex items-center justify-between gap-4">
 			{jobs.length} empleos
 			<JobFilters {filters} />
 		</div>
 		<div class="flex items-center gap-4">
-			Ordenar por
+			Ordenar por:
 			<select name="published-date" class="pr-[30px] border-none py-0 text-primary underline appearance-none bg-transparent">
 				<option value="newest">Fecha de publicación</option>
 			</select>
@@ -101,8 +111,10 @@
 				<JobCard offer={job} />
 				{#if index % 4 === 3 && index < currentPageJobs.length - 1}
 					<div class="flex flex-wrap items-center justify-center gap-6">
-						{#each [1, 2, 3, 4] as _}
-							<a href="/" class="bg-dark/50 w-[calc(50%-12px)] max-w-[170px] max-h-[130px] aspect-[170/130] flex items-center justify-center"> Company Logo </a>
+						{#each featuredCompanies as company}
+							<a href={company.link} class={`${company.class} w-[calc(50%-12px)] max-w-[170px] max-h-[130px] aspect-[170/130] lg:max-w-[109px] lg:max-h-[109px] lg:aspect-square  flex items-center justify-center`}>
+								<img src={company.image} alt="" class="w-[50%] h-[50%] object-cover" />
+							</a>
 						{/each}
 					</div>
 				{/if}

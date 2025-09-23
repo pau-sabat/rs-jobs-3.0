@@ -44,7 +44,7 @@
 
 			<!-- Botón de guardar (mobile) -->
 			<div class="md:hidden">
-				<Save bind:isSaved text="Guardar oferta"/>
+				<Save bind:isSaved text="Guardar oferta" />
 			</div>
 		</div>
 
@@ -78,10 +78,10 @@
 		<div class="flex flex-wrap gap-x-4 gap-y-1 items-center text-legal-mobile md:text-legal-desktop text-gray">
 			<!-- Ubicación -->
 			<div class="flex items-center gap-1">
-				<div class="flex items-center justify-center w-4 h-4 md:w-[18px] md:h-[18px]">
+				<div class="flex justify-center items-center w-4 h-4 md:w-[18px] md:h-[18px]">
 					<Icon name="location" className="w-[9px] h-[13px] md:w-[10.5px] md:h-[15px]" />
 				</div>
-				<span>{job.location}</span>
+				<span class="leading-[100%]">{job.location}</span>
 			</div>
 
 			<!-- Salario -->
@@ -89,7 +89,7 @@
 				<div class="flex items-center justify-center w-4 h-4 md:w-[18px] md:h-[18px]">
 					<Icon name="wallet" className="w-[13.3px] h-[10.7px] md:w-[15px] md:h-[12px]" />
 				</div>
-				<span>{job.salary}</span>
+				<span class="leading-[100%]">{job.salary}</span>
 			</div>
 
 			<!-- Categoría (solo desktop) -->
@@ -97,7 +97,7 @@
 				<div class="flex items-center justify-center w-4 h-4 md:w-[18px] md:h-[18px]">
 					<Icon name="briefcase" className="w-[15px] h-[14.25px]" />
 				</div>
-				<span>{job.category}</span>
+				<span class="leading-[100%]">{job.category}</span>
 			</div>
 		</div>
 	</div>
@@ -105,7 +105,7 @@
 	<!-- Botón de guardar (desktop) -->
 	{#if !compact}
 		<div class="hidden md:block">
-			<Save bind:isSaved text="Guardar oferta"/>
+			<Save bind:isSaved text="Guardar oferta" />
 		</div>
 	{/if}
 </a>

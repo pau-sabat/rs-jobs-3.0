@@ -47,7 +47,6 @@
 	const acceptOptions = (): void => {
 		config.analytics = true
 		config.advertising = true
-		console.log(config)
 		saveConfig()
 	}
 

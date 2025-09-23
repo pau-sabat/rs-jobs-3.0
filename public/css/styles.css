@@ -103,8 +103,21 @@ input:not([type='radio']):not([type='checkbox']) {
 
 /* Inputs de radio y checkbox */
 input[type='radio'],
-input[type='checkbox'] {
-	@apply accent-blue;
+input[type='checkbox']:not(.custom-switch) {
+	@apply accent-blue appearance-none bg-transparent border-2 border-gray relative;
+}
+input[type='radio']:checked:after {
+	@apply content-[''] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-2.5 h-2.5 rounded-full bg-blue;
+}
+input[type='radio'] {
+	@apply rounded-full;
+}
+input[type='checkbox']:not(.custom-switch) {
+	@apply rounded-sm;
+}
+input[type='checkbox']:not(.custom-switch):checked {
+	background: url('/assets/images/icons/check-filled.svg') no-repeat center center;
+	@apply border-blue;
 }
 
 /* Select personalizado */

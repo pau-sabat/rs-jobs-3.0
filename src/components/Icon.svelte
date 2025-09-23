@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { svgCache, pendingFetches } from '../services/iconCache.js'
+	import { svgCache, pendingFetches } from '../services/iconCache'
 
 	export let name: string
 	export let className: string = ''
@@ -12,7 +12,7 @@
 		hasError = false
 
 		if (svgCache.has(name)) {
-			const cachedSvg = svgCache.get(name)
+			const cachedSvg = svgCache.get(name)!
 			svgContent = modifySvg(cachedSvg, className, alt)
 		}
 		else if (pendingFetches.has(name)) {

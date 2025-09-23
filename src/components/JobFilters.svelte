@@ -202,7 +202,7 @@
 		</div>
 
 		<div class="flex flex-col gap-2">
-			<label for="category" class="text-small-mobile md:text-small-desktop font-bold">Categoría</label>
+			<label for="category-select" class="text-small-mobile md:text-small-desktop font-bold">Categoría</label>
 			<select name="category" id="category-select" bind:value={category} class=" flex-grow text-caption-mobile md:text-caption-desktop py-1 border-b border-secondary/50">
 				<option value="">Selecciona la categoría</option>
 			</select>

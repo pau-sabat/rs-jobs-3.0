@@ -5,10 +5,10 @@
 <div class="relative inline-block w-9 h-5">
 	<input
         bind:checked={active}
-        id="switch-component"
+        id="custom-switch"
         type="checkbox"
-        class="peer appearance-none w-9 h-5 bg-gray/15 rounded-full cursor-pointer transition-colors duration-300"
+        class="custom-switch peer appearance-none w-9 h-5 bg-gray/15 rounded-full cursor-pointer transition-colors duration-300"
     />
 	<!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
-	<label for="switch-component" on:click|preventDefault on:keydown|preventDefault class="absolute top-1/2 -translate-y-1/2 left-1 w-4 h-4 bg-secondary/50 rounded-full border border-gray/15 shadow-sm transition-all duration-300 peer-checked:translate-x-3 peer-checked:bg-blue cursor-pointer"> </label>
+	<label for="custom-switch" on:click|preventDefault on:keydown|preventDefault class="absolute top-1/2 -translate-y-1/2 left-1 w-4 h-4 bg-secondary/50 rounded-full border border-gray/15 shadow-sm transition-all duration-300 peer-checked:translate-x-3 peer-checked:bg-blue cursor-pointer"> </label>
 </div>
