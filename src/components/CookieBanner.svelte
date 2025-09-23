@@ -4,10 +4,12 @@
 
 	let isOpen: boolean = false
 
-	let config: {
+	type Config = {
 		analytics: boolean
 		advertising: boolean
-	} = {
+	}
+
+	let config: Config = {
 		analytics: false,
 		advertising: false,
 	}
@@ -45,8 +47,6 @@
 	}
 
 	const acceptOptions = (): void => {
-		config.analytics = true
-		config.advertising = true
 		saveConfig()
 	}
 
