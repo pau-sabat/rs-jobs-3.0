@@ -4,11 +4,11 @@
 	"main": "index.js",
 	"scripts": {
 		"start": "node app.js",
-		"dev": "concurrently \"nodemon app.js\" \"npm run build:css:watch\" \"npm run build:watch\"",
+		"dev": "concurrently --kill-others-on-fail \"nodemon app.js\" \"npm run build:css:watch\" \"npm run build:watch\"",
 		"build:css": "tailwindcss -i ./public/css/styles.css -o ./public/css/output.css",
-		"build:css:watch": "tailwindcss -i ./public/css/styles.css -o ./public/css/output.css --watch",
+		"build:css:watch": "tailwindcss -i ./public/css/styles.css -o ./public/css/output.css --watch --poll",
 		"build": "npm run build:css && vite build",
-		"build:watch": "vite build --watch",
+		"build:watch": "vite build --watch --mode development",
 		"check": "svelte-check --tsconfig ./tsconfig.json"
 	},
 	"keywords": [],
@@ -31,7 +31,6 @@
 		"svelte-check": "^4.3.1",
 		"svelte-preprocess": "^6.0.3",
 		"tailwindcss": "^3.4.0",
-		"ts-node": "^10.9.2",
 		"typescript": "^5.9.2",
 		"vite": "^5.4.19"
 	}

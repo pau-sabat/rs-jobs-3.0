@@ -1,9 +1,20 @@
+<svelte:options
+	customElement={{
+		tag: 'language-selector',
+		shadow: 'none',
+		props: {
+			languages: { type: 'Array' },
+			currentLanguage: { type: 'String', reflect: true },
+		},
+	}}
+/>
+
 <script lang="ts">
 	import { onMount, onDestroy } from 'svelte'
 	import Icon from './Icon.svelte'
 
-	export let languages: string[] = ['es', 'ca']
-	export let currentLanguage: string = languages[0]
+	export let languages: string[]
+	export let currentLanguage: string
 
 	let showDropdown: boolean = false
 	let dropdown: HTMLElement | undefined
@@ -55,14 +66,14 @@
 	{#if showDropdown}
 		<div bind:this={dropdown} class="absolute top-full lg:mt-2 left-1/2 -translate-x-1/2 lg:left-0 lg:translate-x-0 bg-white border border-dark/20 rounded-lg shadow-lg z-10 max-h-72 overflow-y-auto px-3 py-2">
 			{#each languages as language}
-				<div class="hover:bg-gradient-primary cursor-pointer px-2 py-1 rounded-sm flex items-center justify-between flex-nowrap gap-1.5" on:click={() => (currentLanguage = language)}>
+				<button class="hover:bg-gradient-primary cursor-pointer px-2 py-1 rounded-sm flex items-center justify-between flex-nowrap gap-1.5 w-full text-left" on:click={() => (currentLanguage = language)} on:keydown={e => e.key === 'Enter' && (currentLanguage = language)}>
 					<span>{language}</span>
 					{#if currentLanguage === language}
 						<div class="w-4 h-4 flex items-center justify-center">
 							<Icon name="check" className="w-3 h-3" />
 						</div>
 					{/if}
-				</div>
+				</button>
 			{/each}
 		</div>
 	{/if}

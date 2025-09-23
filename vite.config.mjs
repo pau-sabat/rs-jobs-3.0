@@ -10,7 +10,10 @@ export default defineConfig({
 				typescript: {
 					tsconfigFile: './tsconfig.json'
 				}
-			})
+			}),
+			compilerOptions: {
+				customElement: true
+			}
 		})
 	],
 	build: {
@@ -23,9 +26,17 @@ export default defineConfig({
 				assetFileNames: 'bundle.[ext]',
 			},
 		},
+		watch: {
+			// Excluir archivos generados para evitar bucles infinitos
+			exclude: ['**/node_modules/**', '**/public/static/**', '**/public/css/output.css']
+		}
 	},
 	server: {
 		port: 5173,
+		watch: {
+			// Excluir archivos que pueden causar bucles infinitos
+			exclude: ['**/node_modules/**', '**/public/static/**', '**/public/css/output.css']
+		}
 	},
 	resolve: {
 		alias: {

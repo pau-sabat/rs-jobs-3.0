@@ -3,7 +3,10 @@ const router = express.Router()
 const { render, renderWithData } = require('../middlewares/renderMiddleware')
 const fileService = require('../services/fileService')
 
-router.get('/', render('home'))
+router.get('/', renderWithData('home', async req => {
+	const data = fileService.readJson('cities')
+	return { data: data || [] }
+}))
 router.get('/ofertas-trabajo', render('search-job'))
 router.get('/busqueda-de-empresas', render('search-company'))
 router.use(

@@ -3,7 +3,10 @@ module.exports = {
   content: [
     "./src/**/*.{js,svelte,ts}",
     "./src/views/**/*.pug",
-    "./public/**/*.{html,js,css}",
+    "./public/**/*.html",
+    // Excluir archivos generados para evitar bucles infinitos
+    "!./public/static/**",
+    "!./public/css/output.css"
   ],
   theme: {
     extend: {

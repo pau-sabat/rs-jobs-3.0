@@ -1,5 +1,6 @@
 module.exports = {
   compilerOptions: {
-    enableSourcemap: true
+    enableSourcemap: true,
+    customElement: true
   }
 }

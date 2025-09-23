@@ -14,7 +14,12 @@ mixin navbar(data)
             a(href='/busqueda-de-empresas' class="text-secondary hover:text-primary transition-all font-semibold px-1.5") Buscar empresa
 
         div(class="hidden lg:flex items-center gap-2 h-10")
-          div(data-component="LanguageSelector")
+          language-selector(languages=["es", "ca"], currentLanguage="es")
+            template(slot="options")
+              button(class="hover:bg-gradient-primary cursor-pointer px-2 py-1 rounded-sm flex items-center justify-between flex-nowrap gap-1.5 w-full text-left" data-language="es")
+                span Español
+              button(class="hover:bg-gradient-primary cursor-pointer px-2 py-1 rounded-sm flex items-center justify-between flex-nowrap gap-1.5 w-full text-left" data-language="ca")
+                span Català
           a(href='/login').btn.btn-primary Soy empresa
           a(href='/login').btn.btn-secondary-outline Acceso candidato
 
@@ -31,7 +36,7 @@ mixin navbar(data)
             a(href='/ofertas-trabajo' class="text-secondary font-bold h-10 flex items-center justify-center") Buscar trabajo
             a(href='/busqueda-de-empresas' class="text-secondary font-bold h-10 flex items-center justify-center") Buscar empresa
             .flex.items-center.justify-center.h-10
-              div(data-component="LanguageSelector")
+              language-selector(languages=["es", "ca"], currentLanguage="es")
           .flex.flex-col.gap-2
             a.btn(class=`btn-secondary-outline` href='/login') Soy empresa
             a.btn(class=`btn-primary` href='/login') Acceso candidato
