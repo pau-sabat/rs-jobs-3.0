@@ -5,7 +5,7 @@ import { languageMiddleware } from './src/middlewares/languageMiddleware.js'
 import routes from './src/routes/index.js'
 import express from 'express'
 import path from 'path'
-import fs from 'fs'
+import { loadSvgs } from './src/utils/svgLoader.js'
 import { fileURLToPath } from 'url'
 
 const PORT = process.env.PORT || 3000
@@ -22,15 +22,17 @@ i18next
 		detection: {
 			order: ['path', 'cookie', 'header'],
 			caches: ['cookie'],
+			lookupCookie: 'i18next',
+			lookupHeader: 'accept-language',
+			lookupPath: 'lng',
 		},
-		fallbackLng: 'es',
+		supportedLngs: ['es', 'ca'],
 		preload: ['es', 'ca'],
+		fallbackLng: 'es',
 		returnObjects: true,
 	})
 
 const app = express()
-
-app.use(middleware.handle(i18next))
 
 app.set('view engine', 'pug')
 app.set('views', path.join(__dirname, 'src', 'views'))
@@ -56,15 +58,19 @@ const loadDayjs = async () => {
 }
 loadDayjs()
 
+let svgs
+svgs = loadSvgs()
+
 app.use(async (req, res, next) => {
 	// Asegurar que dayjs esté cargado
 	if (!dayjs) {
 		await loadDayjs()
 	}
-	res.locals.fs = fs
-	res.locals.path = path
-	res.locals.process = process
 	res.locals.dayjs = dayjs
+	if (!svgs) {
+		svgs = loadSvgs()
+	}
+	res.locals.svgs = svgs
 	next()
 })
 
@@ -84,6 +90,8 @@ app.use('/static', express.static(path.join(__dirname, 'public/static')))
 
 // Ruta específica para archivos de datos JSON
 app.use('/data', express.static(path.join(__dirname, 'data')))
+
+app.use(middleware.handle(i18next))
 
 app.use(languageMiddleware)
 

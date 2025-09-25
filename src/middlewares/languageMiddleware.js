@@ -1,4 +1,4 @@
 export const languageMiddleware = (req, res, next) => {
-	req.language = req.language || 'es'
+	res.locals.language = req.language
 	next()
 }

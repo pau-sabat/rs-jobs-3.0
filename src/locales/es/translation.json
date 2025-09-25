@@ -1,5 +1,7 @@
 {
-	"home": {
-		"title": "Portal de Empleo"
+	"footer": {},
+	"navbar": {},
+    "home": {
+		"metaTitle": "Portal de Empleo"
 	}
 }

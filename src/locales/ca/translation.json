@@ -1,5 +1,7 @@
 {
+	"footer": {},
+	"navbar": {},
     "home": {
-        "title": "Portal de feina"
-    }
+		"metaTitle": "Portal d'ocupació"
+	}
 }

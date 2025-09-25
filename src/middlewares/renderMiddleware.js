@@ -12,7 +12,7 @@ const render = (viewName, locals = {}) => {
 			...req.locals,
 			...req.query,
 			...req.params,
-			t: req.t(`${viewName}`)
+			t: req.t
 		}
 
 		// Renderizar la vista
@@ -35,7 +35,7 @@ const renderWithData = (viewName, dataProvider) => {
 				...req.locals,
 				...req.query,
 				...req.params,
-				t: req.t(`${viewName}`)
+				t: req.t
 			}
 
 			res.render(`pages/${viewName}`, renderData)

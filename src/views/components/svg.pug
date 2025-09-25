@@ -1,6 +1,5 @@
 mixin svg(name, className, alt)
-    - const svgPath = path.join(process.cwd(), 'public/assets/images/icons', name + '.svg')
-    - let svgContent = fs.readFileSync(svgPath, 'utf8')
+    - let svgContent = svgs[name] || ''
     - if (className) svgContent = svgContent.replace(/<svg /, `<svg class="${className}" `)
     - if (alt) svgContent = svgContent.replace(/<svg /, `<svg aria-label="${alt}" `)
     - else svgContent = svgContent.replace(/<svg /, `<svg aria-hidden="true" `)
